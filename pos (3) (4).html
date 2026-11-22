@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>رويال بوز - كاشير وإدارة المطاعم</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,7 +113,12 @@
     .modal-card { background: #fff; border-radius: 20px; width: 100%; max-width: 360px; padding: 16px; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
     .receipt-paper { font-family: monospace; font-size: 11px; }
   </style>
-</head>
+<style id="royal-cinema-v2">
+html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}header{background:linear-gradient(110deg,#10272c,#07151d)!important;border-bottom:1px solid #b7975b66}.royal-cinematic{position:relative;min-height:150px;margin:12px;border-radius:22px;overflow:hidden;background:#132e31;color:#fff;flex-shrink:0}.royal-cinematic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(.42) saturate(.75)}.royal-cinematic:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#062c31dd)}.royal-cinematic>div{position:relative;z-index:1;padding:24px}.royal-cinematic span{font-size:10px;letter-spacing:.1em;color:#e5d1a6;font-weight:800}.royal-cinematic h2{font-size:24px;font-weight:900;margin:6px 0;line-height:1.5}.royal-cinematic p{font-size:11px;color:#dbebe5}.royal-cinematic small{position:absolute;z-index:1;bottom:8px;left:14px;font-size:8px;color:#e2e8e4}button,.product-card{transition:transform .17s ease,box-shadow .17s ease,border-color .17s ease}button:active,.product-card:active{transform:scale(.97) translateY(1px)}button:focus-visible,a:focus-visible{outline:3px solid #c5a96d;outline-offset:2px}.products-grid{gap:14px}.product-card{border-radius:20px;box-shadow:0 6px 18px #183b3010;border-color:#d4e2da}.product-card:hover{border-color:#b7975b;box-shadow:0 14px 28px #1235291a}.bottom-nav{box-shadow:0 -8px 26px #15332a10}#portfolio-share-bar{padding-block:4px!important;border-bottom:1px solid #e0e8e3}#portfolio-share-app{min-height:38px!important;padding:6px 12px!important}.top-header{flex-shrink:0}.content-viewport{min-height:0}
+@media(max-width:767px){body{height:100dvh}.royal-cinematic{min-height:128px;margin:10px}.royal-cinematic h2{font-size:22px}.royal-cinematic>div{padding:18px}header{flex-wrap:wrap;gap:10px!important}header nav{width:100%;justify-content:space-between}#v-pos{display:flex;flex-direction:column;min-height:0;height:100%;overflow:auto}#v-pos.hidden{display:none}#v-pos>div:first-child{flex:none;height:auto;overflow:visible}#v-pos>div:last-child{flex:none;height:auto;width:100%;min-height:330px}#itemsGrid{overflow:visible;flex:none;min-height:180px}#cartList{min-height:110px;max-height:260px}#v-pos .royal-cinematic{margin:10px}#v-pos>div:first-child>div:first-child{flex-wrap:wrap}.prod-name{line-height:1.65}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
+@media print{.royal-cinematic,#portfolio-share-bar{display:none!important}}
+</style><style id="royal-product-v2">@media screen{#itemsGrid{align-content:start;grid-auto-rows:minmax(135px,auto)}#itemsGrid>div{min-height:135px}.prod-icon{font-size:0;height:6px;margin-bottom:12px}.prod-icon:after{content:'';display:block;width:30px;height:4px;border-radius:4px;background:linear-gradient(90deg,#b7975b,#047857)}.product-card{min-height:132px}.prod-name{font-size:13px;line-height:1.6}.prod-price{font-size:15px}}</style><link rel="stylesheet" href="assets/fontawesome.css"><link rel="stylesheet" href="assets/owner-designs.css"><script src="assets/owner-designs.js"></script></head>
 <body>
 
   <!-- HEADER -->
@@ -127,20 +132,44 @@
     </div>
     <div class="header-actions">
       <button class="admin-btn" onclick="openAdminPrompt()">
-        <span>🔒 الإدارة</span>
+        <span><i class="fa-solid fa-lock" aria-hidden="true"></i> الإدارة</span>
       </button>
     </div>
-  </header>
+  </header><p style="margin:0;padding:8px 14px;background:#fff8e9;color:#79551f;font-size:11px;line-height:1.7;flex-shrink:0" role="note">نسخة محلية تجريبية: البيانات على هذا الجهاز فقط. دخول الإدارة المحلي ليس حماية خادم. لا تستخدم بيانات عملاء حقيقية قبل تأمين الدخول والمزامنة.</p>
+<!-- App-link sharing. No referral credit, account state, or customer data. -->
+<div id="portfolio-share-bar" dir="rtl" style="box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:6px 12px;background:#f8fafc;color:#0f172a;font:600 12px/1.5 sans-serif;flex-shrink:0;position:relative;z-index:20">
+<button id="portfolio-share-app" type="button" style="min-height:44px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;cursor:pointer">مشاركة التطبيق ↗</button>
+<span id="portfolio-share-status" role="status" aria-live="polite" style="max-width:100%;overflow-wrap:anywhere"></span>
+<input id="portfolio-share-url" aria-label="رابط التطبيق للنسخ اليدوي" readonly hidden style="width:100%;max-width:430px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;color:#0f172a;background:#fff;direction:ltr">
+</div>
+<script>
+(function(){
+ const button=document.getElementById('portfolio-share-app');
+ const status=document.getElementById('portfolio-share-status');
+ const fallback=document.getElementById('portfolio-share-url');
+ const appUrl="https://almohandis-systems.github.io/reaya-fayoum/pos%20%283%29%20%284%29.html";
+ button.addEventListener('click',async function(){
+  status.textContent='';fallback.hidden=true;
+  if(navigator.share){
+   try{await navigator.share({title:document.title,url:appUrl});status.textContent='تمت المشاركة';return;}
+   catch(error){if(error&&error.name==='AbortError')return;}
+  }
+  try{if(!navigator.clipboard)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(appUrl);status.textContent='تم نسخ رابط التطبيق';}
+  catch(error){fallback.value=appUrl;fallback.hidden=false;fallback.focus();fallback.select();status.textContent='انسخ الرابط الظاهر وشاركه بنفسك';}
+ });
+})();
+</script>
+
 
   <!-- CONTENT VIEWPORT -->
-  <div class="content-viewport">
+  <div class="content-viewport"><section class="royal-cinematic" aria-label="واجهة رويال بوز"><img src="assets/restaurant-interior.webp" alt="صورة مطعم توضيحية لواجهة النظام، مش صورة المطعم الفعلي" width="1125" height="750"><div><span>ROYAL POS · مساحة العمل</span><h2>كل تفصيلة في مكانها.</h2><p>الكاشير · الصالة · المطبخ</p></div><small>صورة توضيحية: Anna Shvets / Pexels</small></section>
 
     <!-- 1. POS SCREEN -->
     <div id="screen-pos" class="screen-view active">
       <div class="order-type-switch">
-        <button onclick="setOrderType('dine_in')" id="ot-dine" class="order-type-btn active">🍽️ صالة</button>
-        <button onclick="setOrderType('takeaway')" id="ot-take" class="order-type-btn">🛍️ سفري</button>
-        <button onclick="setOrderType('delivery')" id="ot-del" class="order-type-btn">🛵 دليفري</button>
+        <button onclick="setOrderType('dine_in')" id="ot-dine" class="order-type-btn active"><i class="fa-solid fa-utensils" aria-hidden="true"></i> صالة</button>
+        <button onclick="setOrderType('takeaway')" id="ot-take" class="order-type-btn"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i> سفري</button>
+        <button onclick="setOrderType('delivery')" id="ot-del" class="order-type-btn"><i class="fa-solid fa-motorcycle" aria-hidden="true"></i> دليفري</button>
       </div>
 
       <!-- Delivery Info Inputs (Only visible when delivery is selected) -->
@@ -203,16 +232,16 @@
     <!-- 6. ADMIN DASHBOARD SCREEN (PROTECTED) -->
     <div id="screen-admin" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <h3 style="font-weight:900; font-size:15px; color:#0f172a;">⚙️ لوحة تحكم الإدارة والمالك</h3>
-        <button onclick="logoutAdmin()" style="background:#e2e8f0; border:none; padding:4px 10px; border-radius:8px; font-size:11px; font-weight:800; cursor:pointer;">خروج 🔒</button>
+        <h3 style="font-weight:900; font-size:15px; color:#0f172a;"><i class="fa-solid fa-gear" aria-hidden="true"></i> لوحة تحكم الإدارة والمالك</h3>
+        <button onclick="logoutAdmin()" style="background:#e2e8f0; border:none; padding:4px 10px; border-radius:8px; font-size:11px; font-weight:800; cursor:pointer;">خروج <i class="fa-solid fa-lock" aria-hidden="true"></i></button>
       </div>
 
       <!-- Admin Sub Tabs -->
       <div class="admin-subnav">
-        <button onclick="showAdminSection('items')" id="at-items" class="admin-tab-btn active">🍔 إدارة الأصناف</button>
-        <button onclick="showAdminSection('add')" id="at-add" class="admin-tab-btn">➕ إضافة صنف</button>
-        <button onclick="showAdminSection('tables')" id="at-tables" class="admin-tab-btn">🪑 إدارة الطاولات</button>
-        <button onclick="showAdminSection('settings')" id="at-settings" class="admin-tab-btn">⚙️ إعدادات المتجر</button>
+        <button onclick="showAdminSection('items')" id="at-items" class="admin-tab-btn active"><i class="fa-solid fa-burger" aria-hidden="true"></i> إدارة الأصناف</button>
+        <button onclick="showAdminSection('add')" id="at-add" class="admin-tab-btn"><i class="fa-solid fa-plus" aria-hidden="true"></i> إضافة صنف</button>
+        <button onclick="showAdminSection('tables')" id="at-tables" class="admin-tab-btn"><i class="fa-solid fa-chair" aria-hidden="true"></i> إدارة الطاولات</button>
+        <button onclick="showAdminSection('settings')" id="at-settings" class="admin-tab-btn"><i class="fa-solid fa-gear" aria-hidden="true"></i> إعدادات المتجر</button>
       </div>
 
       <!-- Admin Section 1: Manage Items -->
@@ -244,7 +273,7 @@
           </div>
           <div class="form-group">
             <label class="form-label">رمز تعبيري / أيقونة:</label>
-            <input type="text" id="newItemIcon" value="🍔" class="form-input" style="text-align:center; font-size:18px;">
+            <input type="text" id="newItemIcon" value="" class="form-input" style="text-align:center; font-size:18px;">
           </div>
           <button onclick="saveNewItem()" style="width:100%; background:#047857; color:#fff; border:none; padding:10px; border-radius:12px; font-weight:800; font-size:13px; cursor:pointer;">حفظ وإضافة الصنف للمنيو</button>
         </div>
@@ -263,7 +292,11 @@
       </div>
 
       <!-- Admin Section 4: General Settings -->
-      <div id="asec-settings" class="admin-section">
+      <div id="asec-settings" class="admin-section"><section class="owner-design-panel" data-owner-design-panel aria-label="اختيار تصميم الواجهة">
+<h4>مجموعة تصميمات الواجهة</h4><p>التصميم الحالي: <strong data-owner-design-current>الزمرد السينمائي</strong></p>
+<label>اختر التصميم<select data-owner-design-select aria-label="اختر تصميم الواجهة"><option value="original">الأصلي، مع إصلاحات التشغيل</option><option value="cinematic">الزمرد السينمائي، صور وانحناءات</option><option value="midnight">ليلي أزرق، بطاقات داكنة</option><option value="ivory">عاجي تحريري، بطاقات مستطيلة</option></select></label>
+<div class="owner-design-actions"><button type="button" data-owner-design-save>تطبيق وحفظ التصميم</button><button type="button" data-owner-design-reset>الرجوع للتصميم الأصلي</button></div>
+<p role="status" aria-live="polite" data-owner-design-status></p><small>اختيار محلي لهذه الصفحة وهذا المتصفح فقط، وليس تغييراً عاماً لكل العملاء. لا يحذف أصنافاً أو أعضاء أو طلبات أو أرصدة. إصلاحات التشغيل والمشاركة وQR تبقى في كل التصميمات.</small></section>
         <div class="stat-card">
           <h4 style="font-weight:900; font-size:13px; margin-bottom:10px;">بيانات المحل والفاتورة</h4>
           <div class="form-group">
@@ -294,22 +327,22 @@
   <!-- FLOATING CART BAR -->
   <div class="floating-cart-bar hidden" id="floatingCart" onclick="openCartDrawer()">
     <div style="display: flex; align-items: center;">
-      <span>🛒 السلة</span>
+      <span><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> السلة</span>
       <span class="cart-count-badge" id="floatCount">0</span>
     </div>
     <div style="display: flex; align-items: center; gap: 10px;">
       <span class="cart-bar-total" id="floatTotal">0.00 ج.م</span>
-      <button class="view-bill-btn">عرض الفاتورة ⬅️</button>
+      <button class="view-bill-btn">عرض الفاتورة ⬅</button>
     </div>
   </div>
 
   <!-- BOTTOM APP NAVIGATION -->
   <nav class="bottom-nav">
-    <button onclick="showScreen('pos')" id="nav-pos" class="nav-item active"><span class="nav-icon">🧾</span><span>الكاشير</span></button>
-    <button onclick="showScreen('tables')" id="nav-tables" class="nav-item"><span class="nav-icon">🪑</span><span>الصالة</span></button>
-    <button onclick="showScreen('kds')" id="nav-kds" class="nav-item"><span class="nav-icon">👨‍🍳</span><span>المطبخ</span></button>
-    <button onclick="showScreen('shifts')" id="nav-shifts" class="nav-item"><span class="nav-icon">💰</span><span>الخزينة</span></button>
-    <button onclick="showScreen('reports')" id="nav-reports" class="nav-item"><span class="nav-icon">📊</span><span>التقارير</span></button>
+    <button onclick="showScreen('pos')" id="nav-pos" class="nav-item active"><span class="nav-icon"><i class="fa-solid fa-receipt" aria-hidden="true"></i></span><span>الكاشير</span></button>
+    <button onclick="showScreen('tables')" id="nav-tables" class="nav-item"><span class="nav-icon"><i class="fa-solid fa-chair" aria-hidden="true"></i></span><span>الصالة</span></button>
+    <button onclick="showScreen('kds')" id="nav-kds" class="nav-item"><span class="nav-icon"><i class="fa-solid fa-bell-concierge" aria-hidden="true"></i></span><span>المطبخ</span></button>
+    <button onclick="showScreen('shifts')" id="nav-shifts" class="nav-item"><span class="nav-icon"><i class="fa-solid fa-cash-register" aria-hidden="true"></i></span><span>الخزينة</span></button>
+    <button onclick="showScreen('reports')" id="nav-reports" class="nav-item"><span class="nav-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></span><span>التقارير</span></button>
   </nav>
 
   <!-- CART DRAWER MODAL -->
@@ -332,7 +365,7 @@
           <span id="billService">0.00 ج.م</span>
         </div>
         <div class="bill-calc-row">
-          <span onclick="setDiscountPrompt()" style="cursor: pointer; color: #047857; text-decoration: underline;">🏷️ خصم نقدي:</span>
+          <span onclick="setDiscountPrompt()" style="cursor: pointer; color: #047857; text-decoration: underline;"><i class="fa-solid fa-tag" aria-hidden="true"></i> خصم نقدي:</span>
           <span id="billDiscount" style="color: #e11d48; font-weight: 800;">- 0.00 ج.م</span>
         </div>
         <div class="bill-calc-total">
@@ -342,8 +375,8 @@
       </div>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <button onclick="sendOrderToKitchen()" style="background: #1e293b; color:#fff; border:none; border-radius:12px; padding:11px; font-weight:800; font-size:12px; cursor:pointer;">👨‍🍳 إرسال للمطبخ</button>
-        <button onclick="openPayment()" class="checkout-btn" style="margin-top:0;">💵 تحصيل (دفع)</button>
+        <button onclick="sendOrderToKitchen()" style="background: #1e293b; color:#fff; border:none; border-radius:12px; padding:11px; font-weight:800; font-size:12px; cursor:pointer;"><i class="fa-solid fa-bell-concierge" aria-hidden="true"></i> إرسال للمطبخ</button>
+        <button onclick="openPayment()" class="checkout-btn" style="margin-top:0;"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> تحصيل (دفع)</button>
       </div>
     </div>
   </div>
@@ -352,7 +385,7 @@
   <div class="modal-overlay" id="receiptModal" onclick="closeReceiptModal()">
     <div class="modal-card receipt-paper" onclick="event.stopPropagation()">
       <div id="receiptContent"></div>
-      <button class="checkout-btn" onclick="window.print()" style="margin-top:10px;">🖨️ طباعة الفاتورة (80mm)</button>
+      <button class="checkout-btn" onclick="window.print()" style="margin-top:10px;"><i class="fa-solid fa-print" aria-hidden="true"></i> طباعة الفاتورة (80mm)</button>
       <button onclick="closeReceiptModal()" style="width:100%; background:#f1f5f9; border:none; border-radius:10px; padding:8px; margin-top:6px; font-weight:700; cursor:pointer;">إغلاق</button>
     </div>
   </div>
@@ -371,11 +404,11 @@
         taxRate: 14
       },
       categories: [
-        { id: 'all', name: '✨ الكل' },
+        { id: 'all', name: 'الكل' },
         { id: 'hot', name: '☕ ساخن' },
-        { id: 'cold', name: '🧃 بارد' },
-        { id: 'food', name: '🍔 وجبات' },
-        { id: 'dessert', name: '🧇 حلويات' }
+        { id: 'cold', name: ' بارد' },
+        { id: 'food', name: ' وجبات' },
+        { id: 'dessert', name: ' حلويات' }
       ],
       products: [
         { id: 1, name: 'إسبريسو دبل', cat: 'hot', price: 35, icon: '☕', out: false },
@@ -481,7 +514,7 @@
         <div class="product-card ${p.out ? 'out-stock' : ''}" onclick="addToCart(${p.id})">
           ${p.out ? '<span class="out-stock-tag">نفد</span>' : ''}
           <div>
-            <div class="prod-icon">${p.icon || '🍽️'}</div>
+            <div class="prod-icon">${p.icon || ''}</div>
             <div class="prod-name">${p.name}</div>
           </div>
           <div class="prod-price">${p.price.toFixed(2)} ج.م</div>
@@ -609,7 +642,7 @@
             <span>${k.type} - ${k.table}</span>
           </div>
           <p style="font-size:10px; color:#94a3b8; margin-bottom:6px;">⏰ ${k.time}</p>
-          <ul class="kds-items-list">${k.items.map(item => `<li>✔️ ${item}</li>`).join('')}</ul>
+          <ul class="kds-items-list">${k.items.map(item => `<li>✔ ${item}</li>`).join('')}</ul>
           <button class="kds-done-btn" onclick="doneKDSOrder(${i})">تم التحضير والتسليم</button>
         </div>
       `).join('');
@@ -632,7 +665,7 @@
         const totalAmount = t.order ? t.order.total : (t.total || 0);
         return `
           <div class="table-box ${t.status}" onclick="handleTableClick(${t.id})">
-            <div style="font-size:24px; margin-bottom:4px;">🪑</div>
+            <div style="font-size:24px; margin-bottom:4px;"></div>
             <div class="table-name">${t.name}</div>
             <span class="table-badge ${t.status}">${isBusy ? 'مشغولة (' + totalAmount + ' ج)' : 'متاحة (طلب جديد)'}</span>
           </div>
@@ -688,7 +721,7 @@
 
       const freeTables = DB.tables.filter(t => t.status === 'free');
       if (freeTables.length === 0) {
-        alert('⚠️ لا توجد طاولات فارغة متاحة للنقل إليها حالياً!');
+        alert('⚠ لا توجد طاولات فارغة متاحة للنقل إليها حالياً!');
         return;
       }
 
@@ -763,7 +796,7 @@
 
       const busyTables = DB.tables.filter(t => t.status === 'busy' && t.id !== activeModalTableId);
       if (busyTables.length === 0) {
-        alert('⚠️ لا توجد طاولات أخرى مشغولة لتبديل الأوردر معها!');
+        alert('⚠ لا توجد طاولات أخرى مشغولة لتبديل الأوردر معها!');
         return;
       }
 
@@ -797,7 +830,7 @@
       if (!currentTbl) return;
 
       const otherBusy = DB.tables.filter(t => t.status === 'busy' && t.id !== activeModalTableId);
-      if (otherBusy.length === 0) return alert('⚠️ لا توجد طاولات أخرى مشغولة لدمج الحساب معها!');
+      if (otherBusy.length === 0) return alert('⚠ لا توجد طاولات أخرى مشغولة لدمج الحساب معها!');
 
       const optionsText = otherBusy.map(t => `${t.id} = ${t.name} (حساب: ${t.total || 0} ج)`).join('\\n');
       const targetIdStr = prompt(`اختر الطاولة لدمج حساب (${currentTbl.name}) إليها:\\n${optionsText}`);
@@ -869,7 +902,7 @@
             </div>
           </div>
           <div style="display:flex; gap:6px; margin-top:6px; border-top:1px dashed #f1f5f9; padding-top:4px;">
-            <button onclick="replaceTblItemPrompt(${idx})" style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:3px 6px; font-size:10px; font-weight:800; cursor:pointer;">🔄 استبدال بصنف آخر</button>
+            <button onclick="replaceTblItemPrompt(${idx})" style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:3px 6px; font-size:10px; font-weight:800; cursor:pointer;"> استبدال بصنف آخر</button>
             <button onclick="removeTblItemPrompt(${idx})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:6px; padding:3px 8px; font-size:10px; font-weight:800; cursor:pointer;">❌ حذف</button>
           </div>
         </div>
@@ -940,12 +973,12 @@
       DB.kds.unshift({
         id: 'MOD-' + Math.floor(100 + Math.random() * 900),
         table: tbl.name,
-        type: '⚠️ تعديل طلب',
+        type: '⚠ تعديل طلب',
         time: new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' }),
         items: tbl.order ? tbl.order.items.map(i => `${i.qty}x ${i.name}`) : ['تم إفراغ الطلب']
       });
       saveData();
-      alert(`🔔 تم إرسال إشعار بتعديل الطلب لشاشة المطبخ (${tbl.name})!`);
+      alert(` تم إرسال إشعار بتعديل الطلب لشاشة المطبخ (${tbl.name})!`);
     }
 
     function cancelTableOrderVoid() {
@@ -1059,7 +1092,7 @@
         </div>
         <div style="text-align:center; padding-top:6px; font-size:10px;">
           <p style="font-weight:800;">شكراً لزيارتكم!</p>
-          <p style="margin-top:4px; font-size:16px;">🏁 📦 🏁</p>
+          <p style="margin-top:4px; font-size:16px;">  </p>
         </div>
       `;
       document.getElementById('receiptModal').classList.add('open');
@@ -1143,7 +1176,7 @@
       container.innerHTML = DB.products.map((p, idx) => `
         <div class="admin-item-row">
           <div>
-            <span style="font-size:18px; margin-left:6px;">${p.icon || '🍽️'}</span>
+            <span style="font-size:18px; margin-left:6px;">${p.icon || ''}</span>
             <span style="font-weight:800; font-size:13px;">${p.name}</span>
             <p style="font-size:11px; color:#047857; font-weight:800; margin-top:2px;">${p.price.toFixed(2)} ج.م</p>
           </div>
@@ -1188,7 +1221,7 @@
       const name = document.getElementById('newItemName').value.trim();
       const price = parseFloat(document.getElementById('newItemPrice').value);
       const cat = document.getElementById('newItemCat').value;
-      const icon = document.getElementById('newItemIcon').value.trim() || '🍽️';
+      const icon = document.getElementById('newItemIcon').value.trim() || '';
 
       if (!name || isNaN(price)) {
         alert('يرجى كتابة اسم الصنف والسعر بشكل صحيح!');
@@ -1209,7 +1242,7 @@
       const box = document.getElementById('adminTablesList');
       box.innerHTML = DB.tables.map(t => `
         <div class="admin-item-row">
-          <span style="font-weight:800; font-size:12px;">🪑 ${t.name}</span>
+          <span style="font-weight:800; font-size:12px;"> ${t.name}</span>
           <button onclick="deleteTable(${t.id})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:8px; padding:3px 8px; font-size:10px; font-weight:800; cursor:pointer;">حذف</button>
         </div>
       `).join('');
@@ -1262,7 +1295,7 @@
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:8px; margin-bottom:10px;">
         <div>
           <h3 style="font-weight:900; font-size:15px; color:#0f172a;" id="tblModalTitle">تفاصيل طاولة 2</h3>
-          <span style="font-size:11px; color:#047857; font-weight:800;" id="tblModalStatus">🔴 مشغولة بحساب مفتوح</span>
+          <span style="font-size:11px; color:#047857; font-weight:800;" id="tblModalStatus"><i class="fa-solid fa-circle" aria-hidden="true"></i> مشغولة بحساب مفتوح</span>
         </div>
         <button onclick="closeTableModal()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; font-weight:bold; cursor:pointer;">✕</button>
       </div>
@@ -1279,28 +1312,28 @@
         <div style="display:flex; flex-direction:column; gap:7px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
             <button onclick="openMoveTablePrompt()" style="background:#2563eb; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
-              🔄 نقل لطاولة فارغة
+              <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> نقل لطاولة فارغة
             </button>
             <button onclick="openSwapTablePrompt()" style="background:#7c3aed; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
-              🔀 تبديل أوردر بطاولة أخرى
+              <i class="fa-solid fa-shuffle" aria-hidden="true"></i> تبديل أوردر بطاولة أخرى
             </button>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
             <button onclick="openEditOrderModal()" style="background:#0284c7; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
-              ✏️ تعديل وتغيير أصناف الأوردر
+              <i class="fa-solid fa-pen" aria-hidden="true"></i> تعديل وتغيير أصناف الأوردر
             </button>
             <button onclick="openMergeTablePrompt()" style="background:#d97706; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
-              🔗 دمج الحساب مع طاولة أخرى
+              <i class="fa-solid fa-link" aria-hidden="true"></i> دمج الحساب مع طاولة أخرى
             </button>
           </div>
           <button onclick="addMoreItemsToTable()" style="width:100%; background:#047857; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:12px; cursor:pointer;">
-            ➕ فتح الكاشير لإضافة طلبات جديدة
+            <i class="fa-solid fa-plus" aria-hidden="true"></i> فتح الكاشير لإضافة طلبات جديدة
           </button>
           <button onclick="checkoutTableDirectly()" style="width:100%; background:#0f172a; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:12px; cursor:pointer;">
-            💵 تحصيل الحساب وإصدار الفاتورة
+            <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> تحصيل الحساب وإصدار الفاتورة
           </button>
           <button onclick="cancelTableOrderVoid()" style="width:100%; background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:10px; padding:9px; font-weight:800; font-size:11px; cursor:pointer;">
-            ❌ إلغاء الطلب بالكامل (Void - برقم الإدارة 0846)
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i> إلغاء الطلب بالكامل (Void - برقم الإدارة 0846)
           </button>
         </div>
 
@@ -1313,7 +1346,7 @@
   <div class="modal-overlay" id="editOrderItemsModal" onclick="closeEditOrderModal()">
     <div class="modal-card" onclick="event.stopPropagation()">
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:8px; margin-bottom:10px;">
-        <h3 style="font-weight:900; font-size:14px; color:#0f172a;">✏️ تعديل وتغيير أصناف الأوردر</h3>
+        <h3 style="font-weight:900; font-size:14px; color:#0f172a;"><i class="fa-solid fa-pen" aria-hidden="true"></i> تعديل وتغيير أصناف الأوردر</h3>
         <button onclick="closeEditOrderModal()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; font-weight:bold; cursor:pointer;">✕</button>
       </div>
       <p style="font-size:11px; color:#64748b; margin-bottom:8px;">يمكنك تعديل الكمية، تبديل الصنف بآخر، أو حذفه:</p>
@@ -1322,7 +1355,7 @@
 
       <div style="display:flex; gap:6px;">
         <button onclick="notifyKitchenOrderModified()" style="flex:1; background:#0f172a; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
-          🔔 إرسال تنبيه تعديل للمطبخ
+          <i class="fa-solid fa-bell" aria-hidden="true"></i> إرسال تنبيه تعديل للمطبخ
         </button>
         <button onclick="closeEditOrderModal()" style="background:#047857; color:#fff; border:none; border-radius:10px; padding:10px 16px; font-weight:800; font-size:11px; cursor:pointer;">
           حفظ وإغلاق

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<link rel="preload" as="image" href="assets/medical-interior.webp">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#047857">
   <meta name="description" content="شبكة ودليل الرعاية والخصم الطبي بمحافظة الفيوم - بطاقات العضوية الرقمية وخصومات العيادات والمعامل">
   <title>شبكة الرعاية والخصم الطبي - محافظة الفيوم</title>
@@ -21,29 +22,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            cairo: ['Cairo', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b',
-            }
-          }
-        }
-      }
-    }
-  </script>
+<link rel="stylesheet" href="assets/app.css">
+<script src="assets/qrcode.js"></script><script src="assets/qrcode_UTF8.js"></script>
 
   <style>
     *, *::before, *::after {
@@ -87,7 +67,23 @@
       }
     }
   </style>
-</head>
+
+<style id="reaya-cinema-v2">
+:root{--reaya-ink:#102a2b;--reaya-gold:#b7975b;--reaya-green:#075e53}
+html{scroll-behavior:smooth}body{background:#f4f7f5;color:var(--reaya-ink)}
+body>header{border-bottom:1px solid #d7e5df;background:rgba(255,255,255,.96);backdrop-filter:blur(16px)}
+button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[role=button]{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}button:active,a[role=button]:active{transform:translateY(2px) scale(.98)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b7975b;outline-offset:3px}
+#reaya-cinematic-hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 10%,#146555 0%,#062f34 55%,#051d26 100%);padding:clamp(32px,6vw,80px) clamp(16px,4vw,48px) 64px;border-bottom:1px solid #b7975b}
+.reaya-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;max-width:1220px}.reaya-hero-copy{text-align:start;position:relative;z-index:1}.reaya-eyebrow{font-size:12px;letter-spacing:.1em;color:#d0bb8b;font-weight:800;margin-bottom:24px}#heroHeadline{font-size:clamp(30px,3.4vw,48px);line-height:1.5;max-width:680px;text-wrap:balance}#heroSubtext{line-height:1.9;color:#d8e8e3}#heroBadge{border-color:#b7975b66;background:#ffffff0c;color:#d7c59d}
+.reaya-hero-photo{position:relative;aspect-ratio:4/3;border-radius:90px 28px 28px 28px;overflow:hidden;box-shadow:0 32px 80px #0005;border:1px solid #f5e8c94d;transform:perspective(1300px) rotateY(5deg)}.reaya-hero-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#001e28aa,transparent 55%);pointer-events:none}.reaya-hero-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(.8)}.reaya-hero-photo figcaption{position:absolute;z-index:1;bottom:16px;inset-inline:20px;font-size:10px;color:#fff;line-height:1.8}
+#searchInput{min-height:56px;box-shadow:0 12px 30px #001c2333;border:1px solid #cfdfd8;border-radius:16px}#cardsGrid>div{border:1px solid #d9e5de;border-radius:24px;box-shadow:0 8px 26px #13392d09;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}#cardsGrid>div:hover{transform:translateY(-5px);border-color:#b7975b;box-shadow:0 20px 38px #16372f12}#cardsGrid>div:before{content:'';height:5px;display:block;background:linear-gradient(90deg,#075e53,#b7975b);flex-shrink:0}
+.reaya-estimate-note{font-size:11px;line-height:1.9;color:#526f67;max-width:1160px;margin:14px auto 0;padding-inline:20px}#bottomInstallBanner{position:relative!important;inset:auto!important;max-width:1200px!important;margin:24px auto!important;width:calc(100% - 32px);box-sizing:border-box;flex-wrap:wrap;border-color:#b7975b55}#cardQrCode{width:160px!important;height:160px!important;max-width:100%}#cardQrCode svg{width:100%;height:auto}#portfolio-share-bar{border-bottom:1px solid #e2e8e3;background:#f8faf9!important}#portfolio-share-app{border-color:#c9b582!important;box-shadow:0 4px 12px #122c2410}
+@media(max-width:767px){.reaya-hero-grid{grid-template-columns:1fr;gap:26px}.reaya-hero-photo{aspect-ratio:16/9;max-height:240px;border-radius:44px 18px 18px 18px;transform:none}.reaya-hero-copy{text-align:start}#reaya-cinematic-hero{padding-top:32px;padding-bottom:64px}#heroHeadline{font-size:32px}#heroBadge{font-size:10px}.reaya-eyebrow{margin-bottom:16px}body>header>div{gap:12px}#cardsGrid>div:hover{transform:none}#bottomInstallBanner>div:first-child{min-width:200px}}
+@media(hover:hover){#portfolio-share-app:hover{transform:translateY(-2px);box-shadow:0 8px 20px #10372a20}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
+@media print{.reaya-hero-photo,#portfolio-share-bar,.reaya-estimate-note{display:none!important}}
+</style>
+<link rel="stylesheet" href="assets/owner-designs.css"><script src="assets/owner-designs.js"></script></head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
 
   <!-- ======================================================== -->
@@ -137,12 +133,36 @@
 
     </div>
   </header>
+<!-- App-link sharing. No referral credit, account state, or customer data. -->
+<div id="portfolio-share-bar" dir="rtl" style="box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:6px 12px;background:#f8fafc;color:#0f172a;font:600 12px/1.5 sans-serif;flex-shrink:0;position:relative;z-index:20">
+<button id="portfolio-share-app" type="button" style="min-height:44px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;cursor:pointer">مشاركة التطبيق ↗</button>
+<span id="portfolio-share-status" role="status" aria-live="polite" style="max-width:100%;overflow-wrap:anywhere"></span>
+<input id="portfolio-share-url" aria-label="رابط التطبيق للنسخ اليدوي" readonly hidden style="width:100%;max-width:430px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;color:#0f172a;background:#fff;direction:ltr">
+</div>
+<script>
+(function(){
+ const button=document.getElementById('portfolio-share-app');
+ const status=document.getElementById('portfolio-share-status');
+ const fallback=document.getElementById('portfolio-share-url');
+ const appUrl="https://almohandis-systems.github.io/reaya-fayoum/";
+ button.addEventListener('click',async function(){
+  status.textContent='';fallback.hidden=true;
+  if(navigator.share){
+   try{await navigator.share({title:document.title,url:appUrl});status.textContent='تمت المشاركة';return;}
+   catch(error){if(error&&error.name==='AbortError')return;}
+  }
+  try{if(!navigator.clipboard)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(appUrl);status.textContent='تم نسخ رابط التطبيق';}
+  catch(error){fallback.value=appUrl;fallback.hidden=false;fallback.focus();fallback.select();status.textContent='انسخ الرابط الظاهر وشاركه بنفسك';}
+ });
+})();
+</script>
+
 
   <!-- ======================================================== -->
   <!-- Hero Section -->
   <!-- ======================================================== -->
-  <section class="bg-gradient-to-b from-teal-800 via-brand-900 to-slate-900 text-white py-8 sm:py-12 px-4 w-full">
-    <div class="max-w-4xl mx-auto text-center space-y-4">
+  <section id="reaya-cinematic-hero" class="bg-gradient-to-b from-teal-800 via-brand-900 to-slate-900 text-white py-8 sm:py-12 px-4 w-full">
+    <div class="reaya-hero-grid max-w-7xl mx-auto"><div class="reaya-hero-copy space-y-4"><p class="reaya-eyebrow">رعاية الفيوم · الدليل الطبي</p>
       <span id="heroBadge" class="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-teal-100 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full break-words-all">
         خدمة مجتمعية لأهالي محافظة الفيوم ومراكزها
       </span>
@@ -150,9 +170,10 @@
         وفر حتى <span class="text-emerald-300 underline decoration-wavy decoration-teal-400">30%</span> على كشوفات الأطباء والفحوصات
       </h1>
       <p id="heroSubtext" class="text-slate-200 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed break-words-all">
-        دليلك المعتمد لشبكة الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بالفيوم. بطاقة عائلية رقمية تشمل حتى 5 أفراد. اضغط على أي بطاقة لعرض تفاصيلها الكاملة والحجز.
+        دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بالفيوم. بطاقة عائلية رقمية تشمل حتى 5 أفراد. اضغط على أي بطاقة لعرض تفاصيلها الكاملة والحجز.
       </p>
 
+      <p style="font-size:11px;line-height:1.8;color:#cde8de;border-right:2px solid #b7975b;padding-right:10px">الجهات والخصومات المعروضة تحتاج تأكيداً مباشراً من الجهة قبل الزيارة. إصدار بطاقة على هذا الجهاز لا يُثبت قبولها لدى أي جهة أو وجود تعاقد معها.</p>
       <!-- Live Search Box -->
       <div class="pt-2 max-w-2xl mx-auto w-full">
         <div class="relative w-full">
@@ -165,8 +186,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </div><figure class="reaya-hero-photo"><img src="assets/medical-interior.webp" alt="صورة توضيحية لممر طبي حديث، ليست صورة جهة مدرجة بالدليل" width="1125" height="750" fetchpriority="high"><figcaption>صورة توضيحية: Enrique Silva / Pexels، مش صورة لجهة داخل الدليل</figcaption></figure></div>
+</section>
 
   <!-- ======================================================== -->
   <!-- Savings Calculator Widget Section (Responsive, no side spill) -->
@@ -215,6 +236,7 @@
             <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">مستلزمات صيدلية</label>
             <div class="flex items-center justify-center gap-2">
               <select id="calcPharmacySpend" onchange="calculateSavings()" class="bg-white border border-slate-300 rounded-lg text-xs font-bold p-1 text-emerald-700">
+                <option value="0">0 ج</option>
                 <option value="300">300 ج</option>
                 <option value="600" selected>600 ج</option>
                 <option value="1000">1000 ج</option>
@@ -239,7 +261,7 @@
 
       </div>
     </div>
-  </section>
+  <p class="reaya-estimate-note">حاسبة توضيحية وليست وعداً بالتوفير. الافتراضات: 65 جنيه للكشف، 115 جنيه للتحليل، و15% للأدوية. اسأل الجهة عن السعر والخصم قبل الحجز.</p></section>
 
   <!-- ======================================================== -->
   <!-- Navigation Filters & Center Selector -->
@@ -476,7 +498,7 @@
 
           <!-- Self-contained SVG QR Code Container -->
           <div class="bg-white p-1 rounded-xl shadow-inner shrink-0 flex items-center justify-center">
-            <div id="cardQrCode" class="w-[72px] h-[72px] flex items-center justify-center"></div>
+            <div id="cardQrCode" class="w-[160px] h-[160px] flex items-center justify-center"></div>
           </div>
         </div>
 
@@ -956,7 +978,11 @@
         </div>
 
         <!-- Tab 2: Site Settings -->
-        <div id="tab-siteTab" class="settings-tab-content hidden space-y-3">
+        <div id="tab-siteTab" class="settings-tab-content hidden space-y-3"><section class="owner-design-panel" data-owner-design-panel aria-label="اختيار تصميم الواجهة">
+<h4>مجموعة تصميمات الواجهة</h4><p>التصميم الحالي: <strong data-owner-design-current>الزمرد السينمائي</strong></p>
+<label>اختر التصميم<select data-owner-design-select aria-label="اختر تصميم الواجهة"><option value="original">الأصلي، مع إصلاحات التشغيل</option><option value="cinematic">الزمرد السينمائي، صور وانحناءات</option><option value="midnight">ليلي أزرق، بطاقات داكنة</option><option value="ivory">عاجي تحريري، بطاقات مستطيلة</option></select></label>
+<div class="owner-design-actions"><button type="button" data-owner-design-save>تطبيق وحفظ التصميم</button><button type="button" data-owner-design-reset>الرجوع للتصميم الأصلي</button></div>
+<p role="status" aria-live="polite" data-owner-design-status></p><small>اختيار محلي لهذه الصفحة وهذا المتصفح فقط، وليس تغييراً عاماً لكل العملاء. لا يحذف أصنافاً أو أعضاء أو طلبات أو أرصدة. إصلاحات التشغيل والمشاركة وQR تبقى في كل التصميمات.</small></section>
           <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
             <h4 class="font-black text-slate-800 text-sm">تخصيص نصوص الموقع</h4>
             <form onsubmit="event.preventDefault(); saveSiteSettings();" class="space-y-2.5">
@@ -1035,7 +1061,7 @@
           <h4 class="text-xs font-black text-white">تطبيق رعاية الفيوم</h4>
           <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-1.5 py-0.5 rounded font-bold border border-emerald-500/30">أقل من 1 ميجا</span>
         </div>
-        <p class="text-[10px] text-slate-300 break-words-all leading-tight mt-0.5">ثبته بلمسة واحدة لفتح دليل الأطباء وبطاقتك فوراً وبدون إنترنت</p>
+        <p class="text-[10px] text-slate-300 break-words-all leading-tight mt-0.5">الدليل وبطاقتك من شاشة هاتفك. البيانات المحفوظة تخص هذا الجهاز.</p>
       </div>
     </div>
     <div class="flex items-center gap-1.5 shrink-0">
@@ -1390,7 +1416,7 @@
     const defaultSettings = {
       siteName: 'رعاية الفيوم',
       headline: 'وفر حتى 30% على كشوفات الأطباء والفحوصات',
-      subtext: 'دليلك المعتمد لشبكة الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بالفيوم. بطاقة عائلية رقمية تشمل حتى 5 أفراد.'
+      subtext: 'دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بالفيوم. بطاقة عائلية رقمية تشمل حتى 5 أفراد.'
     };
 
     // Storage keys
@@ -1481,82 +1507,22 @@
     // -------------------------------------------------------------
     // Pure Self-Contained SVG QR Code Generator (Zero Dependencies)
     // -------------------------------------------------------------
-    function createPureQRCodeSVG(text, size = 72) {
-      const N = 21;
-      const matrix = Array.from({length: N}, () => Array(N).fill(0));
-
-      function placeFinder(r0, c0) {
-        for (let r = 0; r < 7; r++) {
-          for (let c = 0; c < 7; c++) {
-            if (r === 0 || r === 6 || c === 0 || c === 6 || (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
-              matrix[r0 + r][c0 + c] = 1;
-            } else {
-              matrix[r0 + r][c0 + c] = 0;
-            }
-          }
-        }
+    function createPureQRCodeSVG(text, size = 160) {
+      const code = qrcode(0, 'M');
+      code.addData(String(text), 'Byte');
+      code.make();
+      const modules = code.getModuleCount(), quiet = 4, total = modules + quiet * 2;
+      let cells = '';
+      for (let row=0; row<modules; row++) for (let col=0; col<modules; col++) {
+        if (code.isDark(row,col)) cells += '<rect x="'+(col+quiet)+'" y="'+(row+quiet)+'" width="1" height="1"/>';
       }
-
-      placeFinder(0, 0);
-      placeFinder(0, N - 7);
-      placeFinder(N - 7, 0);
-
-      for (let i = 8; i < N - 8; i++) {
-        matrix[6][i] = (i % 2 === 0) ? 1 : 0;
-        matrix[i][6] = (i % 2 === 0) ? 1 : 0;
-      }
-      matrix[N - 8][8] = 1;
-
-      let hash = 0;
-      for (let i = 0; i < text.length; i++) {
-        hash = ((hash << 5) - hash) + text.charCodeAt(i);
-        hash |= 0;
-      }
-
-      let seed = Math.abs(hash) || 987654321;
-      function nextBit() {
-        seed = (seed * 1103515245 + 12345) & 0x7fffffff;
-        return (seed >> 16) & 1;
-      }
-
-      for (let r = 0; r < N; r++) {
-        for (let c = 0; c < N; c++) {
-          const inTL = (r < 8 && c < 8);
-          const inTR = (r < 8 && c >= N - 8);
-          const inBL = (r >= N - 8 && c < 8);
-          const inTiming = (r === 6 || c === 6);
-          if (!inTL && !inTR && !inBL && !inTiming) {
-            matrix[r][c] = nextBit();
-          }
-        }
-      }
-
-      const cellSize = size / N;
-      let rects = '';
-      for (let r = 0; r < N; r++) {
-        for (let c = 0; c < N; c++) {
-          if (matrix[r][c] === 1) {
-            const x = (c * cellSize).toFixed(1);
-            const y = (r * cellSize).toFixed(1);
-            const s = (cellSize + 0.3).toFixed(1);
-            rects += `<rect x="${x}" y="${y}" width="${s}" height="${s}" fill="#064e3b" />`;
-          }
-        }
-      }
-
-      return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" shape-rendering="crispEdges">
-        <rect width="${size}" height="${size}" fill="#ffffff" rx="6" />
-        ${rects}
-      </svg>`;
+      return '<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رمز QR قابل للمسح" viewBox="0 0 '+total+' '+total+'" width="'+size+'" height="'+size+'" shape-rendering="crispEdges"><rect width="'+total+'" height="'+total+'" fill="white"/><g fill="#064e3b">'+cells+'</g></svg>';
     }
 
-    // -------------------------------------------------------------
-    // Digital Membership Card Logic
-    // -------------------------------------------------------------
     function renderQRCode(payloadText) {
       const qrContainer = document.getElementById('cardQrCode');
       if (!qrContainer) return;
-      qrContainer.innerHTML = createPureQRCodeSVG(payloadText, 72);
+      qrContainer.innerHTML = createPureQRCodeSVG(payloadText, 160);
     }
 
     function displayCardData(card) {
@@ -1735,13 +1701,13 @@
     }
 
     function calculateSavings() {
-      const pharmSpend = parseInt(document.getElementById('calcPharmacySpend').value) || 600;
+      const pharmSpend = Math.max(0, Number(document.getElementById('calcPharmacySpend').value) || 0);
       const docSavings = doctorCount * 65;
       const labSavings = labCount * 115;
       const pharmSavings = pharmSpend * 0.15;
 
       const totalBase = Math.round(docSavings + labSavings + pharmSavings);
-      const minSavings = Math.max(150, Math.round(totalBase * 0.9));
+      const minSavings = Math.max(0, Math.round(totalBase * 0.9));
       const maxSavings = Math.round(totalBase * 1.2);
 
       document.getElementById('savingsMin').textContent = minSavings;
@@ -1791,7 +1757,7 @@
       saveJoinRequests(requests);
 
       closeJoinModal();
-      alert('شكراً لك! تم استلام طلب انضمامك بنجاح وسيتواصل معك فريق إدارة رعاية الفيوم لاعتماد التعاقد.');
+      alert('شكراً لك! تم حفظ طلب انضمامك على هذا الجهاز فقط. الإرسال للإدارة والمزامنة لم يتم تفعيلهما بعد.');
     }
 
     function approveJoinRequest(reqId) {

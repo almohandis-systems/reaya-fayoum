@@ -2,13 +2,13 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>نظام كاشير المطاعم والكافيهات الذكي - Royal POS</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/app.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/fontawesome.css">
   <style>
     body { font-family: 'Cairo', sans-serif; user-select: none; }
     ::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -19,7 +19,12 @@
       #receiptArea { position: absolute; left: 0; top: 0; width: 80mm; padding: 5px; }
     }
   </style>
-</head>
+<style id="royal-cinema-v2">
+html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}header{background:linear-gradient(110deg,#10272c,#07151d)!important;border-bottom:1px solid #b7975b66}.royal-cinematic{position:relative;min-height:150px;margin:12px;border-radius:22px;overflow:hidden;background:#132e31;color:#fff;flex-shrink:0}.royal-cinematic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(.42) saturate(.75)}.royal-cinematic:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#062c31dd)}.royal-cinematic>div{position:relative;z-index:1;padding:24px}.royal-cinematic span{font-size:10px;letter-spacing:.1em;color:#e5d1a6;font-weight:800}.royal-cinematic h2{font-size:24px;font-weight:900;margin:6px 0;line-height:1.5}.royal-cinematic p{font-size:11px;color:#dbebe5}.royal-cinematic small{position:absolute;z-index:1;bottom:8px;left:14px;font-size:8px;color:#e2e8e4}button,.product-card{transition:transform .17s ease,box-shadow .17s ease,border-color .17s ease}button:active,.product-card:active{transform:scale(.97) translateY(1px)}button:focus-visible,a:focus-visible{outline:3px solid #c5a96d;outline-offset:2px}.products-grid{gap:14px}.product-card{border-radius:20px;box-shadow:0 6px 18px #183b3010;border-color:#d4e2da}.product-card:hover{border-color:#b7975b;box-shadow:0 14px 28px #1235291a}.bottom-nav{box-shadow:0 -8px 26px #15332a10}#portfolio-share-bar{padding-block:4px!important;border-bottom:1px solid #e0e8e3}#portfolio-share-app{min-height:38px!important;padding:6px 12px!important}.top-header{flex-shrink:0}.content-viewport{min-height:0}
+@media(max-width:767px){body{height:100dvh}.royal-cinematic{min-height:128px;margin:10px}.royal-cinematic h2{font-size:22px}.royal-cinematic>div{padding:18px}header{flex-wrap:wrap;gap:10px!important}header nav{width:100%;justify-content:space-between}#v-pos{display:flex;flex-direction:column;min-height:0;height:100%;overflow:auto}#v-pos.hidden{display:none}#v-pos>div:first-child{flex:none;height:auto;overflow:visible}#v-pos>div:last-child{flex:none;height:auto;width:100%;min-height:330px}#itemsGrid{overflow:visible;flex:none;min-height:180px}#cartList{min-height:110px;max-height:260px}#v-pos .royal-cinematic{margin:10px}#v-pos>div:first-child>div:first-child{flex-wrap:wrap}.prod-name{line-height:1.65}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
+@media print{.royal-cinematic,#portfolio-share-bar{display:none!important}}
+</style><style id="royal-product-v2">@media screen{#itemsGrid{align-content:start;grid-auto-rows:minmax(135px,auto)}#itemsGrid>div{min-height:135px}.prod-icon{font-size:0;height:6px;margin-bottom:12px}.prod-icon:after{content:'';display:block;width:30px;height:4px;border-radius:4px;background:linear-gradient(90deg,#b7975b,#047857)}.product-card{min-height:132px}.prod-name{font-size:13px;line-height:1.6}.prod-price{font-size:15px}}</style><link rel="stylesheet" href="assets/owner-designs.css"><script src="assets/owner-designs.js"></script></head>
 <body class="bg-slate-100 text-slate-800 h-screen flex flex-col overflow-hidden">
 
   <!-- TOP BAR -->
@@ -42,7 +47,31 @@
       <button onclick="tab('shifts')" id="t-shifts" class="tab-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-vault"></i><span>الخزينة</span></button>
       <button onclick="tab('reports')" id="t-reports" class="tab-btn px-2.5 py-1 rounded-lg text-slate-300 hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-chart-line"></i><span>التقارير</span></button>
     </nav>
-  </header>
+  <button class="owner-design-open" type="button" data-owner-design-open>لوحة المالك · التصميمات</button></header><p style="margin:0;padding:8px 14px;background:#fff8e9;color:#79551f;font-size:11px;line-height:1.7;flex-shrink:0" role="note">نسخة محلية تجريبية: البيانات على هذا الجهاز فقط. دخول الإدارة المحلي ليس حماية خادم. لا تستخدم بيانات عملاء حقيقية قبل تأمين الدخول والمزامنة.</p>
+<!-- App-link sharing. No referral credit, account state, or customer data. -->
+<div id="portfolio-share-bar" dir="rtl" style="box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:6px 12px;background:#f8fafc;color:#0f172a;font:600 12px/1.5 sans-serif;flex-shrink:0;position:relative;z-index:20">
+<button id="portfolio-share-app" type="button" style="min-height:44px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;cursor:pointer">مشاركة التطبيق ↗</button>
+<span id="portfolio-share-status" role="status" aria-live="polite" style="max-width:100%;overflow-wrap:anywhere"></span>
+<input id="portfolio-share-url" aria-label="رابط التطبيق للنسخ اليدوي" readonly hidden style="width:100%;max-width:430px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;color:#0f172a;background:#fff;direction:ltr">
+</div>
+<script>
+(function(){
+ const button=document.getElementById('portfolio-share-app');
+ const status=document.getElementById('portfolio-share-status');
+ const fallback=document.getElementById('portfolio-share-url');
+ const appUrl="https://almohandis-systems.github.io/reaya-fayoum/pos.html";
+ button.addEventListener('click',async function(){
+  status.textContent='';fallback.hidden=true;
+  if(navigator.share){
+   try{await navigator.share({title:document.title,url:appUrl});status.textContent='تمت المشاركة';return;}
+   catch(error){if(error&&error.name==='AbortError')return;}
+  }
+  try{if(!navigator.clipboard)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(appUrl);status.textContent='تم نسخ رابط التطبيق';}
+  catch(error){fallback.value=appUrl;fallback.hidden=false;fallback.focus();fallback.select();status.textContent='انسخ الرابط الظاهر وشاركه بنفسك';}
+ });
+})();
+</script>
+
 
   <!-- MAIN VIEWS -->
   <main class="flex-1 overflow-hidden relative">
@@ -64,7 +93,7 @@
         <!-- CATEGORIES -->
         <div class="bg-white px-2 py-1.5 flex gap-1.5 overflow-x-auto shrink-0 border-b border-slate-200" id="catBar"></div>
 
-        <!-- ITEMS GRID -->
+        <section class="royal-cinematic" aria-label="واجهة رويال بوز"><img src="assets/restaurant-interior.webp" alt="صورة مطعم توضيحية لواجهة النظام، مش صورة المطعم الفعلي" width="1125" height="750"><div><span>ROYAL POS · مساحة العمل</span><h2>كل تفصيلة في مكانها.</h2><p>الكاشير · الصالة · المطبخ</p></div><small>صورة توضيحية: Anna Shvets / Pexels</small></section><!-- ITEMS GRID -->
         <div class="flex-1 p-2.5 overflow-y-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2" id="itemsGrid"></div>
       </div>
 
@@ -501,5 +530,9 @@
 
     window.onload = () => { renderCats(); renderItems(); renderCart(); };
   </script>
-</body>
+<dialog id="owner-design-dialog" aria-label="لوحة المالك: التصميمات"><button type="button" class="owner-design-close" data-owner-design-close>إغلاق</button><section class="owner-design-panel" data-owner-design-panel aria-label="اختيار تصميم الواجهة">
+<h4>مجموعة تصميمات الواجهة</h4><p>التصميم الحالي: <strong data-owner-design-current>الزمرد السينمائي</strong></p>
+<label>اختر التصميم<select data-owner-design-select aria-label="اختر تصميم الواجهة"><option value="original">الأصلي، مع إصلاحات التشغيل</option><option value="cinematic">الزمرد السينمائي، صور وانحناءات</option><option value="midnight">ليلي أزرق، بطاقات داكنة</option><option value="ivory">عاجي تحريري، بطاقات مستطيلة</option></select></label>
+<div class="owner-design-actions"><button type="button" data-owner-design-save>تطبيق وحفظ التصميم</button><button type="button" data-owner-design-reset>الرجوع للتصميم الأصلي</button></div>
+<p role="status" aria-live="polite" data-owner-design-status></p><small>اختيار محلي لهذه الصفحة وهذا المتصفح فقط، وليس تغييراً عاماً لكل العملاء. لا يحذف أصنافاً أو أعضاء أو طلبات أو أرصدة. إصلاحات التشغيل والمشاركة وQR تبقى في كل التصميمات.</small></section></dialog></body>
 </html>
