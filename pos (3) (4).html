@@ -14,11 +14,11 @@
     /* HEADER */
     .top-header { background: #0f172a; color: #fff; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.15); z-index: 20; }
     .brand-title { font-weight: 900; font-size: 14px; display: flex; align-items: center; gap: 6px; }
-    .badge-pos { background: #10b981; color: #fff; font-size: 10px; padding: 2px 7px; border-radius: 12px; font-weight: 800; }
-    .status-text { font-size: 10px; color: #94a3b8; margin-top: 1px; }
+    .badge-pos { background: #10b981; color: #fff; font-size: 13px; padding: 2px 7px; border-radius: 12px; font-weight: 800; }
+    .status-text { font-size: 13px; color: #94a3b8; margin-top: 1px; }
     .live-dot { display: inline-block; width: 7px; height: 7px; background: #10b981; border-radius: 50%; margin-left: 3px; }
     .header-actions { display: flex; align-items: center; gap: 6px; }
-    .admin-btn { background: #334155; color: #f8fafc; border: 1px solid #475569; padding: 5px 10px; border-radius: 10px; font-size: 11px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+    .admin-btn { background: #334155; color: #f8fafc; border: 1px solid #475569; padding: 5px 10px; border-radius: 10px; font-size: 14px; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 4px; }
     .admin-btn:hover { background: #475569; }
 
     /* CONTENT VIEWPORT */
@@ -28,12 +28,12 @@
 
     /* POS SCREEN */
     .order-type-switch { display: flex; background: #e2e8f0; border-radius: 12px; padding: 3px; margin-bottom: 10px; }
-    .order-type-btn { flex: 1; padding: 8px 0; border: none; background: transparent; font-size: 11px; font-weight: 800; color: #64748b; border-radius: 9px; cursor: pointer; transition: 0.15s; }
+    .order-type-btn { flex: 1; padding: 8px 0; border: none; background: transparent; font-size: 14px; font-weight: 800; color: #64748b; border-radius: 9px; cursor: pointer; transition: 0.15s; }
     .order-type-btn.active { background: #fff; color: #047857; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
 
     .cats-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 10px 2px; scrollbar-width: none; }
     .cats-scroll::-webkit-scrollbar { display: none; }
-    .cat-pill { flex-shrink: 0; padding: 7px 13px; background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; font-size: 11px; font-weight: 800; color: #475569; cursor: pointer; }
+    .cat-pill { flex-shrink: 0; padding: 7px 13px; background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; font-size: 14px; font-weight: 800; color: #475569; cursor: pointer; }
     .cat-pill.active { background: #047857; color: #fff; border-color: #047857; box-shadow: 0 3px 8px rgba(4,120,87,0.3); }
 
     .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -41,21 +41,21 @@
     .product-card { background: #fff; border-radius: 16px; padding: 12px; border: 1.5px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; min-height: 105px; position: relative; transition: 0.1s; }
     .product-card:active { transform: scale(0.96); border-color: #047857; }
     .product-card.out-stock { opacity: 0.55; pointer-events: none; }
-    .out-stock-tag { position: absolute; top: 6px; left: 6px; background: #e11d48; color: #fff; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+    .out-stock-tag { position: absolute; top: 6px; left: 6px; background: #e11d48; color: #fff; font-size: 13px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
     .prod-icon { font-size: 24px; margin-bottom: 4px; }
-    .prod-name { font-size: 12px; font-weight: 800; color: #1e293b; line-height: 1.3; }
+    .prod-name { font-size: 14.5px; font-weight: 800; color: #1e293b; line-height: 1.3; }
     .prod-price { font-size: 13px; font-weight: 900; color: #047857; margin-top: 5px; }
 
     /* FLOATING CART BAR */
     .floating-cart-bar { position: fixed; bottom: 65px; left: 12px; right: 12px; background: #0f172a; color: #fff; border-radius: 16px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 6px 20px rgba(0,0,0,0.3); z-index: 30; cursor: pointer; }
     .floating-cart-bar.hidden { display: none; }
-    .cart-count-badge { background: #10b981; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 800; margin-left: 6px; }
+    .cart-count-badge { background: #10b981; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 14px; font-weight: 800; margin-left: 6px; }
     .cart-bar-total { font-weight: 900; font-size: 15px; color: #34d399; }
-    .view-bill-btn { background: #047857; color: #fff; padding: 6px 14px; border-radius: 10px; font-size: 11px; font-weight: 800; border: none; }
+    .view-bill-btn { background: #047857; color: #fff; padding: 6px 14px; border-radius: 10px; font-size: 14px; font-weight: 800; border: none; }
 
     /* BOTTOM NAV */
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; height: 60px; display: flex; border-top: 1px solid #e2e8f0; z-index: 40; }
-    .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #64748b; background: none; border: none; cursor: pointer; gap: 3px; }
+    .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #64748b; background: none; border: none; cursor: pointer; gap: 3px; }
     .nav-item.active { color: #047857; font-weight: 900; }
     .nav-icon { font-size: 17px; }
 
@@ -68,10 +68,10 @@
     .drawer-title { font-weight: 900; font-size: 15px; color: #0f172a; }
     .close-drawer-btn { background: #f1f5f9; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 15px; font-weight: bold; cursor: pointer; }
     .cart-items-scroll { flex: 1; overflow-y: auto; max-height: 35vh; margin-bottom: 8px; }
-    .cart-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 12px; }
+    .cart-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14.5px; }
     .cart-qty-ctrl { display: flex; align-items: center; gap: 6px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 2px 6px; }
     .qty-btn { border: none; background: none; font-size: 14px; font-weight: 900; color: #047857; cursor: pointer; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; }
-    .bill-calc-row { display: flex; justify-content: space-between; font-size: 12px; color: #475569; margin-bottom: 4px; }
+    .bill-calc-row { display: flex; justify-content: space-between; font-size: 14.5px; color: #475569; margin-bottom: 4px; }
     .bill-calc-total { display: flex; justify-content: space-between; font-size: 16px; font-weight: 900; color: #047857; border-top: 1.5px solid #0f172a; padding-top: 6px; margin-top: 6px; }
     .checkout-btn { width: 100%; background: #047857; color: #fff; border: none; border-radius: 14px; padding: 12px; font-size: 13px; font-weight: 900; cursor: pointer; }
 
@@ -81,29 +81,29 @@
     .table-box.free { border-color: #a7f3d0; background: #f0fdf4; }
     .table-box.busy { border-color: #fecdd3; background: #fff1f2; }
     .table-name { font-weight: 900; font-size: 13px; margin-bottom: 4px; }
-    .table-badge { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 8px; display: inline-block; }
+    .table-badge { font-size: 13px; font-weight: 800; padding: 2px 8px; border-radius: 8px; display: inline-block; }
     .table-badge.free { background: #d1fae5; color: #065f46; }
     .table-badge.busy { background: #ffe4e6; color: #9f1239; }
 
     .kds-card { background: #1e293b; color: #fff; border-radius: 16px; padding: 12px; margin-bottom: 10px; border: 1px solid #334155; }
     .kds-head { display: flex; justify-content: space-between; border-bottom: 1px solid #334155; padding-bottom: 6px; margin-bottom: 8px; font-weight: 900; color: #fbbf24; font-size: 13px; }
-    .kds-items-list { font-size: 12px; list-style: none; margin-bottom: 10px; }
+    .kds-items-list { font-size: 14.5px; list-style: none; margin-bottom: 10px; }
     .kds-items-list li { padding: 3px 0; border-bottom: 1px dashed #334155; }
-    .kds-done-btn { width: 100%; background: #10b981; color: #fff; border: none; border-radius: 10px; padding: 8px; font-weight: 800; font-size: 12px; cursor: pointer; }
+    .kds-done-btn { width: 100%; background: #10b981; color: #fff; border: none; border-radius: 10px; padding: 8px; font-weight: 800; font-size: 14.5px; cursor: pointer; }
 
     .stat-card { background: #fff; border-radius: 16px; padding: 12px; margin-bottom: 8px; border: 1px solid #e2e8f0; }
-    .stat-title { font-size: 11px; font-weight: 700; color: #64748b; }
+    .stat-title { font-size: 14px; font-weight: 700; color: #64748b; }
     .stat-value { font-size: 18px; font-weight: 900; color: #0f172a; margin-top: 3px; }
 
     /* ADMIN DASHBOARD */
     .admin-subnav { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; }
-    .admin-tab-btn { flex-shrink: 0; padding: 6px 12px; background: #fff; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 11px; font-weight: 800; color: #475569; cursor: pointer; }
+    .admin-tab-btn { flex-shrink: 0; padding: 6px 12px; background: #fff; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; font-weight: 800; color: #475569; cursor: pointer; }
     .admin-tab-btn.active { background: #0f172a; color: #fff; border-color: #0f172a; }
     .admin-section { display: none; }
     .admin-section.active { display: block; }
     .form-group { margin-bottom: 10px; }
-    .form-label { display: block; font-size: 11px; font-weight: 800; color: #334155; margin-bottom: 4px; }
-    .form-input { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 12px; font-weight: 700; outline: none; }
+    .form-label { display: block; font-size: 14px; font-weight: 800; color: #334155; margin-bottom: 4px; }
+    .form-input { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; font-weight: 700; outline: none; }
     .form-input:focus { border-color: #047857; }
     .admin-item-row { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 
@@ -111,10 +111,10 @@
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 60; display: none; align-items: center; justify-content: center; padding: 16px; }
     .modal-overlay.open { display: flex; }
     .modal-card { background: #fff; border-radius: 20px; width: 100%; max-width: 360px; padding: 16px; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .receipt-paper { font-family: monospace; font-size: 11px; }
+    .receipt-paper { font-family: monospace; font-size: 14px; }
   </style>
 <style id="royal-cinema-v2">
-html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}header{background:linear-gradient(110deg,#10272c,#07151d)!important;border-bottom:1px solid #b7975b66}.royal-cinematic{position:relative;min-height:150px;margin:12px;border-radius:22px;overflow:hidden;background:#132e31;color:#fff;flex-shrink:0}.royal-cinematic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(.42) saturate(.75)}.royal-cinematic:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#062c31dd)}.royal-cinematic>div{position:relative;z-index:1;padding:24px}.royal-cinematic span{font-size:10px;letter-spacing:.1em;color:#e5d1a6;font-weight:800}.royal-cinematic h2{font-size:24px;font-weight:900;margin:6px 0;line-height:1.5}.royal-cinematic p{font-size:11px;color:#dbebe5}.royal-cinematic small{position:absolute;z-index:1;bottom:8px;left:14px;font-size:8px;color:#e2e8e4}button,.product-card{transition:transform .17s ease,box-shadow .17s ease,border-color .17s ease}button:active,.product-card:active{transform:scale(.97) translateY(1px)}button:focus-visible,a:focus-visible{outline:3px solid #c5a96d;outline-offset:2px}.products-grid{gap:14px}.product-card{border-radius:20px;box-shadow:0 6px 18px #183b3010;border-color:#d4e2da}.product-card:hover{border-color:#b7975b;box-shadow:0 14px 28px #1235291a}.bottom-nav{box-shadow:0 -8px 26px #15332a10}#portfolio-share-bar{padding-block:4px!important;border-bottom:1px solid #e0e8e3}#portfolio-share-app{min-height:38px!important;padding:6px 12px!important}.top-header{flex-shrink:0}.content-viewport{min-height:0}
+html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}header{background:linear-gradient(110deg,#10272c,#07151d)!important;border-bottom:1px solid #b7975b66}.royal-cinematic{position:relative;min-height:150px;margin:12px;border-radius:22px;overflow:hidden;background:#132e31;color:#fff;flex-shrink:0}.royal-cinematic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(.42) saturate(.75)}.royal-cinematic:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#062c31dd)}.royal-cinematic>div{position:relative;z-index:1;padding:24px}.royal-cinematic span{font-size:13px;letter-spacing:.1em;color:#e5d1a6;font-weight:800}.royal-cinematic h2{font-size:24px;font-weight:900;margin:6px 0;line-height:1.5}.royal-cinematic p{font-size:14px;color:#dbebe5}.royal-cinematic small{position:absolute;z-index:1;bottom:8px;left:14px;font-size:13px;color:#e2e8e4}button,.product-card{transition:transform .17s ease,box-shadow .17s ease,border-color .17s ease}button:active,.product-card:active{transform:scale(.97) translateY(1px)}button:focus-visible,a:focus-visible{outline:3px solid #c5a96d;outline-offset:2px}.products-grid{gap:14px}.product-card{border-radius:20px;box-shadow:0 6px 18px #183b3010;border-color:#d4e2da}.product-card:hover{border-color:#b7975b;box-shadow:0 14px 28px #1235291a}.bottom-nav{box-shadow:0 -8px 26px #15332a10}#portfolio-share-bar{padding-block:4px!important;border-bottom:1px solid #e0e8e3}#portfolio-share-app{min-height:38px!important;padding:6px 12px!important}.top-header{flex-shrink:0}.content-viewport{min-height:0}
 @media(max-width:767px){body{height:100dvh}.royal-cinematic{min-height:128px;margin:10px}.royal-cinematic h2{font-size:22px}.royal-cinematic>div{padding:18px}header{flex-wrap:wrap;gap:10px!important}header nav{width:100%;justify-content:space-between}#v-pos{display:flex;flex-direction:column;min-height:0;height:100%;overflow:auto}#v-pos.hidden{display:none}#v-pos>div:first-child{flex:none;height:auto;overflow:visible}#v-pos>div:last-child{flex:none;height:auto;width:100%;min-height:330px}#itemsGrid{overflow:visible;flex:none;min-height:180px}#cartList{min-height:110px;max-height:260px}#v-pos .royal-cinematic{margin:10px}#v-pos>div:first-child>div:first-child{flex-wrap:wrap}.prod-name{line-height:1.65}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
 @media print{.royal-cinematic,#portfolio-share-bar{display:none!important}}
@@ -135,7 +135,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
         <span><i class="fa-solid fa-lock" aria-hidden="true"></i> الإدارة</span>
       </button>
     </div>
-  </header><p style="margin:0;padding:8px 14px;background:#fff8e9;color:#79551f;font-size:11px;line-height:1.7;flex-shrink:0" role="note">نسخة محلية تجريبية: البيانات على هذا الجهاز فقط. دخول الإدارة المحلي ليس حماية خادم. لا تستخدم بيانات عملاء حقيقية قبل تأمين الدخول والمزامنة.</p>
+  </header><p style="margin:0;padding:8px 14px;background:#fff8e9;color:#79551f;font-size:14px;line-height:1.7;flex-shrink:0" role="note">نسخة محلية تجريبية: البيانات على هذا الجهاز فقط. دخول الإدارة المحلي ليس حماية خادم. لا تستخدم بيانات عملاء حقيقية قبل تأمين الدخول والمزامنة.</p>
 <!-- App-link sharing. No referral credit, account state, or customer data. -->
 <div id="portfolio-share-bar" dir="rtl" style="box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:6px 12px;background:#f8fafc;color:#0f172a;font:600 12px/1.5 sans-serif;flex-shrink:0;position:relative;z-index:20">
 <button id="portfolio-share-app" type="button" style="min-height:44px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;cursor:pointer">مشاركة التطبيق ↗</button>
@@ -189,7 +189,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     <div id="screen-tables" class="screen-view">
       <div style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
         <h3 style="font-weight: 900; font-size: 14px;">خريطة طاولات الصالة</h3>
-        <span style="font-size: 11px; color: #64748b;">اختر طاولة لتسجيل الطلب</span>
+        <span style="font-size: 14px; color: #64748b;">اختر طاولة لتسجيل الطلب</span>
       </div>
       <div class="tables-container" id="tablesContainer"></div>
     </div>
@@ -198,7 +198,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     <div id="screen-kds" class="screen-view">
       <div style="margin-bottom: 10px;">
         <h3 style="font-weight: 900; font-size: 14px;">طلبات المطبخ والبار النشطة</h3>
-        <p style="font-size: 11px; color: #64748b;">تحديث فوري للأوردرات الحية</p>
+        <p style="font-size: 14px; color: #64748b;">تحديث فوري للأوردرات الحية</p>
       </div>
       <div id="kdsContainer"></div>
     </div>
@@ -207,7 +207,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     <div id="screen-shifts" class="screen-view">
       <div style="margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
         <h3 style="font-weight: 900; font-size: 14px;">الوردية والصندوق اليومي</h3>
-        <button onclick="addExpensePrompt()" style="background: #e11d48; color:#fff; border:none; border-radius:8px; padding:4px 10px; font-size:11px; font-weight:800; cursor:pointer;">+ تسجيل مصروف</button>
+        <button onclick="addExpensePrompt()" style="background: #e11d48; color:#fff; border:none; border-radius:8px; padding:4px 10px; font-size:14px; font-weight:800; cursor:pointer;">+ تسجيل مصروف</button>
       </div>
       <div class="stat-card"><p class="stat-title">عهدة بداية الوردية</p><h4 class="stat-value" id="shiftOpenTxt">300.00 ج.م</h4></div>
       <div class="stat-card"><p class="stat-title">المبيعات النقدية (كاش)</p><h4 class="stat-value" style="color: #047857;" id="shiftCashTxt">0.00 ج.م</h4></div>
@@ -216,7 +216,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       <div class="stat-card" style="background: #0f172a; color: #fff;">
         <p class="stat-title" style="color: #94a3b8;">الكاش الفعلي المتوقع في الدرج:</p>
         <h4 class="stat-value" style="color: #34d399; font-size: 20px;" id="shiftExpectedTxt">300.00 ج.م</h4>
-        <button onclick="closeShiftPrompt()" style="width:100%; background:#047857; color:#fff; border:none; border-radius:10px; padding:8px; margin-top:8px; font-weight:800; font-size:12px; cursor:pointer;">إغلاق الوردية وحفظ التقرير (Z-Report)</button>
+        <button onclick="closeShiftPrompt()" style="width:100%; background:#047857; color:#fff; border:none; border-radius:10px; padding:8px; margin-top:8px; font-weight:800; font-size:14.5px; cursor:pointer;">إغلاق الوردية وحفظ التقرير (Z-Report)</button>
       </div>
     </div>
 
@@ -224,7 +224,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     <div id="screen-reports" class="screen-view">
       <div style="margin-bottom: 10px;">
         <h3 style="font-weight: 900; font-size: 14px;">تقارير وسجل المبيعات</h3>
-        <p style="font-size: 11px; color: #64748b;" id="reportsSummaryTxt">0 فواتير • 0.00 ج.م اليوم</p>
+        <p style="font-size: 14px; color: #64748b;" id="reportsSummaryTxt">0 فواتير • 0.00 ج.م اليوم</p>
       </div>
       <div id="reportsContainer"></div>
     </div>
@@ -233,7 +233,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     <div id="screen-admin" class="screen-view">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
         <h3 style="font-weight:900; font-size:15px; color:#0f172a;"><i class="fa-solid fa-gear" aria-hidden="true"></i> لوحة تحكم الإدارة والمالك</h3>
-        <button onclick="logoutAdmin()" style="background:#e2e8f0; border:none; padding:4px 10px; border-radius:8px; font-size:11px; font-weight:800; cursor:pointer;">خروج <i class="fa-solid fa-lock" aria-hidden="true"></i></button>
+        <button onclick="logoutAdmin()" style="background:#e2e8f0; border:none; padding:4px 10px; border-radius:8px; font-size:14px; font-weight:800; cursor:pointer;">خروج <i class="fa-solid fa-lock" aria-hidden="true"></i></button>
       </div>
 
       <!-- Admin Sub Tabs -->
@@ -246,7 +246,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
 
       <!-- Admin Section 1: Manage Items -->
       <div id="asec-items" class="admin-section active">
-        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:11px; font-weight:800; color:#64748b;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:14px; font-weight:800; color:#64748b;">
           <span>قائمة الأصناف الحالية:</span>
           <span>تعديل السعر / التوفر / حذف</span>
         </div>
@@ -285,7 +285,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
           <h4 style="font-weight:900; font-size:13px; margin-bottom:8px;">إضافة طاولة جديدة</h4>
           <div style="display:flex; gap:6px;">
             <input type="text" id="newTableName" placeholder="اسم الطاولة (مثلاً: طاولة 5)..." class="form-input">
-            <button onclick="saveNewTable()" style="background:#047857; color:#fff; border:none; padding:0 14px; border-radius:10px; font-weight:800; font-size:12px; white-space:nowrap; cursor:pointer;">إضافة</button>
+            <button onclick="saveNewTable()" style="background:#047857; color:#fff; border:none; padding:0 14px; border-radius:10px; font-weight:800; font-size:14.5px; white-space:nowrap; cursor:pointer;">إضافة</button>
           </div>
         </div>
         <div id="adminTablesList" style="margin-top:10px;"></div>
@@ -351,7 +351,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       <div class="drawer-header">
         <div>
           <h3 class="drawer-title">فاتورة الطلب الحالي</h3>
-          <span style="font-size: 11px; color: #64748b;" id="drawerOrderInfo">صالة (طاولة 1)</span>
+          <span style="font-size: 14px; color: #64748b;" id="drawerOrderInfo">صالة (طاولة 1)</span>
         </div>
         <button class="close-drawer-btn" onclick="closeCartDrawer()">✕</button>
       </div>
@@ -375,7 +375,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       </div>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <button onclick="sendOrderToKitchen()" style="background: #1e293b; color:#fff; border:none; border-radius:12px; padding:11px; font-weight:800; font-size:12px; cursor:pointer;"><i class="fa-solid fa-bell-concierge" aria-hidden="true"></i> إرسال للمطبخ</button>
+        <button onclick="sendOrderToKitchen()" style="background: #1e293b; color:#fff; border:none; border-radius:12px; padding:11px; font-weight:800; font-size:14.5px; cursor:pointer;"><i class="fa-solid fa-bell-concierge" aria-hidden="true"></i> إرسال للمطبخ</button>
         <button onclick="openPayment()" class="checkout-btn" style="margin-top:0;"><i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> تحصيل (دفع)</button>
       </div>
     </div>
@@ -561,13 +561,13 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     function renderDrawerCart(subtotal, srvFee, grandTotal) {
       const list = document.getElementById('drawerCartList');
       if (!S.cart.length) {
-        list.innerHTML = '<p style="text-align:center; color:#94a3b8; padding:20px; font-size:12px;">السلة فارغة</p>';
+        list.innerHTML = '<p style="text-align:center; color:#94a3b8; padding:20px; font-size:14.5px;">السلة فارغة</p>';
       } else {
         list.innerHTML = S.cart.map((item, idx) => `
           <div class="cart-row">
             <div>
               <p style="font-weight:800;">${item.name}</p>
-              <span style="color:#047857; font-size:11px;">${item.price.toFixed(2)} ج.م</span>
+              <span style="color:#047857; font-size:14px;">${item.price.toFixed(2)} ج.م</span>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="cart-qty-ctrl">
@@ -632,7 +632,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
     function renderKDS() {
       const box = document.getElementById('kdsContainer');
       if (!DB.kds.length) {
-        box.innerHTML = '<p style="text-align:center; color:#94a3b8; padding:30px; font-size:12px;">لا توجد طلبات معلقة</p>';
+        box.innerHTML = '<p style="text-align:center; color:#94a3b8; padding:30px; font-size:14.5px;">لا توجد طلبات معلقة</p>';
         return;
       }
       box.innerHTML = DB.kds.map((k, i) => `
@@ -641,7 +641,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
             <span>${k.id}</span>
             <span>${k.type} - ${k.table}</span>
           </div>
-          <p style="font-size:10px; color:#94a3b8; margin-bottom:6px;">⏰ ${k.time}</p>
+          <p style="font-size:13px; color:#94a3b8; margin-bottom:6px;">⏰ ${k.time}</p>
           <ul class="kds-items-list">${k.items.map(item => `<li>✔ ${item}</li>`).join('')}</ul>
           <button class="kds-done-btn" onclick="doneKDSOrder(${i})">تم التحضير والتسليم</button>
         </div>
@@ -693,9 +693,9 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       document.getElementById('tblModalTitle').innerText = 'إدارة ' + tbl.name;
       const order = tbl.order || { items: [{ name: 'طلب صالة معلق', qty: 1, price: tbl.total || 185 }], total: tbl.total || 185 };
       
-      let html = '<div style="font-size:11px; font-weight:800; margin-bottom:6px; color:#475569;">الأصناف المسجلة على الشيك:</div>';
+      let html = '<div style="font-size:14px; font-weight:800; margin-bottom:6px; color:#475569;">الأصناف المسجلة على الشيك:</div>';
       html += order.items.map(it => `
-        <div style="display:flex; justify-content:space-between; font-size:12px; padding:3px 0; border-bottom:1px dashed #cbd5e1;">
+        <div style="display:flex; justify-content:space-between; font-size:14.5px; padding:3px 0; border-bottom:1px dashed #cbd5e1;">
           <span>${it.name} x${it.qty}</span>
           <span style="font-weight:900; color:#047857;">${(it.price * it.qty).toFixed(2)} ج.م</span>
         </div>
@@ -892,18 +892,18 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
         <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:8px 10px; margin-bottom:6px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <div>
-              <span style="font-weight:800; font-size:12px;">${item.name}</span>
-              <p style="font-size:11px; color:#047857; font-weight:700;">${item.price.toFixed(2)} ج.م (الإجمالي: ${(item.price * item.qty).toFixed(2)})</p>
+              <span style="font-weight:800; font-size:14.5px;">${item.name}</span>
+              <p style="font-size:14px; color:#047857; font-weight:700;">${item.price.toFixed(2)} ج.م (الإجمالي: ${(item.price * item.qty).toFixed(2)})</p>
             </div>
             <div style="display:flex; align-items:center; gap:6px;">
               <button onclick="changeTblItemQty(${idx}, -1)" style="width:24px; height:24px; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:900;">-</button>
-              <span style="font-weight:900; font-size:12px;">${item.qty}</span>
+              <span style="font-weight:900; font-size:14.5px;">${item.qty}</span>
               <button onclick="changeTblItemQty(${idx}, 1)" style="width:24px; height:24px; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:900;">+</button>
             </div>
           </div>
           <div style="display:flex; gap:6px; margin-top:6px; border-top:1px dashed #f1f5f9; padding-top:4px;">
-            <button onclick="replaceTblItemPrompt(${idx})" style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:3px 6px; font-size:10px; font-weight:800; cursor:pointer;"> استبدال بصنف آخر</button>
-            <button onclick="removeTblItemPrompt(${idx})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:6px; padding:3px 8px; font-size:10px; font-weight:800; cursor:pointer;">❌ حذف</button>
+            <button onclick="replaceTblItemPrompt(${idx})" style="flex:1; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:3px 6px; font-size:13px; font-weight:800; cursor:pointer;"> استبدال بصنف آخر</button>
+            <button onclick="removeTblItemPrompt(${idx})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:6px; padding:3px 8px; font-size:13px; font-weight:800; cursor:pointer;">❌ حذف</button>
           </div>
         </div>
       `).join('');
@@ -1070,27 +1070,27 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       document.getElementById('receiptContent').innerHTML = `
         <div style="text-align:center; border-bottom:1px dashed #000; padding-bottom:8px; margin-bottom:8px;">
           <h2 style="font-size:14px; font-weight:900;">${DB.settings.brandName}</h2>
-          <p style="font-size:10px;">الفيوم • كاشير: ${DB.settings.cashierName}</p>
-          <p style="font-size:10px; font-weight:800; margin-top:4px;">فاتورة مبيعات ضريبية</p>
+          <p style="font-size:13px;">الفيوم • كاشير: ${DB.settings.cashierName}</p>
+          <p style="font-size:13px; font-weight:800; margin-top:4px;">فاتورة مبيعات ضريبية</p>
         </div>
-        <div style="border-bottom:1px dashed #000; padding-bottom:6px; margin-bottom:6px; font-size:10px; line-height:1.5;">
+        <div style="border-bottom:1px dashed #000; padding-bottom:6px; margin-bottom:6px; font-size:13px; line-height:1.5;">
           <div><b>رقم:</b> ${inv.id}</div>
           <div><b>التاريخ:</b> ${inv.date} ${inv.time}</div>
           <div><b>نوع الطلب:</b> ${inv.type}</div>
           <div><b>طريقة السداد:</b> ${inv.method}</div>
         </div>
         <div style="border-bottom:1px dashed #000; padding-bottom:6px; margin-bottom:6px;">
-          <table style="width:100%; text-align:right; font-size:10px;">
+          <table style="width:100%; text-align:right; font-size:13px;">
             ${inv.items.map(i => `<tr><td>${i.name}</td><td style="text-align:center;">x${i.qty}</td><td style="text-align:left; font-weight:800;">${(i.price * i.qty).toFixed(2)}</td></tr>`).join('')}
           </table>
         </div>
-        <div style="font-size:10px; line-height:1.6; border-bottom:1px dashed #000; padding-bottom:6px; margin-bottom:6px;">
+        <div style="font-size:13px; line-height:1.6; border-bottom:1px dashed #000; padding-bottom:6px; margin-bottom:6px;">
           <div style="display:flex; justify-content:space-between;"><span>المجموع:</span><span>${inv.subtotal.toFixed(2)} ج.م</span></div>
           ${inv.service > 0 ? `<div style="display:flex; justify-content:space-between;"><span>خدمة الصالة:</span><span>${inv.service.toFixed(2)} ج.م</span></div>` : ''}
           ${inv.discount > 0 ? `<div style="display:flex; justify-content:space-between;"><span>الخصم:</span><span>-${inv.discount.toFixed(2)} ج.م</span></div>` : ''}
           <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:900; margin-top:4px;"><span>الإجمالي:</span><span>${inv.total.toFixed(2)} ج.م</span></div>
         </div>
-        <div style="text-align:center; padding-top:6px; font-size:10px;">
+        <div style="text-align:center; padding-top:6px; font-size:13px;">
           <p style="font-weight:800;">شكراً لزيارتكم!</p>
           <p style="margin-top:4px; font-size:16px;">  </p>
         </div>
@@ -1131,16 +1131,16 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       document.getElementById('reportsSummaryTxt').innerText = `${DB.history.length} فواتير • ${total.toFixed(2)} ج.م مبيعات اليوم`;
       const box = document.getElementById('reportsContainer');
       if (!DB.history.length) {
-        box.innerHTML = '<p style="text-align:center; color:#94a3b8; padding:30px; font-size:12px;">لا توجد فواتير مسجلة بعد</p>';
+        box.innerHTML = '<p style="text-align:center; color:#94a3b8; padding:30px; font-size:14.5px;">لا توجد فواتير مسجلة بعد</p>';
         return;
       }
       box.innerHTML = DB.history.map(inv => `
         <div style="background:#fff; border-radius:14px; padding:12px; margin-bottom:8px; border:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
           <div>
             <p style="font-weight:900; font-size:13px;">${inv.id} • <span style="color:#047857;">${inv.total.toFixed(2)} ج.م</span></p>
-            <p style="font-size:10px; color:#64748b;">${inv.time} • ${inv.type} (${inv.method})</p>
+            <p style="font-size:13px; color:#64748b;">${inv.time} • ${inv.type} (${inv.method})</p>
           </div>
-          <button onclick='showReceipt(${JSON.stringify(inv)})' style="background:#f1f5f9; border:none; padding:6px 12px; border-radius:8px; font-size:11px; font-weight:800; cursor:pointer;">عرض</button>
+          <button onclick='showReceipt(${JSON.stringify(inv)})' style="background:#f1f5f9; border:none; padding:6px 12px; border-radius:8px; font-size:14px; font-weight:800; cursor:pointer;">عرض</button>
         </div>
       `).join('');
     }
@@ -1178,12 +1178,12 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
           <div>
             <span style="font-size:18px; margin-left:6px;">${p.icon || ''}</span>
             <span style="font-weight:800; font-size:13px;">${p.name}</span>
-            <p style="font-size:11px; color:#047857; font-weight:800; margin-top:2px;">${p.price.toFixed(2)} ج.م</p>
+            <p style="font-size:14px; color:#047857; font-weight:800; margin-top:2px;">${p.price.toFixed(2)} ج.م</p>
           </div>
           <div style="display:flex; align-items:center; gap:6px;">
-            <button onclick="editProductPrice(${p.id})" style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:8px; padding:4px 8px; font-size:10px; font-weight:800; cursor:pointer;">تعديل السعر</button>
-            <button onclick="toggleProductStock(${p.id})" style="background:${p.out ? '#fee2e2' : '#ecfdf5'}; color:${p.out ? '#b91c1c' : '#047857'}; border:1px solid ${p.out ? '#fca5a5' : '#a7f3d0'}; border-radius:8px; padding:4px 8px; font-size:10px; font-weight:800; cursor:pointer;">${p.out ? 'نفد (إيقاف)' : 'متاح'}</button>
-            <button onclick="deleteProduct(${p.id})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:8px; padding:4px 8px; font-size:10px; font-weight:800; cursor:pointer;">حذف</button>
+            <button onclick="editProductPrice(${p.id})" style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:8px; padding:4px 8px; font-size:13px; font-weight:800; cursor:pointer;">تعديل السعر</button>
+            <button onclick="toggleProductStock(${p.id})" style="background:${p.out ? '#fee2e2' : '#ecfdf5'}; color:${p.out ? '#b91c1c' : '#047857'}; border:1px solid ${p.out ? '#fca5a5' : '#a7f3d0'}; border-radius:8px; padding:4px 8px; font-size:13px; font-weight:800; cursor:pointer;">${p.out ? 'نفد (إيقاف)' : 'متاح'}</button>
+            <button onclick="deleteProduct(${p.id})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:8px; padding:4px 8px; font-size:13px; font-weight:800; cursor:pointer;">حذف</button>
           </div>
         </div>
       `).join('');
@@ -1242,8 +1242,8 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       const box = document.getElementById('adminTablesList');
       box.innerHTML = DB.tables.map(t => `
         <div class="admin-item-row">
-          <span style="font-weight:800; font-size:12px;"> ${t.name}</span>
-          <button onclick="deleteTable(${t.id})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:8px; padding:3px 8px; font-size:10px; font-weight:800; cursor:pointer;">حذف</button>
+          <span style="font-weight:800; font-size:14.5px;"> ${t.name}</span>
+          <button onclick="deleteTable(${t.id})" style="background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:8px; padding:3px 8px; font-size:13px; font-weight:800; cursor:pointer;">حذف</button>
         </div>
       `).join('');
     }
@@ -1295,7 +1295,7 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:8px; margin-bottom:10px;">
         <div>
           <h3 style="font-weight:900; font-size:15px; color:#0f172a;" id="tblModalTitle">تفاصيل طاولة 2</h3>
-          <span style="font-size:11px; color:#047857; font-weight:800;" id="tblModalStatus"><i class="fa-solid fa-circle" aria-hidden="true"></i> مشغولة بحساب مفتوح</span>
+          <span style="font-size:14px; color:#047857; font-weight:800;" id="tblModalStatus"><i class="fa-solid fa-circle" aria-hidden="true"></i> مشغولة بحساب مفتوح</span>
         </div>
         <button onclick="closeTableModal()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; font-weight:bold; cursor:pointer;">✕</button>
       </div>
@@ -1311,28 +1311,28 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
         <!-- Table Action Buttons -->
         <div style="display:flex; flex-direction:column; gap:7px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
-            <button onclick="openMoveTablePrompt()" style="background:#2563eb; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
+            <button onclick="openMoveTablePrompt()" style="background:#2563eb; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14px; cursor:pointer;">
               <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> نقل لطاولة فارغة
             </button>
-            <button onclick="openSwapTablePrompt()" style="background:#7c3aed; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
+            <button onclick="openSwapTablePrompt()" style="background:#7c3aed; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14px; cursor:pointer;">
               <i class="fa-solid fa-shuffle" aria-hidden="true"></i> تبديل أوردر بطاولة أخرى
             </button>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
-            <button onclick="openEditOrderModal()" style="background:#0284c7; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
+            <button onclick="openEditOrderModal()" style="background:#0284c7; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14px; cursor:pointer;">
               <i class="fa-solid fa-pen" aria-hidden="true"></i> تعديل وتغيير أصناف الأوردر
             </button>
-            <button onclick="openMergeTablePrompt()" style="background:#d97706; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
+            <button onclick="openMergeTablePrompt()" style="background:#d97706; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14px; cursor:pointer;">
               <i class="fa-solid fa-link" aria-hidden="true"></i> دمج الحساب مع طاولة أخرى
             </button>
           </div>
-          <button onclick="addMoreItemsToTable()" style="width:100%; background:#047857; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:12px; cursor:pointer;">
+          <button onclick="addMoreItemsToTable()" style="width:100%; background:#047857; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14.5px; cursor:pointer;">
             <i class="fa-solid fa-plus" aria-hidden="true"></i> فتح الكاشير لإضافة طلبات جديدة
           </button>
-          <button onclick="checkoutTableDirectly()" style="width:100%; background:#0f172a; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:12px; cursor:pointer;">
+          <button onclick="checkoutTableDirectly()" style="width:100%; background:#0f172a; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14.5px; cursor:pointer;">
             <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i> تحصيل الحساب وإصدار الفاتورة
           </button>
-          <button onclick="cancelTableOrderVoid()" style="width:100%; background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:10px; padding:9px; font-weight:800; font-size:11px; cursor:pointer;">
+          <button onclick="cancelTableOrderVoid()" style="width:100%; background:#fff1f2; color:#e11d48; border:1px solid #fecdd3; border-radius:10px; padding:9px; font-weight:800; font-size:14px; cursor:pointer;">
             <i class="fa-solid fa-xmark" aria-hidden="true"></i> إلغاء الطلب بالكامل (Void - برقم الإدارة 0846)
           </button>
         </div>
@@ -1349,15 +1349,15 @@ html,body{margin:0;max-width:100%;box-sizing:border-box}body{background:#eef3f1}
         <h3 style="font-weight:900; font-size:14px; color:#0f172a;"><i class="fa-solid fa-pen" aria-hidden="true"></i> تعديل وتغيير أصناف الأوردر</h3>
         <button onclick="closeEditOrderModal()" style="background:#f1f5f9; border:none; width:28px; height:28px; border-radius:50%; font-weight:bold; cursor:pointer;">✕</button>
       </div>
-      <p style="font-size:11px; color:#64748b; margin-bottom:8px;">يمكنك تعديل الكمية، تبديل الصنف بآخر، أو حذفه:</p>
+      <p style="font-size:14px; color:#64748b; margin-bottom:8px;">يمكنك تعديل الكمية، تبديل الصنف بآخر، أو حذفه:</p>
       
       <div id="editOrderItemsList" style="max-height:220px; overflow-y:auto; margin-bottom:12px;"></div>
 
       <div style="display:flex; gap:6px;">
-        <button onclick="notifyKitchenOrderModified()" style="flex:1; background:#0f172a; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:11px; cursor:pointer;">
+        <button onclick="notifyKitchenOrderModified()" style="flex:1; background:#0f172a; color:#fff; border:none; border-radius:10px; padding:10px; font-weight:800; font-size:14px; cursor:pointer;">
           <i class="fa-solid fa-bell" aria-hidden="true"></i> إرسال تنبيه تعديل للمطبخ
         </button>
-        <button onclick="closeEditOrderModal()" style="background:#047857; color:#fff; border:none; border-radius:10px; padding:10px 16px; font-weight:800; font-size:11px; cursor:pointer;">
+        <button onclick="closeEditOrderModal()" style="background:#047857; color:#fff; border:none; border-radius:10px; padding:10px 16px; font-weight:800; font-size:14px; cursor:pointer;">
           حفظ وإغلاق
         </button>
       </div>
