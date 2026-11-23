@@ -10,7 +10,7 @@ const safe=x=>typeof x==='string'?!/[<>"'`\\&]/.test(x)&&x.length<=2000:Array.is
 const fail=e=>{console.error(e.code||e.message);alert((e.code?'['+e.code+'] ':'')+'تعذر إتمام العملية. تحقق من الاتصال والصلاحيات وحاول مجدداً.');};
 function refresh(){populateCentersSelectors();updateCategoryCounts();renderCards();if(owner){renderAdminTable();renderMembersTable();renderRequestsTable();calculateStats();}}
 function watch(name,assign,q){return onSnapshot(q||collection(db,name),s=>{assign(s.docs.map(d=>({...d.data(),id:d.id})));refresh();},fail);}
-window.getItems=()=>clone(providers);
+window.getItems=()=>clone(providers).filter(e=>!e.seedRecord&&!/^(?:عيادة|عياده|صيدلية|صيدليه|معمل|مركز(?:\s+أشعة)?|طبيب)\s*[0-9٠-٩]+$/u.test((e.name||" ").trim()));
 window.getMemberCards=()=>owner?clone(members):[];
 window.getJoinRequests=()=>owner?clone(requests):[];
 async function persist(name,before,after){if(!owner)throw Error('owner-only');if(!safe(after))throw Error('invalid-characters');const batch=writeBatch(db),ids=new Set(after.map(r=>r.id));for(const row of before)if(!ids.has(row.id))batch.delete(doc(db,name,row.id));for(const row of after)if(JSON.stringify(before.find(r=>r.id===row.id))!==JSON.stringify(row))batch.set(doc(db,name,row.id),name==='providers'?{...row,approved:true}:row);await batch.commit();}

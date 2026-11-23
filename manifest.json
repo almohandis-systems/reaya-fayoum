@@ -1,8 +1,8 @@
 {
   "name": "رعاية طبية",
   "short_name": "رعاية طبية",
-  "description": "دليل وبطاقات الرعاية الطبية في جميع المحافظات",
-  "start_url": "./index.html?v=brand-20261123-2",
+  "description": "دليل خدمات طبية قيد التجهيز",
+  "start_url": "./index.html?v=neutral-20261123",
   "display": "standalone",
   "background_color": "#047857",
   "theme_color": "#047857",
