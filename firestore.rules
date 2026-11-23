@@ -19,6 +19,16 @@ service cloud.firestore {
       allow get,list: if resource.data.approved == true || owner();
       allow create,update,delete: if owner();
     }
+    match /providerContacts/{id} { allow read,write: if owner(); }
+    match /subscribers/{id} {
+      allow read,update,delete: if owner();
+      allow create: if owner() || (request.resource.data.keys().hasOnly(['id','name','phone','governorate','address','consent','status','createdAt'])
+        && request.resource.data.id == id && text(request.resource.data.id,60)
+        && text(request.resource.data.name,150) && request.resource.data.name.size()>1
+        && text(request.resource.data.phone,25) && request.resource.data.phone.matches('[+0-9 ()-]{8,25}')
+        && text(request.resource.data.governorate,100) && text(request.resource.data.address,350)
+        && request.resource.data.consent == true && request.resource.data.status == 'pending' && request.resource.data.createdAt == request.time);
+    }
     match /members/{id} { allow read,write: if owner(); }
     match /requests/{id} {
       allow read,update,delete: if owner();
