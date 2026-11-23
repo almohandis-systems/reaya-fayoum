@@ -4,7 +4,8 @@ window.raayaContentStore={current:{},isOwner:()=>Se,save:async values=>{
  if(!Se)throw Error('owner-only');
  await Yf(Qe(Ee,'appContent','interface'),{version:1,texts:JSON.stringify(values),updatedAt:Va()});
 }};
-Cy(Qe(Ee,'appContent','interface'),snapshot=>{
+Cy(Qe(Ee,'appContent','interface'),{includeMetadataChanges:true},snapshot=>{
+ if(snapshot.metadata.hasPendingWrites)return;
  let values={};try{const data=snapshot.exists()?snapshot.data():null;values=data?JSON.parse(data.texts):{};}catch(e){console.error('Invalid interface text document');}
  window.raayaContentStore.current=values;
  window.dispatchEvent(new CustomEvent('raaya-content-update',{detail:values}));
