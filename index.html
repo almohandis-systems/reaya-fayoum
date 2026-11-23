@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#047857">
-  <meta name="description" content="شبكة ودليل الرعاية والخصم الطبي بمحافظة الفيوم - بطاقات العضوية الرقمية وخصومات العيادات والمعامل">
-  <title>شبكة الرعاية والخصم الطبي - محافظة الفيوم</title>
+  <meta name="description" content="شبكة ودليل الرعاية والخصم الطبي بجميع المحافظات - بطاقات العضوية الرقمية وخصومات العيادات والمعامل">
+  <title>رعاية طبية - دليل الخدمات الطبية</title>
   <link rel="manifest" href="manifest.json">
 <script>
   if ('serviceWorker' in navigator) {
@@ -99,7 +99,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-30 w-full">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2.5">
 
-      <!-- Brand & Secret Trigger (5 clicks on "رعاية الفيوم") -->
+      <!-- Brand & Secret Trigger (5 clicks on "رعاية طبية") -->
       <div class="flex items-center space-x-2.5 space-x-reverse select-none shrink-0">
         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-md shrink-0">
           <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,12 +108,12 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         </div>
         <div>
           <div class="flex items-center gap-1.5 flex-wrap">
-            <span id="secretSiteTitleTrigger" class="text-lg sm:text-xl font-black text-slate-900 tracking-tight cursor-pointer hover:text-brand-700 transition-colors" title="شبكة رعاية الفيوم">
-              رعاية الفيوم
+            <span id="secretSiteTitleTrigger" class="text-lg sm:text-xl font-black text-slate-900 tracking-tight cursor-pointer hover:text-brand-700 transition-colors" title="شبكة رعاية طبية">
+              رعاية طبية
             </span>
             <span class="bg-brand-100 text-brand-700 text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold">دليل الخصومات</span>
           </div>
-          <p id="headerSubtext" class="text-[10px] sm:text-xs text-slate-500 break-words-all">دليلك المعتمد لخصومات العيادات والمعامل والمراكز بالفيوم</p>
+          <p id="headerSubtext" style="white-space:normal;overflow-wrap:anywhere;max-width:100%" class="text-[10px] sm:text-xs text-slate-500 break-words-all">دليلك المعتمد لخصومات العيادات والمعامل والمراكز بجميع المحافظات</p>
         </div>
       </div>
 
@@ -169,15 +169,15 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <!-- Hero Section -->
   <!-- ======================================================== -->
   <section id="reaya-cinematic-hero" class="bg-gradient-to-b from-teal-800 via-brand-900 to-slate-900 text-white py-8 sm:py-12 px-4 w-full">
-    <div class="reaya-hero-grid max-w-7xl mx-auto"><div class="reaya-hero-copy space-y-4"><p class="reaya-eyebrow">رعاية الفيوم · الدليل الطبي</p>
+    <div class="reaya-hero-grid max-w-7xl mx-auto"><div class="reaya-hero-copy space-y-4"><p class="reaya-eyebrow">رعاية طبية · الدليل الطبي</p>
       <span id="heroBadge" class="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-teal-100 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full break-words-all">
-        خدمة مجتمعية لأهالي محافظة الفيوم ومراكزها
+        خدمة مجتمعية لأهالي جميع المحافظات
       </span>
       <h1 id="heroHeadline" class="text-xl sm:text-3xl md:text-4xl font-black leading-snug break-words-all">
         وفر حتى <span class="text-emerald-300 underline decoration-wavy decoration-teal-400">30%</span> على كشوفات الأطباء والفحوصات
       </h1>
       <p id="heroSubtext" class="text-slate-200 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed break-words-all">
-        دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بالفيوم. بطاقة عائلية رقمية تشمل حتى 5 أفراد. اضغط على أي بطاقة لعرض تفاصيلها الكاملة والحجز.
+        دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بجميع المحافظات. بطاقة عائلية رقمية تشمل حتى 5 أفراد. اضغط على أي بطاقة لعرض تفاصيلها الكاملة والحجز.
       </p>
 
       <p style="font-size:14px;line-height:1.8;color:#cde8de;border-right:2px solid #b7975b;padding-right:10px">الجهات والخصومات المعروضة تحتاج تأكيداً مباشراً من الجهة قبل الزيارة. إصدار بطاقة على هذا الجهاز لا يُثبت قبولها لدى أي جهة أو وجود تعاقد معها.</p>
@@ -210,7 +210,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
             <span>حاسبة التوفير التقديرية لأسرتك</span>
           </div>
           <h2 class="text-base sm:text-lg font-black text-slate-900 leading-snug break-words-all">
-            احسب كم ستوفر شهرياً مع بطاقة رعاية الفيوم
+            احسب كم ستوفر شهرياً مع بطاقة رعاية طبية
           </h2>
           <p class="text-xs text-slate-500 leading-relaxed break-words-all">
             حدد استهلاك عائلتك الطبي الشهري التقريبي وشاهد حجم الوفر المالي المباشر في كشوفاتك وفحوصاتك.
@@ -299,9 +299,10 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         <!-- Center / City Selector & Schedule Filter -->
         <div class="flex items-center gap-2 flex-wrap">
           <div class="flex items-center gap-1.5">
+            <label for="governorateFilter" class="text-xs font-bold text-slate-600">المحافظة:</label><select id="governorateFilter" class="bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs"><option value="all">جميع المحافظات</option></select>
             <label for="centerFilter" class="text-xs font-bold text-slate-600">المركز:</label>
             <select id="centerFilter" class="bg-slate-50 border border-slate-300 text-slate-700 text-xs rounded-xl focus:ring-brand-500 focus:border-brand-500 p-2 font-semibold pr-7">
-              <option value="all">جميع مراكز الفيوم</option>
+              <option value="all">جميع المناطق والمراكز</option>
             </select>
           </div>
 
@@ -434,7 +435,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         <div class="flex items-center gap-2">
           <span class="text-xl">💳</span>
           <div>
-            <h3 class="text-base font-black text-slate-800 break-words-all">بطاقة العضوية الرقمية لشبكة الفيوم</h3>
+            <h3 class="text-base font-black text-slate-800 break-words-all">بطاقة العضوية الرقمية لرعاية طبية</h3>
             <p class="text-[11px] text-slate-400 break-words-all">أظهر هذه البطاقة لسكرتير العيادة أو المعمل للحصول على الخصم</p>
           </div>
         </div>
@@ -466,7 +467,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
               🏥
             </div>
             <div>
-              <span class="block text-xs sm:text-sm font-black tracking-wide break-words-all">رعاية الفيوم الطبية</span>
+              <span class="block text-xs sm:text-sm font-black tracking-wide break-words-all">رعاية طبية</span>
               <span class="block text-[9px] sm:text-[10px] text-emerald-200 break-words-all">بطاقة الرعاية الصحية العائلية المعتمدة</span>
             </div>
           </div>
@@ -482,6 +483,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
             <span id="displayCardHolder" class="text-sm sm:text-base font-black text-white tracking-wide break-words-all leading-snug"></span>
           </div>
 
+          <p class="text-xs text-emerald-200">المحافظة: <span id="displayCardGovernorate"></span></p>
           <!-- Up to 5 Family Members (Wraps cleanly without overflow) -->
           <div>
             <span class="text-[9px] sm:text-[10px] text-emerald-200 block mb-1">المشمولين بالخصم العائلي (حتى 5 أفراد):</span>
@@ -536,14 +538,14 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         <div class="flex items-center gap-2">
           <span class="text-xl">🩺</span>
           <div>
-            <h3 class="text-base font-black text-slate-800 break-words-all">طلب انضمام جهة طبية لشبكة الفيوم</h3>
+            <h3 class="text-base font-black text-slate-800 break-words-all">طلب انضمام جهة طبية لرعاية طبية</h3>
             <p class="text-[11px] text-slate-400 break-words-all">سجل بيانات عيادتك أو معملك للانضمام لقائمة الخصومات المعتمدة</p>
           </div>
         </div>
         <button onclick="closeJoinModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
       </div>
 
-      <form id="joinForm" onsubmit="event.preventDefault(); submitJoinRequest();" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <form id="joinForm" onsubmit="event.preventDefault(); submitJoinRequest();" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs"><div><label class="block font-bold text-slate-700 mb-1" for="joinGovernorate">المحافظة *</label><input id="joinGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
         <div>
           <label class="block font-bold text-slate-700 mb-1">نوع الجهة الطبية *</label>
           <select id="joinCategory" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-bold">
@@ -566,9 +568,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
         <div>
           <label class="block font-bold text-slate-700 mb-1">المركز / المدينة التابع لها *</label>
-          <select id="joinCenter" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-bold">
-            <!-- Populated from centers -->
-          </select>
+          <input id="joinCenter" type="text" required placeholder="المدينة أو المنطقة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
         </div>
 
         <div>
@@ -615,7 +615,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   </div>
 
   <!-- ======================================================== -->
-  <!-- Secret Admin PIN Modal (Prompted ONLY after 5 clicks on "رعاية الفيوم") -->
+  <!-- Secret Admin PIN Modal (Prompted ONLY after 5 clicks on "رعاية طبية") -->
   <!-- ======================================================== -->
   <div id="pinModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
     <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 border border-slate-100 transform transition-all">
@@ -712,7 +712,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
               <div class="mb-4 rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs"><p>التعديل والحذف هنا على هذا المتصفح فقط، ولا يغيران بيانات أجهزة الزوار.</p><button type="button" onclick="clearStarterRecords()" style="background:#be123c;color:#fff" class="mt-2 rounded-lg bg-rose-700 text-white px-3 py-2 font-bold">حذف كل السجلات الأولية</button></div>
               <form id="itemForm" onsubmit="event.preventDefault(); saveItem();" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-                <input type="hidden" id="itemId">
+                <input type="hidden" id="itemId"><div><label class="block font-bold text-slate-700 mb-1" for="itemGovernorate">المحافظة *</label><input id="itemGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
 
                 <div>
                   <label class="block font-bold text-slate-700 mb-1">نوع الجهة *</label>
@@ -735,10 +735,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
                 </div>
 
                 <div>
-                  <label class="block font-bold text-slate-700 mb-1">المركز التابع له بالفيوم *</label>
-                  <select id="itemCenter" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium">
-                    <!-- Populated from centers -->
-                  </select>
+                  <label class="block font-bold text-slate-700 mb-1">المدينة أو المنطقة *</label>
+                  <input id="itemCenter" type="text" required placeholder="المدينة أو المنطقة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
                 </div>
 
                 <div>
@@ -851,7 +849,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
               </h3>
 
               <form id="memberCardForm" onsubmit="event.preventDefault(); saveMemberCard();" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-                <input type="hidden" id="memberCardId">
+                <input type="hidden" id="memberCardId"><div><label class="block font-bold text-slate-700 mb-1" for="mGovernorate">المحافظة *</label><input id="mGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
 
                 <div>
                   <label class="block font-bold text-slate-700 mb-1">اسم العميل الرئيسي (رب الأسرة) *</label>
@@ -934,7 +932,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           <span class="text-xl">⚙️</span>
           <div>
             <h3 class="text-base font-black">إعدادات وصلاحيات النظام المتقدمة</h3>
-            <p class="text-[11px] text-slate-400">تغيير الرقم السري، تخصيص النصوص، وإدارة مراكز الفيوم</p>
+            <p class="text-[11px] text-slate-400">تغيير الرقم السري، تخصيص النصوص، وإدارة المناطق والمراكز</p>
           </div>
         </div>
         <button onclick="closeAdvancedSettingsModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center font-bold">&times;</button>
@@ -948,7 +946,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           🎨 تخصيص نصوص الموقع
         </button>
         <button onclick="switchSettingsTab('centersTab')" id="btn-centersTab" class="settings-tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
-          📍 مراكز وقرى الفيوم
+          📍 المناطق والمراكز
         </button>
         <button onclick="switchSettingsTab('statsTab')" id="btn-statsTab" class="settings-tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
           📊 تقرير وإحصائيات
@@ -1019,7 +1017,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         <!-- Tab 3: Centers -->
         <div id="tab-centersTab" class="settings-tab-content hidden space-y-3">
           <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
-            <h4 class="font-black text-slate-800 text-sm">إدارة مراكز وقرى محافظة الفيوم</h4>
+            <h4 class="font-black text-slate-800 text-sm">إدارة جميع المحافظات</h4>
             <div class="flex gap-2">
               <input type="text" id="newCenterInput" placeholder="اسم المركز أو القرية الجديدة..." class="flex-1 bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs">
               <button onclick="addNewCenter()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition shrink-0">
@@ -1067,7 +1065,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       </div>
       <div class="min-w-0 flex-1">
         <div class="flex items-center gap-1.5 flex-wrap">
-          <h4 class="text-xs font-black text-white">تطبيق رعاية الفيوم</h4>
+          <h4 class="text-xs font-black text-white">تطبيق رعاية طبية</h4>
           <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-1.5 py-0.5 rounded font-bold border border-emerald-500/30">أقل من 1 ميجا</span>
         </div>
         <p class="text-[10px] text-slate-300 break-words-all leading-tight mt-0.5">الدليل وبطاقتك من شاشة هاتفك. البيانات المحفوظة تخص هذا الجهاز.</p>
@@ -1133,7 +1131,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">✓</span>
           <div>
             <span class="font-bold block">جاهز للاستخدام!</span>
-            <span>ستظهر أيقونة "رعاية الفيوم" بجانب واتساب وفيسبوك على شاشتك.</span>
+            <span>ستظهر أيقونة "رعاية طبية" بجانب واتساب وفيسبوك على شاشتك.</span>
           </div>
         </div>
       </div>
@@ -1205,13 +1203,13 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         </div>
 
         <div>
-          <h2 class="text-xl font-black text-white tracking-tight">شبكة رعاية الفيوم للخصم الطبي</h2>
+          <h2 class="text-xl font-black text-white tracking-tight">شبكة رعاية طبية للخصم الطبي</h2>
           <p class="text-xs text-emerald-200 mt-0.5 font-bold">دليلك المعتمد لخصومات العيادات والمعامل والمراكز</p>
         </div>
 
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-3 rounded-2xl">
           <p class="text-xs font-bold text-teal-100 leading-relaxed">
-            امسح الكود بكاميرا هاتفك لتثبيت التطبيق فوراً وعرض بطاقتك وأطباء الخصم بالفيوم
+            امسح الكود بكاميرا هاتفك لتثبيت التطبيق فوراً وعرض بطاقتك وأطباء الخصم بجميع المحافظات
           </p>
         </div>
 
@@ -1222,7 +1220,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
         <div class="pt-2 text-[11px] text-slate-300 space-y-1">
           <p class="font-bold text-white">بدون تحميل برامج معقدة • حجم خفيف جداً • يعمل بدون إنترنت</p>
-          <p class="text-[10px] text-emerald-300">خدمة مجتمعية لأهالي محافظة الفيوم ومراكزها</p>
+          <p class="text-[10px] text-emerald-300">خدمة مجتمعية لأهالي جميع المحافظات</p>
         </div>
 
       </div>
@@ -1246,8 +1244,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <!-- ======================================================== -->
   <footer class="bg-white border-t border-slate-200 py-6 mt-auto w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
-      <p id="footerTitle" class="font-bold text-slate-700 break-words-all">شبكة الرعاية والخصم الطبي - محافظة الفيوم</p>
-      <p class="break-words-all">خدمة الربط بين المواطنين ومقدمي الخدمات الطبية في مراكز وقرى الفيوم للحصول على كشوفات وفحوصات مخفضة.</p>
+      <p id="footerTitle" class="font-bold text-slate-700 break-words-all">شبكة الرعاية والخصم الطبي - جميع المحافظات</p>
+      <p class="break-words-all">خدمة الربط بين المواطنين ومقدمي الخدمات الطبية في المناطق والمراكز للحصول على كشوفات وفحوصات مخفضة.</p>
       <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-100">
         جميع الحقوق محفوظة &copy; <span id="currentYear"></span>
       </p>
@@ -1267,7 +1265,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "doctor",
     "name": "عيادة ١٠١",
     "specialty": "استشاري أمراض القلب والقسطرة التداخلية",
-    "center": "بندر الفيوم",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 101، ممر أ، وحدة 1",
     "phone": "000-000-0001",
     "discount": "25%",
@@ -1281,7 +1280,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "doctor",
     "name": "عيادة ١٠٢",
     "specialty": "أخصائية طب الأطفال وحديثي الولادة",
-    "center": "سنورس",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 102، ممر أ، وحدة 2",
     "phone": "000-000-0002",
     "discount": "30%",
@@ -1295,7 +1295,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "doctor",
     "name": "عيادة ١٠٣",
     "specialty": "استشاري جراحة العظام والمفاصل والمناظير",
-    "center": "إطسا",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 103، ممر أ، وحدة 3",
     "phone": "000-000-0003",
     "discount": "20%",
@@ -1309,7 +1310,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "doctor",
     "name": "عيادة ١٠٤",
     "specialty": "استشاري الباطنة العامة والجهاز الهضمي والكبد",
-    "center": "طامية",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 104، ممر أ، وحدة 4",
     "phone": "000-000-0004",
     "discount": "20%",
@@ -1323,7 +1325,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "pharmacy",
     "name": "صيدلية ٢٠١",
     "specialty": "صيدلية ومركز مستلزمات طبية وتجميل",
-    "center": "بندر الفيوم",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 105، ممر أ، وحدة 5",
     "phone": "000-000-0005",
     "discount": "15%",
@@ -1337,7 +1340,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "pharmacy",
     "name": "صيدلية ٢٠٢",
     "specialty": "صيدلية وصحة عامة ومستلزمات أطفال",
-    "center": "أبشواي",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 106، ممر أ، وحدة 6",
     "phone": "000-000-0006",
     "discount": "15%",
@@ -1351,7 +1355,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "lab",
     "name": "معمل ٣٠١",
     "specialty": "فحوصات دم شاملة، هرمونات، وأورام",
-    "center": "بندر الفيوم",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 107، ممر أ، وحدة 7",
     "phone": "000-000-0007",
     "discount": "30%",
@@ -1365,7 +1370,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "lab",
     "name": "معمل ٣٠٢",
     "specialty": "تحاليل مناعية وجينات وفحوصات كبدية",
-    "center": "إطسا",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 108، ممر أ، وحدة 8",
     "phone": "000-000-0008",
     "discount": "25%",
@@ -1379,7 +1385,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "radiology",
     "name": "مركز أشعة ٤٠١",
     "specialty": "أشعة رنين مغناطيسي، مقطعية، وسونار 4D",
-    "center": "بندر الفيوم",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 109، ممر أ، وحدة 9",
     "phone": "000-000-0009",
     "discount": "25%",
@@ -1393,7 +1400,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "radiology",
     "name": "مركز أشعة ٤٠٢",
     "specialty": "أشعة عادية، موجات صوتية، وبانوراما أسنان",
-    "center": "سنورس",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "address": "مبنى 110، ممر أ، وحدة 10",
     "phone": "000-000-0010",
     "discount": "20%",
@@ -1407,13 +1415,14 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   {
     "id": "card-1",
     "code": "RF-Z7Q2-1001",
-    "holderName": "عضو ١٠٠١",
-    "holderPhone": "000-000-1001",
+    "holderName": "أحمد محمود محمد",
+    "governorate": "غير محددة",
+    "holderPhone": "010-XXXX-0001",
     "familyMembers": [
-      "فرد ١٠٠٢",
-      "فرد ١٠٠٣",
-      "فرد ١٠٠٤",
-      "فرد ١٠٠٥"
+      "منى حسن علي",
+      "عمر أحمد محمود",
+      "نور أحمد محمود",
+      "يوسف أحمد محمود"
     ],
     "expiryDate": "2027-12-31",
     "seedRecord": true
@@ -1425,7 +1434,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     "category": "doctor",
     "name": "عيادة ١٠٥",
     "specialty": "أخصائي جراحة المسالك البولية والكلى",
-    "center": "طامية",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
     "phone": "000-000-0011",
     "discount": "25%",
     "address": "مبنى ١١١، ممر ب، وحدة ١",
@@ -1436,11 +1446,11 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   }
 ];
 
-    const defaultCenters = ['بندر الفيوم', 'إطسا', 'سنورس', 'طامية', 'أبشواي', 'يوسف الصديق'];
+    const defaultCenters = ['منطقة ١'];
     const defaultSettings = {
-      siteName: 'رعاية الفيوم',
+      siteName: 'رعاية طبية',
       headline: 'وفر حتى 30% على كشوفات الأطباء والفحوصات',
-      subtext: 'دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بالفيوم. بطاقة عائلية رقمية تشمل حتى 5 أفراد.'
+      subtext: 'دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بجميع المحافظات. بطاقة عائلية رقمية تشمل حتى 5 أفراد.'
     };
 
     // Storage keys
@@ -1506,6 +1516,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     }
     function saveItems(items) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      populateCentersSelectors();
       updateCategoryCounts();
       renderCards();
       renderAdminTable();
@@ -1589,7 +1600,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('printableCardArea').classList.remove('hidden');
       document.getElementById('memberCardEmptyState').classList.add('hidden');
       document.getElementById('displayCardHolder').textContent = card.holderName || 'اسم العميل';
-      document.getElementById('displayCardCode').textContent = card.code || 'FYM-2026';
+      document.getElementById('displayCardGovernorate').textContent = card.governorate || 'غير محددة';
+      document.getElementById('displayCardCode').textContent = card.code || 'RT-2026';
       document.getElementById('displayCardExpiry').textContent = card.expiryDate || '2027-09-30';
 
       const familyContainer = document.getElementById('displayFamilyMembers');
@@ -1655,9 +1667,9 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('modalProviderDiscountBadge').textContent = `خصم ${item.discount}`;
       document.getElementById('modalProviderName').textContent = item.name;
       document.getElementById('modalProviderSpecialty').textContent = `التخصص: ${item.specialty}`;
-      document.getElementById('modalProviderAddress').textContent = `${item.center}: ${item.address}`;
+      document.getElementById('modalProviderAddress').textContent = `${item.governorate || 'غير محددة'} / ${item.center}: ${item.address}`;
       document.getElementById('modalProviderSchedule').textContent = item.schedule || 'المواعيد: متوفر حسب الحجز المسبق';
-      document.getElementById('modalProviderNotes').textContent = item.notes || 'الخصم متاح لحاملي بطاقة رعاية الفيوم على الكشوفات والفحوصات.';
+      document.getElementById('modalProviderNotes').textContent = item.notes || 'الخصم متاح لحاملي بطاقة رعاية طبية على الكشوفات والفحوصات.';
       document.getElementById('modalProviderPhone').textContent = item.phone;
 
       // Phone link
@@ -1667,7 +1679,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
       // WhatsApp link
       const waPhone = cleanPhone.startsWith('0') ? ('2' + cleanPhone) : cleanPhone;
-      const waMessage = encodeURIComponent(`السلام عليكم، أرغب في حجز كشف مع الطبيب من خلال شبكة رعاية الفيوم - كود العضوية: `);
+      const waMessage = encodeURIComponent(`السلام عليكم، أرغب في حجز كشف مع الطبيب من خلال شبكة رعاية طبية - كود العضوية: `);
       document.getElementById('modalProviderWaBtn').href = item.seedRecord ? '#' : `https://wa.me/${waPhone}?text=${waMessage}`;
       document.getElementById('modalProviderWaBtn').classList.toggle('hidden', !!item.seedRecord);
 
@@ -1803,6 +1815,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       const name = document.getElementById('joinName').value.trim();
       const specialty = document.getElementById('joinSpecialty').value.trim();
       const center = document.getElementById('joinCenter').value;
+      const governorate = document.getElementById('joinGovernorate').value.trim();
       const phone = document.getElementById('joinPhone').value.trim();
       const discount = document.getElementById('joinDiscount').value.trim();
       const address = document.getElementById('joinAddress').value.trim();
@@ -1815,7 +1828,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         category,
         name,
         specialty,
-        center,
+        center, governorate,
         phone,
         discount,
         address,
@@ -1844,6 +1857,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         name: req.name,
         specialty: req.specialty,
         center: req.center,
+        governorate: req.governorate || 'غير محددة',
         address: req.address,
         phone: req.phone,
         discount: req.discount,
@@ -1925,7 +1939,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     function resetMemberForm() {
       document.getElementById('memberCardForm').reset();
       document.getElementById('memberCardId').value = '';
-      document.getElementById('mCardCode').value = 'FYM-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('mCardCode').value = 'RT-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
       const nextYear = new Date();
       nextYear.setFullYear(nextYear.getFullYear() + 1);
       document.getElementById('mExpiryDate').value = nextYear.toISOString().slice(0, 10);
@@ -1934,6 +1948,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     function saveMemberCard() {
       const id = document.getElementById('memberCardId').value;
       const holderName = document.getElementById('mHolderName').value.trim();
+      const governorate = document.getElementById('mGovernorate').value.trim();
       const holderPhone = document.getElementById('mHolderPhone').value.trim();
       const code = document.getElementById('mCardCode').value.trim();
       const expiryDate = document.getElementById('mExpiryDate').value;
@@ -1948,14 +1963,14 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       if (id) {
         const idx = cards.findIndex(c => c.id === id);
         if (idx !== -1) {
-          cards[idx] = { ...cards[idx], id, code, holderName, holderPhone, familyMembers: family, expiryDate };
+          cards[idx] = { ...cards[idx], id, code, holderName, holderPhone, governorate, familyMembers: family, expiryDate };
         }
       } else {
         const newCard = {
           id: 'card-' + Date.now(),
-          code: code || ('FYM-2026-' + Math.floor(1000 + Math.random() * 9000)),
+          code: code || ('RT-2026-' + Math.floor(1000 + Math.random() * 9000)),
           holderName,
-          holderPhone,
+          holderPhone, governorate,
           familyMembers: family,
           expiryDate
         };
@@ -1975,6 +1990,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('memberCardId').value = card.id;
       document.getElementById('mHolderName').value = card.holderName;
       document.getElementById('mHolderPhone').value = card.holderPhone;
+      document.getElementById('mGovernorate').value = card.governorate || '';
       document.getElementById('mCardCode').value = card.code;
       document.getElementById('mExpiryDate').value = card.expiryDate;
 
@@ -2043,6 +2059,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     // -------------------------------------------------------------
     let currentCategory = 'all';
     let currentCenter = 'all';
+    let currentGovernorate = 'all';
     let currentSchedule = 'all';
     let searchQuery = '';
 
@@ -2083,10 +2100,10 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           item.name.toLowerCase().includes(q) ||
           item.specialty.toLowerCase().includes(q) ||
           item.address.toLowerCase().includes(q) ||
-          item.center.toLowerCase().includes(q) ||
+          item.center.toLowerCase().includes(q) || (item.governorate || '').toLowerCase().includes(q) ||
           item.phone.includes(q);
 
-        return matchesCategory && matchesCenter && matchesSchedule && matchesSearch;
+        return matchesCategory && matchesCenter && matchesSchedule && matchesSearch && (currentGovernorate === 'all' || (item.governorate || 'غير محددة') === currentGovernorate);
       });
 
       resultsCountText.textContent = `يتم عرض ${filtered.length} من إجمالي ${items.length} جهة طبية معتمدة (انقر على البطاقة لعرض التفاصيل الكاملة)`;
@@ -2103,8 +2120,9 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
         const cleanPhone = item.phone.replace(/[^0-9]/g, '');
         const waPhone = cleanPhone.startsWith('0') ? ('2' + cleanPhone) : cleanPhone;
-        const waMessage = encodeURIComponent(`السلام عليكم، أرغب في حجز كشف مع الطبيب من خلال شبكة رعاية الفيوم - كود العضوية: `);
+        const waMessage = encodeURIComponent(`السلام عليكم، أرغب في حجز كشف مع الطبيب من خلال شبكة رعاية طبية - كود العضوية: `);
         const waLink = `https://wa.me/${waPhone}?text=${waMessage}`;
+        const unavailableContact = item.seedRecord || /^000/.test(item.phone) || /[xX]/.test(item.phone);
 
         return `
           <div onclick="openProviderDetailsModal('${item.id}')"
@@ -2138,7 +2156,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
                 <div class="flex items-start gap-1.5">
                   <span class="text-slate-400 shrink-0">📍</span>
                   <p class="break-words-all leading-relaxed">
-                    <span class="font-bold text-slate-700 underline decoration-slate-300 decoration-1">${item.center}:</span>
+                    <span class="font-bold text-slate-700 underline decoration-slate-300 decoration-1">${item.governorate || 'غير محددة'} / ${item.center}:</span>
                     <span>${item.address}</span>
                   </p>
                 </div>
@@ -2174,7 +2192,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
                   </a>
                 ` : ''}
 
-                ${!item.seedRecord ? `<a href="${waLink}" target="_blank" rel="noopener noreferrer"
+                ${!unavailableContact ? `<a href="${waLink}" target="_blank" rel="noopener noreferrer"
                    class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-extrabold shadow-sm transition" title="حجز فوري عبر واتساب">
                   <span>💬</span>
                   <span>واتساب</span>
@@ -2221,6 +2239,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       const name = document.getElementById('itemName').value.trim();
       const specialty = document.getElementById('itemSpecialty').value.trim();
       const center = document.getElementById('itemCenter').value;
+      const governorate = document.getElementById('itemGovernorate').value.trim();
       const address = document.getElementById('itemAddress').value.trim();
       const phone = document.getElementById('itemPhone').value.trim();
       const discount = document.getElementById('itemDiscount').value.trim();
@@ -2232,7 +2251,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       if (id) {
         const idx = items.findIndex(i => i.id === id);
         if (idx !== -1) {
-          items[idx] = { ...items[idx], id, category, name, specialty, center, address, phone, discount, schedule, mapUrl, notes };
+          items[idx] = { ...items[idx], id, category, name, specialty, center, governorate, address, phone, discount, schedule, mapUrl, notes };
           if (!/^000/.test(phone) && /^[+\d\s()-]{8,}$/.test(phone)) delete items[idx].seedRecord;
         }
       } else {
@@ -2241,7 +2260,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           category,
           name,
           specialty,
-          center,
+          center, governorate,
           address,
           phone,
           discount,
@@ -2267,6 +2286,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('itemName').value = item.name;
       document.getElementById('itemSpecialty').value = item.specialty;
       document.getElementById('itemCenter').value = item.center;
+      document.getElementById('itemGovernorate').value = item.governorate || '';
       document.getElementById('itemAddress').value = item.address;
       document.getElementById('itemPhone').value = item.phone;
       document.getElementById('itemDiscount').value = item.discount;
@@ -2424,24 +2444,25 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     function applySiteSettings() {
       const s = getSiteSettings();
       document.getElementById('secretSiteTitleTrigger').textContent = s.siteName;
-      document.getElementById('footerTitle').textContent = `شبكة ${s.siteName} للخصم الطبي - محافظة الفيوم`;
+      document.getElementById('footerTitle').textContent = `شبكة ${s.siteName} للخصم الطبي - جميع المحافظات`;
       document.getElementById('heroHeadline').innerHTML = s.headline.replace(/30%/, '<span class="text-emerald-300 underline decoration-wavy decoration-teal-400">30%</span>');
       document.getElementById('heroSubtext').textContent = s.subtext;
     }
 
     function populateCentersSelectors() {
-      const centers = getCenters();
+      const items = getItems();
+      const filter = document.getElementById('governorateFilter');
+      const provinces = [...new Set(items.map(i => i.governorate || 'غير محددة'))].sort();
+      const selected = filter.value;
+      filter.replaceChildren(new Option('جميع المحافظات', 'all'), ...provinces.map(g => new Option(g,g)));
+      filter.value = provinces.includes(selected) ? selected : 'all';
+      currentGovernorate = filter.value;
+      const centers = [...new Set(items.filter(i => currentGovernorate === 'all' || (i.governorate || 'غير محددة') === currentGovernorate).map(i=>i.center))].sort();
       const centerFilter = document.getElementById('centerFilter');
-      const itemCenter = document.getElementById('itemCenter');
-      const joinCenter = document.getElementById('joinCenter');
-
       const currentVal = centerFilter.value;
-      centerFilter.innerHTML = `<option value="all">جميع مراكز الفيوم</option>` +
-        centers.map(c => `<option value="${c}">${c}</option>`).join('');
-      if (centers.includes(currentVal)) centerFilter.value = currentVal;
-
-      itemCenter.innerHTML = centers.map(c => `<option value="${c}">${c}</option>`).join('');
-      if (joinCenter) joinCenter.innerHTML = centers.map(c => `<option value="${c}">${c}</option>`).join('');
+      centerFilter.replaceChildren(new Option('جميع المناطق والمراكز', 'all'), ...centers.map(c=>new Option(c,c)));
+      centerFilter.value = centers.includes(currentVal) ? currentVal : 'all';
+      currentCenter = centerFilter.value;
     }
 
     function renderCentersTags() {
@@ -2573,6 +2594,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       const card = cards.find(c => c.id === cardId);
       if (!card) return;
 
+      if (card.seedRecord || /^000/.test(card.holderPhone || '')) { alert('لا يوجد رقم تواصل متاح لهذه البطاقة.'); return; }
       const cleanPhone = card.holderPhone.replace(/[^0-9]/g, '');
       const waPhone = cleanPhone.startsWith('0') ? ('2' + cleanPhone) : cleanPhone;
 
@@ -2582,7 +2604,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       const siteUrl = window.location.href;
 
       const message = `السلام عليكم ورحمة الله وبركاته يا أستاذ ${card.holderName} 🌿
-أهلاً بك وبأسرتك الكريمة في شبكة رعاية الفيوم للخصم الطبي.
+أهلاً بك وبأسرتك الكريمة في شبكة رعاية طبية للخصم الطبي.
 
 ✅ تم تفعيل بطاقتكم العائلية بنجاح:
 💳 كود العضوية: ${card.code}
@@ -2637,6 +2659,9 @@ ${siteUrl}
       });
     });
 
+    document.getElementById('governorateFilter').addEventListener('change', (e) => {
+      currentGovernorate = e.target.value; populateCentersSelectors(); renderCards();
+    });
     document.getElementById('centerFilter').addEventListener('change', (e) => {
       currentCenter = e.target.value;
       renderCards();
@@ -2669,6 +2694,16 @@ ${siteUrl}
     // -------------------------------------------------------------
     // App Initialization
     // -------------------------------------------------------------
+    if (!localStorage.getItem('reaya_national_v1')) {
+      [STORAGE_KEY, MEMBERS_STORAGE_KEY, REQUESTS_STORAGE_KEY].forEach(key => {
+        const raw = localStorage.getItem(key);
+        if (!raw) return;
+        try { localStorage.setItem(key, JSON.stringify(JSON.parse(raw).map(row => row.seedRecord ? {...row, ...(row.center ? {center: 'منطقة ١'} : {}), governorate: 'غير محددة', ...(key === MEMBERS_STORAGE_KEY ? {holderName: defaultMemberCards[0].holderName, holderPhone: defaultMemberCards[0].holderPhone, familyMembers: defaultMemberCards[0].familyMembers} : {})} : row))); } catch (e) {}
+      });
+      const saved = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (saved) { try { const settings = JSON.parse(saved); settings.siteName = 'رعاية طبية'; settings.subtext = defaultSettings.subtext; localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settings)); } catch (e) {} }
+      localStorage.setItem('reaya_national_v1', '1');
+    }
     document.getElementById('currentYear').textContent = new Date().getFullYear();
     applySiteSettings();
     populateCentersSelectors();
