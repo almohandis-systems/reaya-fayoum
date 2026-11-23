@@ -1237,7 +1237,148 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     // -------------------------------------------------------------
     // Initial Seed Data
     // -------------------------------------------------------------
-    const defaultData = [];
+    const defaultData = [
+  {
+    "id": "1",
+    "category": "doctor",
+    "name": "د. محمود عبد الرحمن الجندي",
+    "specialty": "استشاري أمراض القلب والقسطرة التداخلية",
+    "center": "بندر الفيوم",
+    "address": "ميدان السواقي، برج الأطباء، الدور الرابع",
+    "phone": "0842354120",
+    "discount": "25%",
+    "schedule": "يومياً من 5م إلى 10م عدا الجمعة",
+    "mapUrl": "https://maps.google.com/?q=Fayoum",
+    "notes": "الخصم يسري على الكشف ورسم القلب بموجب الكارت",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "2",
+    "category": "doctor",
+    "name": "د. سارة عادل النجار",
+    "specialty": "أخصائية طب الأطفال وحديثي الولادة",
+    "center": "سنورس",
+    "address": "شارع بورسعيد، أمام مجلس المدينة القديم",
+    "phone": "01098765432",
+    "discount": "30%",
+    "schedule": "السبت والإثنين والأربعاء من 4م إلى 8م",
+    "mapUrl": "https://maps.google.com/?q=Sinnuris",
+    "notes": "يشمل متابعة النمو والتطعيمات الدورية للأطفال",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "3",
+    "category": "doctor",
+    "name": "د. خالد إبراهيم الديب",
+    "specialty": "استشاري جراحة العظام والمفاصل والمناظير",
+    "center": "إطسا",
+    "address": "شارع البحر، بجوار البنك الأهلي المصري",
+    "phone": "01122334455",
+    "discount": "20%",
+    "schedule": "يومياً من 6م إلى 10م",
+    "mapUrl": "https://maps.google.com/?q=Itsa",
+    "notes": "الخصم على قيمة الكشف والاستشارة ومتابعة الجبائر",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "4",
+    "category": "doctor",
+    "name": "د. طارق مصطفى وهبة",
+    "specialty": "استشاري الباطنة العامة والجهاز الهضمي والكبد",
+    "center": "طامية",
+    "address": "الشارع التجاري، برج الهدى، الدور الأول",
+    "phone": "01234567890",
+    "discount": "20%",
+    "schedule": "الأحد والثلاثاء والخميس من 5م إلى 9م",
+    "mapUrl": "",
+    "notes": "خصم 20% على الكشف وسونار البطن",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "5",
+    "category": "pharmacy",
+    "name": "صيدلية النخيل الكبرى",
+    "specialty": "صيدلية ومركز مستلزمات طبية وتجميل",
+    "center": "بندر الفيوم",
+    "address": "شارع جمال عبد الناصر، بجوار بنك مصر",
+    "phone": "0842378900",
+    "discount": "15%",
+    "schedule": "خدمة 24 ساعة طوال أيام الأسبوع",
+    "mapUrl": "https://maps.google.com/?q=Fayoum",
+    "notes": "خصم 15% على مستحضرات العناية والمستلزمات الطبية وأجهزة قياس السكر والضغط",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "6",
+    "category": "pharmacy",
+    "name": "صيدلية الشفاء الحديثة",
+    "specialty": "صيدلية وصحة عامة ومستلزمات أطفال",
+    "center": "أبشواي",
+    "address": "ميدان المحطة، أمام مجمع المواقف الرئيسي",
+    "phone": "01011223344",
+    "discount": "15%",
+    "schedule": "يومياً من 8 صباحاً حتى 1 بعد منتصف الليل",
+    "mapUrl": "",
+    "notes": "خصم على منتجات التجميل ومستلزمات الأطفال وكبار السن",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "7",
+    "category": "lab",
+    "name": "معامل الأمل التخصصية للتحاليل الطبية",
+    "specialty": "فحوصات دم شاملة، هرمونات، وأورام",
+    "center": "بندر الفيوم",
+    "address": "شارع الحرية، عمارة الأوقاف، الدور الثاني",
+    "phone": "0842341122",
+    "discount": "30%",
+    "schedule": "يومياً من 9 ص إلى 11 م عدا الجمعة من 2 ظ إلى 10 م",
+    "mapUrl": "https://maps.google.com/?q=Fayoum",
+    "notes": "خصم 30% على كافة التحاليل الفردية وباقات الفحص الشامل",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "8",
+    "category": "lab",
+    "name": "معمل النيل للتحاليل الدقيقة",
+    "specialty": "تحاليل مناعية وجينات وفحوصات كبدية",
+    "center": "إطسا",
+    "address": "طريق بحر يوسف، أعلى صيدلية الأمانة",
+    "phone": "01055667788",
+    "discount": "25%",
+    "schedule": "يومياً من 10 ص إلى 10 م",
+    "mapUrl": "",
+    "notes": "خصم فوري 25% وسحب العينات للمنازل مجاناً لحاملي الكارت",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "9",
+    "category": "radiology",
+    "name": "مركز الفيوم المتقدم للأشعة والرنين",
+    "specialty": "أشعة رنين مغناطيسي، مقطعية، وسونار 4D",
+    "center": "بندر الفيوم",
+    "address": "شارع المستشفى العام، مجمع البشائر الطبي",
+    "phone": "0842389900",
+    "discount": "25%",
+    "schedule": "يومياً من 9 ص حتى 11 م",
+    "mapUrl": "https://maps.google.com/?q=Fayoum",
+    "notes": "خصم 25% على السونار والدوبلر وأشعة الصدر والعظام",
+    "governorate": "الفيوم"
+  },
+  {
+    "id": "10",
+    "category": "radiology",
+    "name": "مركز السلام للأشعة الديجيتال والسونار",
+    "specialty": "أشعة عادية، موجات صوتية، وبانوراما أسنان",
+    "center": "سنورس",
+    "address": "طريق الفيوم - سنورس السريع، عمارة البرج",
+    "phone": "01144556677",
+    "discount": "20%",
+    "schedule": "يومياً من 12 ظ إلى 9 م عدا الجمعة",
+    "mapUrl": "",
+    "notes": "خصم 20% على الأشعات العادية وبانوراما الأسنان",
+    "governorate": "الفيوم"
+  }
+];
     const defaultMemberCards = [];
     const defaultRequests = [];
 
@@ -1302,6 +1443,15 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     }
 
     function getItems() {
+      // Owner approved restoring the exact original directory on 2026-11-23.
+      if (!localStorage.getItem('raaya.original-directory-restored-v1')) {
+        let rows=[]; try { rows=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]'); } catch {}
+        if (!Array.isArray(rows)) rows=[];
+        rows=rows.filter(row=>!row.seedRecord&&!/^(?:عيادة|عياده|صيدلية|صيدليه|معمل|مركز(?:\s+أشعة)?|طبيب)\s*[0-9٠-٩]+$/u.test((row.name||'').trim()));
+        for (const row of defaultData) if (!rows.some(x=>x.id===row.id)) rows.push({...row});
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(rows));
+        localStorage.setItem('raaya.original-directory-restored-v1','1');
+      }
       const stored = localStorage.getItem(STORAGE_KEY);
       if (!stored) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
