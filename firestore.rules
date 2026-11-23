@@ -28,6 +28,11 @@ service cloud.firestore {
         && text(request.resource.data.phone,25) && request.resource.data.phone.matches('[+0-9 ()-]{8,25}')
         && text(request.resource.data.governorate,100) && text(request.resource.data.address,350)
         && request.resource.data.familyMembers is list && request.resource.data.familyMembers.size() <= 5
+        && (request.resource.data.familyMembers.size() < 1 || text(request.resource.data.familyMembers[0],150))
+        && (request.resource.data.familyMembers.size() < 2 || text(request.resource.data.familyMembers[1],150))
+        && (request.resource.data.familyMembers.size() < 3 || text(request.resource.data.familyMembers[2],150))
+        && (request.resource.data.familyMembers.size() < 4 || text(request.resource.data.familyMembers[3],150))
+        && (request.resource.data.familyMembers.size() < 5 || text(request.resource.data.familyMembers[4],150))
         && request.resource.data.consent == true && request.resource.data.status == 'pending' && request.resource.data.createdAt == request.time);
     }
     match /memberLookup/{token} {

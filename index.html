@@ -110,7 +110,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 #requestsTableBody td:last-child button{flex:1 1 40%;margin:0!important}
 #adminDashboard .admin-sec-btn{flex:1;white-space:normal!important}#adminDashboard h2{font-size:20px!important}
 }
-</style></head>
+</style><style>#memberCardModal{align-items:flex-start!important;overflow-y:auto!important;padding:12px!important}#memberCardModal>div{margin:12px auto!important;max-height:none!important;overflow:visible!important;width:100%;max-width:480px}#memberCardModal #digitalCard{max-width:100%!important;height:auto!important;overflow:visible!important}#memberCardModal svg{max-width:100%}</style></head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
 
   <!-- ======================================================== -->
@@ -209,7 +209,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           </div>
         </div>
       </div>
-    </div><figure class="reaya-hero-photo"><img src="assets/medical-interior.webp" alt="صورة توضيحية لممر طبي حديث، ليست صورة جهة مدرجة بالدليل" width="1125" height="750" fetchpriority="high"><figcaption>صورة توضيحية: Enrique Silva / Pexels، مش صورة لجهة داخل الدليل</figcaption></figure></div>
+    </div><figure class="reaya-hero-photo"><img src="assets/medical-interior.webp" alt="Medical corridor" width="1125" height="750" fetchpriority="high"><figcaption>Enrique Silva / Pexels</figcaption></figure></div>
 </section>
 
   <!-- ======================================================== -->
@@ -459,11 +459,12 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         <button onclick="closeMemberCardModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
       </div>
 
-      <!-- Card Search / Phone Lookup -->
+      <button onclick="openSubscriberForm()" class="w-full p-3 rounded-xl bg-emerald-700 text-white font-bold mb-3">تسجيل أسرة جديدة وطلب بطاقة</button>
+<!-- Card Search / Phone Lookup -->
       <div class="mb-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
-        <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">ابحث برقم الهاتف أو كود العضوية:</label>
+        <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">أدخل رمز الوصول الخاص من الإدارة:</label>
         <div class="flex gap-2">
-          <input type="text" id="memberSearchInput" placeholder="رقم الهاتف أو كود العضوية"
+          <input type="text" id="memberSearchInput" style="min-width:0" placeholder="رمز الوصول الخاص للبطاقة"
                  class="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-bold">
           <button onclick="lookupMemberCard()" class="px-3.5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition shrink-0">
             عرض البطاقة
@@ -562,7 +563,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         <button onclick="closeJoinModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
       </div>
 
-      <form id="joinForm" onsubmit="event.preventDefault(); submitJoinRequest();" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs"><div><label class="block font-bold text-slate-700 mb-1" for="joinGovernorate">المحافظة *</label><input id="joinGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
+      <p class="text-xs text-slate-600 mb-3">بإرسال الطلب، توافق على استخدام بياناتك للتواصل وإدارة الخدمة. بيانات الطلب متاحة للإدارة فقط حتى الاعتماد.</p>
+<form id="joinForm" onsubmit="event.preventDefault(); submitJoinRequest();" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs"><div><label class="block font-bold text-slate-700 mb-1" for="joinGovernorate">المحافظة *</label><input id="joinGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
         <div>
           <label class="block font-bold text-slate-700 mb-1">نوع الجهة الطبية *</label>
           <select id="joinCategory" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-bold">
@@ -656,6 +658,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       <div class="bg-white rounded-3xl shadow-2xl max-w-6xl w-full border border-slate-200 overflow-hidden flex flex-col my-auto max-h-[95vh]">
 
         <!-- Admin Dashboard Header -->
+<button onclick="openContactDatabase()" class="p-2 text-sm">قاعدة بيانات الجهات والعملاء</button>
 <button onclick="ownerSignOut()" class="p-2 text-sm">تسجيل الخروج</button>
         <div class="bg-slate-900 text-white p-3.5 sm:p-5 flex items-center justify-between border-b border-slate-800 gap-2 flex-wrap">
           <div class="flex items-center gap-2.5">
@@ -714,7 +717,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
                 إضافة جهة جديدة إلى الدليل
               </h3>
 
-              <div class="mb-4 rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs"><p>التعديل والحذف هنا على هذا المتصفح فقط، ولا يغيران بيانات أجهزة الزوار.</p><button type="button" onclick="clearStarterRecords()" style="background:#be123c;color:#fff" class="mt-2 rounded-lg bg-rose-700 text-white px-3 py-2 font-bold">حذف كل السجلات الأولية</button></div>
+              <div class="mb-4 rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs"><p>التغييرات المحفوظة تظهر لجميع الزوار.</p><button type="button" onclick="clearStarterRecords()" style="background:#be123c;color:#fff" class="mt-2 rounded-lg bg-rose-700 text-white px-3 py-2 font-bold">حذف كل السجلات الأولية</button></div>
               <form id="itemForm" onsubmit="event.preventDefault(); saveItem();" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
                 <input type="hidden" id="itemId"><div><label class="block font-bold text-slate-700 mb-1" for="itemGovernorate">المحافظة *</label><input id="itemGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
 
@@ -936,16 +939,13 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
           <span class="text-xl">⚙️</span>
           <div>
             <h3 class="text-base font-black">إعدادات وصلاحيات النظام المتقدمة</h3>
-            <p class="text-[11px] text-slate-400">تغيير الرقم السري، تخصيص النصوص، وإدارة المناطق والمراكز</p>
+            <p class="text-[11px] text-slate-400">تخصيص نصوص الموقع وإدارة المناطق والمراكز</p>
           </div>
         </div>
         <button onclick="closeAdvancedSettingsModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center font-bold">&times;</button>
       </div>
 
       <div class="flex border-b border-slate-200 bg-slate-100 px-3 text-xs font-bold overflow-x-auto hide-scrollbar gap-1.5 py-2">
-        <button onclick="switchSettingsTab('pinTab')" id="btn-pinTab" class="settings-tab-btn active px-3 py-1.5 rounded-xl bg-white text-slate-900 shadow-sm transition shrink-0">
-          🔑 تغيير الرقم السري
-        </button>
         <button onclick="switchSettingsTab('siteTab')" id="btn-siteTab" class="settings-tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
           🎨 تخصيص نصوص الموقع
         </button>
@@ -958,35 +958,6 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       </div>
 
       <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1 text-xs bg-slate-50">
-
-        <!-- Tab 1: PIN -->
-        <div id="tab-pinTab" class="settings-tab-content space-y-3">
-          <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
-            <h4 class="font-black text-slate-800 text-sm">تعديل الرقم السري للإدارة</h4>
-            <form onsubmit="event.preventDefault(); updateSecretPin();" class="space-y-2.5">
-              <div>
-                <label class="block font-bold text-slate-700 mb-1">الرقم السري الحالي *</label>
-                <input type="password" id="currentPinInput" required placeholder="••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-bold tracking-widest text-center">
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                <div>
-                  <label class="block font-bold text-slate-700 mb-1">الرقم السري الجديد *</label>
-                  <input type="password" id="newPinInput" required placeholder="••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-bold tracking-widest text-center">
-                </div>
-                <div>
-                  <label class="block font-bold text-slate-700 mb-1">تأكيد الرقم الجديد *</label>
-                  <input type="password" id="confirmNewPinInput" required placeholder="••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-bold tracking-widest text-center">
-                </div>
-              </div>
-              <p id="changePinMsg" class="font-bold hidden"></p>
-              <div class="flex justify-end pt-1">
-                <button type="submit" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition shadow-sm">
-                  تحديث الرقم السري
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
 
         <!-- Tab 2: Site Settings -->
         <div id="tab-siteTab" class="settings-tab-content hidden space-y-3"><section class="owner-design-panel" data-owner-design-panel aria-label="اختيار تصميم الواجهة">
@@ -1246,7 +1217,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <!-- ======================================================== -->
   <!-- Footer -->
   <!-- ======================================================== -->
-  <div id="connectionStatus" role="status" class="text-center text-xs py-2"></div>
+  <div class="text-center py-4"><button onclick="openSubscriberForm()" class="bg-emerald-700 text-white rounded-xl px-6 py-3 font-bold">طلب اشتراك عميل جديد</button></div>
+<div id="connectionStatus" role="status" class="text-center text-xs py-2"></div>
   <footer class="bg-white border-t border-slate-200 py-6 mt-auto w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
       <p id="footerTitle" class="font-bold text-slate-700 break-words-all">شبكة الرعاية والخصم الطبي - جميع المحافظات</p>
@@ -1899,7 +1871,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('mExpiryDate').value = nextYear.toISOString().slice(0, 10);
     }
 
-    function saveMemberCard() {
+    async function saveMemberCard() {
       const id = document.getElementById('memberCardId').value;
       const holderName = document.getElementById('mHolderName').value.trim();
       const governorate = document.getElementById('mGovernorate').value.trim();
@@ -1931,7 +1903,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         cards.unshift(newCard);
       }
 
-      saveMemberCards(cards);
+      await saveMemberCards(cards);
       resetMemberForm();
       alert('تم حفظ وتفعيل بطاقة العضوية بنجاح!');
     }
@@ -1955,10 +1927,10 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('memberCardForm').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function deleteMemberCard(cardId) {
+    async function deleteMemberCard(cardId) {
       if (!confirm('هل أنت متأكد من حذف هذه البطاقة؟')) return;
       let cards = getMemberCards().filter(c => c.id !== cardId);
-      saveMemberCards(cards);
+      await saveMemberCards(cards);
     }
 
     function viewCardDirectly(cardId) {
@@ -2187,7 +2159,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       `;
     }
 
-    function saveItem() {
+    async function saveItem() {
       const id = document.getElementById('itemId').value;
       const category = document.getElementById('itemCategory').value;
       const name = document.getElementById('itemName').value.trim();
@@ -2225,7 +2197,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         items.unshift(newItem);
       }
 
-      saveItems(items);
+      await saveItems(items);
       resetItemForm();
       alert('تم حفظ وتحديث بيانات الجهة في الدليل بنجاح!');
     }
@@ -2257,10 +2229,10 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('itemForm').scrollIntoView({ behavior: 'smooth' });
     }
 
-    function deleteItem(id) {
+    async function deleteItem(id) {
       if (!confirm('هل أنت متأكد من حذف هذه الجهة من الدليل؟')) return;
       let items = getItems().filter(i => i.id !== id);
-      saveItems(items);
+      await saveItems(items);
     }
 
     function renderAdminTable() {
@@ -2323,14 +2295,9 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('settingHeadline').value = s.headline;
       document.getElementById('settingSubtext').value = s.subtext;
 
-      document.getElementById('currentPinInput').value = '';
-      document.getElementById('newPinInput').value = '';
-      document.getElementById('confirmNewPinInput').value = '';
-      document.getElementById('changePinMsg').classList.add('hidden');
-
       renderCentersTags();
       calculateStats();
-      switchSettingsTab('pinTab');
+      switchSettingsTab('siteTab');
       document.getElementById('settingsModal').classList.remove('hidden');
     }
 
@@ -2352,37 +2319,6 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.querySelectorAll('.settings-tab-content').forEach(content => content.classList.add('hidden'));
       const activeTab = document.getElementById(`tab-${tabId}`);
       if (activeTab) activeTab.classList.remove('hidden');
-    }
-
-    function updateSecretPin() {
-      const currentPin = document.getElementById('currentPinInput').value.trim();
-      const newPin = document.getElementById('newPinInput').value.trim();
-      const confirmNewPin = document.getElementById('confirmNewPinInput').value.trim();
-      const msg = document.getElementById('changePinMsg');
-      msg.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
-
-      if (currentPin !== getAdminPin()) {
-        msg.classList.add('text-rose-600');
-        msg.textContent = 'الرقم السري الحالي غير مطابق!';
-        return;
-      }
-      if (!newPin || newPin.length < 4) {
-        msg.classList.add('text-rose-600');
-        msg.textContent = 'يجب أن يتكون الرقم السري من 4 أرقام أو حروف على الأقل.';
-        return;
-      }
-      if (newPin !== confirmNewPin) {
-        msg.classList.add('text-rose-600');
-        msg.textContent = 'الرقم السري الجديد وتأكيده غير متطابقين!';
-        return;
-      }
-
-      setAdminPin(newPin);
-      msg.classList.add('text-emerald-600');
-      msg.textContent = 'تم تحديث الرقم السري بنجاح!';
-      document.getElementById('currentPinInput').value = '';
-      document.getElementById('newPinInput').value = '';
-      document.getElementById('confirmNewPinInput').value = '';
     }
 
     function saveSiteSettings() {
@@ -2678,6 +2614,8 @@ ${siteUrl}
     calculateSavings();
     resetMemberForm();
   </script>
-<script src="assets/request-bridge.js?v=delivery-6" defer></script>
-</body>
+<script src="assets/shared-backend-v12.js" defer></script>
+<div id="contactDatabase" class="fixed inset-0 bg-white z-50 hidden overflow-auto p-4" style="z-index:1100"><div class="max-w-6xl mx-auto"><div class="flex justify-between items-center gap-3 mb-4"><h2 class="text-xl font-bold">قاعدة بيانات الجهات والعملاء</h2><button onclick="document.getElementById('contactDatabase').classList.add('hidden')" class="bg-slate-100 rounded-xl p-3">إغلاق</button></div><p class="text-sm text-slate-600 mb-4">بيانات خاصة بالإدارة، لا تظهر لزوار التطبيق.</p><div class="flex flex-wrap gap-3 mb-4"><select id="contactDbKind" onchange="renderContactDatabase()" class="border p-3 rounded-xl"><option value="providers">الجهات الطبية</option><option value="subscribers">العملاء والمشتركون</option></select><input id="contactDbSearch" oninput="renderContactDatabase()" placeholder="بحث بالاسم أو الهاتف أو العنوان" class="border p-3 rounded-xl flex-1 min-w-0"><button onclick="exportContactCsv()" class="bg-emerald-700 text-white p-3 rounded-xl">تصدير CSV</button><span id="contactDbCount" class="p-3"></span></div><div class="overflow-auto"><table class="w-full text-sm text-right"><thead><tr><th>الاسم</th><th>الهاتف</th><th>المحافظة</th><th>العنوان</th><th>التخصص</th><th>التاريخ</th></tr></thead><tbody id="contactDbRows"></tbody></table></div></div></div>
+<div id="subscriberFormModal" class="fixed inset-0 bg-slate-900/70 hidden overflow-auto p-4" style="z-index:1100"><div class="bg-white rounded-2xl max-w-md p-5 mx-auto my-4"><h2 class="text-xl font-bold mb-4">طلب اشتراك عميل جديد</h2><form onsubmit="submitSubscriber(event)" class="space-y-3"><label class="block">الاسم<input name="name" required maxlength="150" class="border rounded-xl p-3 w-full"></label><label class="block">أفراد الأسرة، حتى 5 أسماء، اسم في كل سطر<textarea name="family" rows="3" class="border rounded-xl p-3 w-full"></textarea></label><label class="block">الهاتف<input name="phone" required type="tel" pattern="[+0-9 ()-]{8,25}" class="border rounded-xl p-3 w-full"></label><label class="block">المحافظة<input name="governorate" required maxlength="100" class="border rounded-xl p-3 w-full"></label><label class="block">العنوان، اختياري<input name="address" maxlength="350" class="border rounded-xl p-3 w-full"></label><label class="flex gap-2 items-start text-sm"><input name="consent" type="checkbox" required class="mt-1">أوافق على استخدام بياناتي للتواصل معي وإدارة خدمة رعاية طبية. البيانات خاصة بالإدارة.</label><button type="submit" class="bg-emerald-700 text-white rounded-xl p-3 w-full font-bold">إرسال طلب الاشتراك</button><button type="button" onclick="document.getElementById('subscriberFormModal').classList.add('hidden')" class="p-3 w-full">إلغاء</button></form></div></div>
+<script src="assets/language.js?v=2" defer></script></body>
 </html>
