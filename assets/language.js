@@ -4,7 +4,7 @@ const originals=new WeakMap(), attrs=new WeakMap(), hasWords=s=>/[\p{L}]/u.test(
 const resolve=(s,lang=language)=>{const key=s.trim();if(!key)return s;const pair=published[key];let value=pair&&typeof pair[lang]==='string'?pair[lang]:(lang==='en'?(dictionary[key]||key):key);if(value===key&&lang==='en'){
  if(/^\d+ طلب جديد$/.test(key))value=key.replace(/ طلب جديد$/,' new applications');
  else {for(const k of Object.keys(dictionary).sort((a,b)=>b.length-a.length)){if(!value.includes(k))continue;const esc=k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');value=value.replace(new RegExp('(?<![\\p{L}])'+esc+'(?![\\p{L}])','gu'),()=>published[k]?.en??dictionary[k]);}}
- }return s.replace(key,value);};
+ }if(lang==='ar'&&!pair){for(const [from,p] of Object.entries(published)){if(!from||!value.includes(from))continue;const esc=from.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');value=value.replace(new RegExp('(?<![\\p{L}])'+esc+'(?![\\p{L}])','gu'),()=>p.ar??from);}}return s.replace(key,value);};
 function excluded(el){return !el||el.closest('script,style,textarea,#contentEditor,[data-no-translate]');}
 function apply(){if(busy||!document.body)return;busy=true;observer.disconnect();document.documentElement.lang=language;document.documentElement.dir=language==='en'?'ltr':'rtl';
 for(const id of ['heroHeadline','heroSubtext','secretSiteTitleTrigger','footerTitle']){const el=document.getElementById(id);if(!el)continue;if(!el.dataset.copySource)el.dataset.copySource=el.textContent.trim();const key=el.dataset.copySource;if(published[key]){const v=published[key][language]??key;if(el.textContent!==v)el.textContent=v;const text=el.firstChild;if(text?.nodeType===3)originals.set(text,{source:key,last:v});}}
@@ -26,5 +26,5 @@ host.prepend(panel);document.getElementById('contentEditorSearch').oninput=()=>{
 const legacy=document.getElementById('settingSiteName')?.closest('form')?.parentElement;if(legacy)legacy.hidden=true;
 renderRows();}
 window.addEventListener('raaya-content-update',e=>{published=structuredClone(e.detail||{});if(!dirty){overrides=structuredClone(e.detail||{});renderRows();}apply();if(!saving)status(dirty?'وصل تحديث منشور. تغييراتك الحالية لم تُنشر بعد.':'متصل. النصوص المنشورة تظهر لكل الزوار.');});
-Promise.all([fetch('assets/translations-en.json?v=4').then(r=>r.json()),fetch('assets/text-catalog.json?v=1').then(r=>r.json())]).then(([d,c])=>{dictionary=d;catalog=c;mount();if(window.raayaContentStore?.current){overrides=structuredClone(window.raayaContentStore.current);published=structuredClone(overrides);}renderRows();apply();}).catch(()=>{apply();status('تعذر تحميل مكتبة النصوص. أعد فتح الصفحة.');});
+Promise.all([fetch('assets/translations-en.json?v=4').then(r=>r.json()),fetch('assets/text-catalog.json?v=2').then(r=>r.json())]).then(([d,c])=>{dictionary=d;catalog=c;mount();if(window.raayaContentStore?.current){overrides=structuredClone(window.raayaContentStore.current);published=structuredClone(overrides);}renderRows();apply();}).catch(()=>{apply();status('تعذر تحميل مكتبة النصوص. أعد فتح الصفحة.');});
 })();
