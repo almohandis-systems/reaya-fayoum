@@ -7,6 +7,8 @@
   <meta name="theme-color" content="#047857">
   <meta name="description" content="شبكة ودليل الرعاية والخصم الطبي بجميع المحافظات - بطاقات العضوية الرقمية وخصومات العيادات والمعامل">
   <title>رعاية طبية - دليل الخدمات الطبية</title>
+  <link rel="icon" type="image/png" href="assets/raaya-icon-192.png">
+  <link rel="apple-touch-icon" href="assets/raaya-icon-192.png">
   <link rel="manifest" href="manifest.json">
 <script>
   if ('serviceWorker' in navigator) {
@@ -101,11 +103,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
       <!-- Brand & Secret Trigger (5 clicks on "رعاية طبية") -->
       <div class="flex items-center space-x-2.5 space-x-reverse select-none" style="min-width:0;max-width:100%">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white font-black text-lg sm:text-xl shadow-md shrink-0">
-          <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"></path>
-          </svg>
-        </div>
+        <img src="assets/raaya-tibbiya-logo.png" alt="شعار رعاية طبية" width="96" height="75" style="width:96px;height:75px;object-fit:contain;flex-shrink:0" fetchpriority="high">
         <div style="min-width:0">
           <div class="flex items-center gap-1.5 flex-wrap">
             <span id="secretSiteTitleTrigger" class="text-lg sm:text-xl font-black text-slate-900 tracking-tight cursor-pointer hover:text-brand-700 transition-colors" title="شبكة رعاية طبية">
@@ -169,7 +167,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <!-- Hero Section -->
   <!-- ======================================================== -->
   <section id="reaya-cinematic-hero" class="bg-gradient-to-b from-teal-800 via-brand-900 to-slate-900 text-white py-8 sm:py-12 px-4 w-full">
-    <div class="reaya-hero-grid max-w-7xl mx-auto"><div class="reaya-hero-copy space-y-4"><p class="reaya-eyebrow">رعاية طبية · الدليل الطبي</p>
+    <div class="reaya-hero-grid max-w-7xl mx-auto"><div class="reaya-hero-copy space-y-4"><img src="assets/raaya-tibbiya-logo.png" alt="رعاية طبية، بطاقة العضوية والخدمات الطبية" width="1260" height="980" style="display:block;width:min(100%,320px);height:auto;max-height:250px;object-fit:contain;margin:0 auto 16px" fetchpriority="high"><p class="reaya-eyebrow">رعاية طبية · الدليل الطبي</p>
       <span id="heroBadge" class="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-teal-100 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full break-words-all">
         خدمة مجتمعية لأهالي جميع المحافظات
       </span>
