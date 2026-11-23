@@ -1782,40 +1782,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('joinModal').classList.add('hidden');
     }
 
-    function submitJoinRequest() {
-      const category = document.getElementById('joinCategory').value;
-      const name = document.getElementById('joinName').value.trim();
-      const specialty = document.getElementById('joinSpecialty').value.trim();
-      const center = document.getElementById('joinCenter').value;
-      const governorate = document.getElementById('joinGovernorate').value.trim();
-      const phone = document.getElementById('joinPhone').value.trim();
-      const discount = document.getElementById('joinDiscount').value.trim();
-      const address = document.getElementById('joinAddress').value.trim();
-      const schedule = document.getElementById('joinSchedule').value.trim();
-      const mapUrl = document.getElementById('joinMapUrl').value.trim();
-      const notes = document.getElementById('joinNotes').value.trim();
-
-      const newReq = {
-        id: 'req-' + Date.now(),
-        category,
-        name,
-        specialty,
-        center, governorate,
-        phone,
-        discount,
-        address,
-        schedule,
-        mapUrl,
-        notes
-      };
-
-      const requests = getJoinRequests();
-      requests.unshift(newReq);
-      saveJoinRequests(requests);
-
-      closeJoinModal();
-      alert('شكراً لك! تم حفظ طلب انضمامك على هذا الجهاز فقط. الإرسال للإدارة والمزامنة لم يتم تفعيلهما بعد.');
-    }
+    function submitJoinRequest() { alert('الاتصال بالإدارة لم يجهز بعد. تحقق من الإنترنت وحاول مجدداً، أو استخدم تواصل معنا أسفل الصفحة.'); }
 
     function approveJoinRequest(reqId) {
       let requests = getJoinRequests();
@@ -2696,6 +2663,6 @@ ${siteUrl}
     calculateSavings();
     resetMemberForm();
   </script>
-<script src="assets/request-bridge.js?v=delivery-1" defer></script>
+<script src="assets/request-bridge.js?v=delivery-2" defer></script>
 </body>
 </html>
