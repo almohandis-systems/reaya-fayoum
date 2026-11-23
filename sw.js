@@ -1,4 +1,4 @@
-const BRAND_VERSION = 'raaya-brand-20261123-2';
+const BRAND_VERSION = 'raaya-delivery-20261123-6';
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', event => {

@@ -16,7 +16,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js?v=brand-20261123-2', {updateViaCache: 'none'});
+      navigator.serviceWorker.register('sw.js?v=delivery-6', {updateViaCache: 'none'});
     });
   }
 </script>
@@ -1676,7 +1676,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       document.getElementById('modalProviderAddress').textContent = `${item.governorate || 'غير محددة'} / ${item.center}: ${item.address}`;
       document.getElementById('modalProviderSchedule').textContent = item.schedule || 'المواعيد: متوفر حسب الحجز المسبق';
       document.getElementById('modalProviderNotes').textContent = item.notes || 'الخصم متاح لحاملي بطاقة رعاية طبية على الكشوفات والفحوصات.';
-      document.getElementById('modalProviderPhone').textContent = item.phone;
+      document.getElementById('modalProviderPhone').textContent = 'تواصل معنا';
 
       // Phone link
       const cleanPhone = item.phone.replace(/[^0-9]/g, '');
@@ -2134,8 +2134,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
             <!-- Action Bar (Buttons stop propagation so user can directly call/whatsapp or click card for full view) -->
             <div class="bg-slate-50 px-4 py-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap">
               <div class="text-xs">
-                <span class="text-slate-400 block text-[9px] font-bold">رقم الحجز</span>
-                <span class="font-bold text-slate-800 font-mono text-[11px]" dir="ltr">${item.phone}</span>
+                
+                <a href="${unavailableContact ? '#' : ('https://wa.me/'+waPhone)}" onclick="event.stopPropagation();${unavailableContact ? 'return false;' : ''}" target="_blank" rel="noopener noreferrer" class="inline-block px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold">تواصل معنا</a>
               </div>
 
               <div class="flex items-center gap-1.5 shrink-0" onclick="event.stopPropagation();">
@@ -2678,6 +2678,6 @@ ${siteUrl}
     calculateSavings();
     resetMemberForm();
   </script>
-<script src="assets/request-bridge.js?v=delivery-5" defer></script>
+<script src="assets/request-bridge.js?v=delivery-6" defer></script>
 </body>
 </html>
