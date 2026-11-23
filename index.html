@@ -627,23 +627,9 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         </svg>
       </div>
       <h3 class="text-lg font-bold text-center text-slate-800 mb-1">التحقق من هوية المسؤول</h3>
-      <p class="text-xs text-center text-slate-500 mb-4">أدخل الرقم السري للوصول إلى لوحة التحكم الشاملة</p>
+      <p class="text-xs text-center text-slate-500 mb-4">الدخول متاح لحساب Google المصرح به فقط</p>
 
-      <form id="pinForm" onsubmit="event.preventDefault(); verifyPin();">
-        <div class="mb-4">
-          <input type="password" id="adminPinInput" maxlength="10" placeholder="••••"
-                 class="w-full text-center tracking-widest text-2xl font-bold py-2.5 px-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500">
-          <p id="pinError" class="text-xs text-rose-500 mt-1.5 text-center hidden font-semibold">الرقم السري غير صحيح!</p>
-        </div>
-        <div class="flex gap-2">
-          <button type="submit" class="flex-1 bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition">
-            دخول
-          </button>
-          <button type="button" onclick="closePinModal()" class="px-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-2.5 rounded-xl text-sm transition">
-            إلغاء
-          </button>
-        </div>
-      </form>
+<button onclick="verifyPin()" class="w-full bg-brand-600 text-white p-3 rounded-xl">الدخول باستخدام Google</button><button onclick="closePinModal()" class="w-full p-3">إلغاء</button>
     </div>
   </div>
 
@@ -655,6 +641,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       <div class="bg-white rounded-3xl shadow-2xl max-w-6xl w-full border border-slate-200 overflow-hidden flex flex-col my-auto max-h-[95vh]">
 
         <!-- Admin Dashboard Header -->
+<button onclick="ownerSignOut()" class="p-2 text-sm">تسجيل الخروج</button>
         <div class="bg-slate-900 text-white p-3.5 sm:p-5 flex items-center justify-between border-b border-slate-800 gap-2 flex-wrap">
           <div class="flex items-center gap-2.5">
             <button id="gearSettingsBtn" onclick="openAdvancedSettingsModal()"
@@ -1244,6 +1231,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <!-- ======================================================== -->
   <!-- Footer -->
   <!-- ======================================================== -->
+  <div id="connectionStatus" role="status" class="text-center text-xs py-2"></div>
   <footer class="bg-white border-t border-slate-200 py-6 mt-auto w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
       <p id="footerTitle" class="font-bold text-slate-700 break-words-all">شبكة الرعاية والخصم الطبي - جميع المحافظات</p>
@@ -1251,6 +1239,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-100">
         جميع الحقوق محفوظة &copy; <span id="currentYear"></span>
       </p>
+<div class="pt-3 border-t border-slate-100"><strong dir="ltr" class="block">ALMOHANDIS SYSTEMS</strong><div class="flex justify-center gap-4 mt-2"><a href="https://wa.me/201013376681" target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-700">تواصل معنا</a><a href="mailto:almohandissystems@gmail.com">البريد الإلكتروني</a></div></div>
     </div>
   </footer>
 
@@ -1706,7 +1695,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     // -------------------------------------------------------------
     let clickCount = 0;
     let clickResetTimer = null;
-    const titleTrigger = document.getElementById('secretSiteTitleTrigger');
+    const titleTrigger = document.querySelector('header img');
 
     titleTrigger.addEventListener('click', () => {
       clickCount++;
@@ -1719,28 +1708,9 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
       }
     });
 
-    function openPinModal() {
-      document.getElementById('adminPinInput').value = '';
-      document.getElementById('pinError').classList.add('hidden');
-      document.getElementById('pinModal').classList.remove('hidden');
-      setTimeout(() => document.getElementById('adminPinInput').focus(), 150);
-    }
-    function closePinModal() {
-      document.getElementById('pinModal').classList.add('hidden');
-    }
-
-    function verifyPin() {
-      const enteredPin = document.getElementById('adminPinInput').value.trim();
-      if (enteredPin === getAdminPin()) {
-        closePinModal();
-        openAdminDashboard();
-      } else {
-        document.getElementById('pinError').classList.remove('hidden');
-        document.getElementById('adminPinInput').value = '';
-        document.getElementById('adminPinInput').focus();
-      }
-    }
-
+    function openPinModal() { document.getElementById('pinModal').classList.remove('hidden'); }
+    function closePinModal() { document.getElementById('pinModal').classList.add('hidden'); }
+    function verifyPin() { alert('جارٍ تحميل الاتصال'); }
     function openAdminDashboard() {
       document.getElementById('adminDashboard').classList.remove('hidden');
       resetItemForm();
@@ -2726,5 +2696,6 @@ ${siteUrl}
     calculateSavings();
     resetMemberForm();
   </script>
+<script src="assets/request-bridge.js?v=delivery-1" defer></script>
 </body>
 </html>
