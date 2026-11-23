@@ -7,7 +7,7 @@ const OWNER_UID='CWo2ULEH4oZviK7VXgrFP9e45Sz1';
 let providers=[],members=[],requests=[],owner=false,ready=false,stops=[];
 const clone=x=>JSON.parse(JSON.stringify(x));
 const safe=x=>typeof x==='string'?!/[<>"'`\\&]/.test(x)&&x.length<=2000:Array.isArray(x)?x.every(safe):x&&typeof x==='object'?Object.values(x).every(safe):true;
-const fail=e=>{console.error(e.code||e.message);alert('تعذر إتمام العملية. تحقق من الاتصال والصلاحيات وحاول مجدداً.');};
+const fail=e=>{console.error(e.code||e.message);alert((e.code?'['+e.code+'] ':'')+'تعذر إتمام العملية. تحقق من الاتصال والصلاحيات وحاول مجدداً.');};
 function refresh(){populateCentersSelectors();updateCategoryCounts();renderCards();if(owner){renderAdminTable();renderMembersTable();renderRequestsTable();calculateStats();}}
 function watch(name,assign,q){return onSnapshot(q||collection(db,name),s=>{assign(s.docs.map(d=>({...d.data(),id:d.id})));refresh();},fail);}
 window.getItems=()=>clone(providers);
@@ -18,7 +18,7 @@ window.saveItems=async rows=>{await persist('providers',providers,rows);};
 window.saveMemberCards=async rows=>{await persist('members',members,rows);};
 window.saveJoinRequests=async rows=>{await persist('requests',requests,rows);};
 window.openPinModal=()=>{if(owner)return openAdminDashboard();document.getElementById('pinModal').classList.remove('hidden');};
-window.verifyPin=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvider());}catch(e){fail(e);}};
+window.verifyPin=async()=>{if(window.matchMedia&&matchMedia('(display-mode: standalone)').matches||navigator.standalone){alert('تسجيل الدخول داخل التطبيق غير مدعوم على هذا الجهاز. سيتم فتح كروم لتسجيل دخول المالك، ثم افتح لوحة المالك من نفس الصفحة في كروم.');const u=location.origin+location.pathname.replace(/[^\/]*$/,'')+'owner-login.html';location.href=/Android/i.test(navigator.userAgent)?'intent://'+u.replace(/^https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;end':u;return;}try{await signInWithPopup(auth,new GoogleAuthProvider());}catch(e){fail(e);}};
 const oldOpen=window.openAdminDashboard;window.openAdminDashboard=()=>{if(owner)oldOpen();else openPinModal();};
 window.ownerSignOut=async()=>{await signOut(auth);closeAdminDashboard();};
 window.submitJoinRequest=async()=>{const b=document.querySelector('#joinForm button[type=submit]');if(b)b.disabled=true;try{const fields={category:'joinCategory',name:'joinName',specialty:'joinSpecialty',center:'joinCenter',governorate:'joinGovernorate',phone:'joinPhone',discount:'joinDiscount',address:'joinAddress',schedule:'joinSchedule',mapUrl:'joinMapUrl',notes:'joinNotes'},row={};for(const[k,v]of Object.entries(fields))row[k]=document.getElementById(v).value.trim();if(!safe(row)||!row.name||!row.phone)throw Error('invalid-input');const key=localStorage.getItem('raaya.request.key')||crypto.randomUUID();localStorage.setItem('raaya.request.key',key);await setDoc(doc(db,'requests',key),{...row,id:key,status:'pending',createdAt:serverTimestamp()});localStorage.removeItem('raaya.request.key');closeJoinModal();alert('تم إرسال طلبك للإدارة للمراجعة بنجاح.');}catch(e){fail(e);}finally{if(b)b.disabled=false;}};
