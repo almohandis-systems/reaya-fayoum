@@ -4,16 +4,19 @@
 <link rel="preload" as="image" href="assets/medical-interior.webp">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="رعاية طبية">
+  <meta name="apple-mobile-web-app-title" content="رعاية طبية">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#047857">
   <meta name="description" content="شبكة ودليل الرعاية والخصم الطبي بجميع المحافظات - بطاقات العضوية الرقمية وخصومات العيادات والمعامل">
   <title>رعاية طبية - دليل الخدمات الطبية</title>
-  <link rel="icon" type="image/png" href="assets/raaya-icon-192.png">
-  <link rel="apple-touch-icon" href="assets/raaya-icon-192.png">
-  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/raaya-icon-192.png?v=brand-20261123-2">
+  <link rel="apple-touch-icon" href="assets/raaya-icon-192.png?v=brand-20261123-2">
+  <link rel="manifest" href="manifest.json?v=brand-20261123-2">
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.register('sw.js?v=brand-20261123-2', {updateViaCache: 'none'});
     });
   }
 </script>

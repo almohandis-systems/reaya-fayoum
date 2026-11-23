@@ -1,13 +1,7 @@
-self.addEventListener('install', (e) => {
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', (e) => {
-  return self.clients.claim();
-});
-
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    fetch(e.request).catch(() => caches.match(e.request))
-  );
+const BRAND_VERSION = 'raaya-brand-20261123-2';
+self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
+self.addEventListener('fetch', event => {
+  // Always ask the network for current branding; do not create a stale asset cache.
+  event.respondWith(fetch(event.request, {cache: 'no-cache'}).catch(() => caches.match(event.request)));
 });
