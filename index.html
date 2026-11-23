@@ -1849,7 +1849,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         discount: req.discount,
         schedule: req.schedule,
         mapUrl: req.mapUrl || '',
-        notes: req.notes || ''
+        notes: req.notes || '',
+        ...(req.seedRecord ? { seedRecord: true } : {})
       };
       items.unshift(newItem);
       saveItems(items);
