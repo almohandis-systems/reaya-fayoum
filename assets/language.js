@@ -26,5 +26,5 @@ host.prepend(panel);document.getElementById('contentEditorSearch').oninput=()=>{
 const legacy=document.getElementById('settingSiteName')?.closest('form')?.parentElement;if(legacy)legacy.hidden=true;
 renderRows();}
 window.addEventListener('raaya-content-update',e=>{published=structuredClone(e.detail||{});if(!dirty){overrides=structuredClone(e.detail||{});renderRows();}apply();if(!saving)status(dirty?'وصل تحديث منشور. تغييراتك الحالية لم تُنشر بعد.':'متصل. النصوص المنشورة تظهر لكل الزوار.');});
-Promise.all([fetch('assets/translations-en.json?v=4').then(r=>r.json()),fetch('assets/text-catalog.json?v=3').then(r=>r.json())]).then(([d,c])=>{dictionary=d;catalog=c;mount();if(window.raayaContentStore?.current){overrides=structuredClone(window.raayaContentStore.current);published=structuredClone(overrides);}renderRows();apply();}).catch(()=>{apply();status('تعذر تحميل مكتبة النصوص. أعد فتح الصفحة.');});
+Promise.all([fetch('assets/translations-en.json?v=5').then(r=>r.json()),fetch('assets/text-catalog.json?v=4').then(r=>r.json())]).then(([d,c])=>{dictionary=d;catalog=c;mount();if(window.raayaContentStore?.current){overrides=structuredClone(window.raayaContentStore.current);published=structuredClone(overrides);}renderRows();apply();}).catch(()=>{apply();status('تعذر تحميل مكتبة النصوص. أعد فتح الصفحة.');});
 })();

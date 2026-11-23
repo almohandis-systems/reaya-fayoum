@@ -1,0 +1,26 @@
+/* Scoped family-request presentation. No global design changes. */
+#subscriberFormModal{background:rgba(15,23,42,.78);padding:14px!important;overscroll-behavior:contain;font-size:16px;line-height:1.65;color:#142b3b}
+#subscriberFormModal .subscriber-sheet{box-sizing:border-box;background:#fff;max-width:500px;width:100%;margin:10px auto 24px;border:1px solid #dbe5e9;border-radius:22px;padding:24px 20px;box-shadow:0 24px 70px #0004}
+#subscriberFormModal .subscriber-heading{display:block;background:none;padding:0 0 17px;margin:0 0 12px;border:0;border-bottom:1px solid #e2e8ee;box-shadow:none;text-align:start;position:static;min-height:0}
+#subscriberFormModal h2{margin:0;color:#143d3b;font-size:23px;line-height:1.5;font-weight:850;letter-spacing:0}
+#subscriberFormModal .subscriber-existing{display:block;background:#f0f7f5;color:#185748;border:1px solid #d3e7e0;border-radius:11px;width:100%;min-height:46px;padding:10px 12px;font-size:14px;font-weight:700;text-align:center;margin-bottom:22px}
+#subscriberFormModal .subscriber-fields{display:flex;flex-direction:column;gap:21px}
+#subscriberFormModal .subscriber-field{border:0;padding:0;margin:0;min-width:0}
+#subscriberFormModal .subscriber-field>label,#subscriberFormModal legend{display:flex;align-items:center;gap:10px;margin:0 0 10px;padding:0;font-weight:800;font-size:16px;color:#203d49;width:100%;float:none}
+#subscriberFormModal .field-number{display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px;height:28px;border-radius:8px;background:#edf4f2;color:#256654;font-size:13px;font-weight:800;direction:ltr;font-variant-numeric:tabular-nums}
+#subscriberFormModal input:not([type=checkbox]){box-sizing:border-box;display:block;width:100%;min-width:0;height:51px;margin:0;border:1.5px solid #b8c9ce;border-radius:11px;background:#fff;color:#132f3a;padding:11px 13px;font-family:inherit;font-size:16px;font-weight:650;line-height:1.6;box-shadow:0 1px 2px #193e4310}
+#subscriberFormModal input::placeholder{color:#647983;opacity:1;font-weight:600}
+#subscriberFormModal input:focus{outline:3px solid #d4e9e1;outline-offset:1px;border-color:#247b60}
+#subscriberFormModal .subscriber-member-list{display:flex;flex-direction:column;gap:10px;padding:13px;background:#f5f8f9;border:1px solid #dce6e9;border-radius:14px;clear:both}
+#subscriberFormModal .subscriber-member{display:flex;gap:10px;align-items:center;margin:0;min-width:0}
+#subscriberFormModal .member-number{display:flex;align-items:center;justify-content:center;flex:0 0 27px;height:27px;background:#fff;color:#345c65;border:1px solid #cfdee2;border-radius:50%;font-size:14px;font-weight:800;direction:ltr}
+#subscriberFormModal .subscriber-consent{display:flex;align-items:flex-start;gap:11px;font-size:14px;line-height:1.9;font-weight:650;color:#38505b;border-top:1px solid #e2e8ee;padding-top:19px}
+#subscriberFormModal .subscriber-consent input{flex:0 0 20px;width:20px;height:20px;margin-top:4px;accent-color:#12684c}
+#subscriberFormModal .subscriber-actions{display:flex;flex-direction:column;gap:8px}
+#subscriberFormModal .subscriber-actions button{min-height:50px;border-radius:12px;font-size:16px;font-weight:800;padding:12px;border:1px solid #d5e0e5;background:#f3f6f8;color:#284957}
+#subscriberFormModal .subscriber-actions button[type=submit]{background:#12684c;color:#fff;border-color:#12684c;box-shadow:0 5px 14px #12684c22}
+#subscriberFormModal button:focus-visible{outline:3px solid #73bda4;outline-offset:3px}
+#subscriberFormModal button:disabled{opacity:.6;cursor:wait}
+@media(max-width:360px){#subscriberFormModal{padding:8px!important}#subscriberFormModal .subscriber-sheet{padding:20px 15px}#subscriberFormModal h2{font-size:21px}}
+#subscriberFormModal .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#subscriberFormModal{overflow-y:auto!important;overflow-x:hidden!important;inset:0}
