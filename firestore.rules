@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner() { return request.auth != null && request.auth.uid == 'CWo2ULEH4oZviK7VXgrFP9e45Sz1' && request.auth.token.email_verified == true; }
+    function text(v,n) { return v is string && v.size() <= n && !v.matches('.*[<>"\'`\\\\&].*'); }
+    function validRequest(r) {
+      return r.keys().hasOnly(['id','category','name','specialty','center','governorate','phone','discount','address','schedule','mapUrl','notes','status','createdAt'])
+        && r.keys().hasAll(['id','category','name','specialty','center','governorate','phone','discount','address','schedule','mapUrl','notes','status','createdAt'])
+        && r.category in ['doctor','pharmacy','lab','radiology','hospital','center']
+        && text(r.id,60) && r.name.size()>1 && text(r.name,150)
+        && text(r.specialty,250) && text(r.center,100) && text(r.governorate,100)
+        && text(r.phone,25) && r.phone.matches('[+0-9 ()-]{8,25}')
+        && text(r.discount,30) && text(r.address,350) && text(r.schedule,250)
+        && text(r.notes,1000) && text(r.mapUrl,500)
+        && (r.mapUrl == '' || r.mapUrl.matches('https://.*'))
+        && r.status == 'pending' && r.createdAt == request.time;
+    }
+    match /providers/{id} {
+      allow get,list: if resource.data.approved == true || owner();
+      allow create,update,delete: if owner();
+    }
+    match /members/{id} { allow read,write: if owner(); }
+    match /requests/{id} {
+      allow read,update,delete: if owner();
+      allow create: if owner() || (validRequest(request.resource.data) && request.resource.data.id == id);
+    }
+    match /{document=**} { allow read,write: if false; }
+  }
+}

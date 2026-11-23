@@ -1,0 +1,2660 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<link rel="preload" as="image" href="assets/medical-interior.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="رعاية طبية">
+  <meta name="apple-mobile-web-app-title" content="رعاية طبية">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#047857">
+  <meta name="description" content="شبكة ودليل الرعاية والخصم الطبي بجميع المحافظات - بطاقات العضوية الرقمية وخصومات العيادات والمعامل">
+  <title>رعاية طبية - دليل الخدمات الطبية</title>
+  <link rel="icon" type="image/png" href="assets/raaya-icon-192.png?v=brand-20261123-2">
+  <link rel="apple-touch-icon" href="assets/raaya-icon-192.png?v=brand-20261123-2">
+  <link rel="manifest" href="manifest.json?v=brand-20261123-2">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js?v=brand-20261123-2', {updateViaCache: 'none'});
+    });
+  }
+</script>
+
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+<link rel="stylesheet" href="assets/app.css">
+<script src="assets/qrcode.js"></script><script src="assets/qrcode_UTF8.js"></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+    .break-words-all {
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      white-space: normal !important;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .card-gradient {
+      background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #0f766e 100%);
+    }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printableCardArea, #printableCardArea *, #printablePosterArea, #printablePosterArea * {
+        visibility: visible;
+      }
+      #printableCardArea, #printablePosterArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+  </style>
+
+<style id="reaya-cinema-v2">
+:root{--reaya-ink:#102a2b;--reaya-gold:#b7975b;--reaya-green:#075e53}
+html{scroll-behavior:smooth}body{background:#f4f7f5;color:var(--reaya-ink)}
+body>header{border-bottom:1px solid #d7e5df;background:rgba(255,255,255,.96);backdrop-filter:blur(16px)}
+button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[role=button]{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}button:active,a[role=button]:active{transform:translateY(2px) scale(.98)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b7975b;outline-offset:3px}
+#reaya-cinematic-hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 10%,#146555 0%,#062f34 55%,#051d26 100%);padding:clamp(32px,6vw,80px) clamp(16px,4vw,48px) 64px;border-bottom:1px solid #b7975b}
+.reaya-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;max-width:1220px}.reaya-hero-copy{text-align:start;position:relative;z-index:1}.reaya-eyebrow{font-size:14.5px;letter-spacing:.1em;color:#d0bb8b;font-weight:800;margin-bottom:24px}#heroHeadline{font-size:clamp(30px,3.4vw,48px);line-height:1.5;max-width:680px;text-wrap:balance}#heroSubtext{line-height:1.9;color:#d8e8e3}#heroBadge{border-color:#b7975b66;background:#ffffff0c;color:#d7c59d}
+.reaya-hero-photo{position:relative;aspect-ratio:4/3;border-radius:90px 28px 28px 28px;overflow:hidden;box-shadow:0 32px 80px #0005;border:1px solid #f5e8c94d;transform:perspective(1300px) rotateY(5deg)}.reaya-hero-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#001e28aa,transparent 55%);pointer-events:none}.reaya-hero-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(.8)}.reaya-hero-photo figcaption{position:absolute;z-index:1;bottom:16px;inset-inline:20px;font-size:13px;color:#fff;line-height:1.8}
+#searchInput{min-height:56px;box-shadow:0 12px 30px #001c2333;border:1px solid #cfdfd8;border-radius:16px}#cardsGrid>div{border:1px solid #d9e5de;border-radius:24px;box-shadow:0 8px 26px #13392d09;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}#cardsGrid>div:hover{transform:translateY(-5px);border-color:#b7975b;box-shadow:0 20px 38px #16372f12}#cardsGrid>div:before{content:'';height:5px;display:block;background:linear-gradient(90deg,#075e53,#b7975b);flex-shrink:0}
+.reaya-estimate-note{font-size:14px;line-height:1.9;color:#526f67;max-width:1160px;margin:14px auto 0;padding-inline:20px}#bottomInstallBanner{position:relative!important;inset:auto!important;max-width:1200px!important;margin:24px auto!important;width:calc(100% - 32px);box-sizing:border-box;flex-wrap:wrap;border-color:#b7975b55}#cardQrCode{width:160px!important;height:160px!important;max-width:100%}#cardQrCode svg{width:100%;height:auto}#portfolio-share-bar{border-bottom:1px solid #e2e8e3;background:#f8faf9!important}#portfolio-share-app{border-color:#c9b582!important;box-shadow:0 4px 12px #122c2410}
+@media(max-width:767px){.reaya-hero-grid{grid-template-columns:1fr;gap:26px}.reaya-hero-photo{aspect-ratio:16/9;max-height:240px;border-radius:44px 18px 18px 18px;transform:none}.reaya-hero-copy{text-align:start}#reaya-cinematic-hero{padding-top:32px;padding-bottom:64px}#heroHeadline{font-size:32px}#heroBadge{font-size:13px}.reaya-eyebrow{margin-bottom:16px}body>header>div{gap:12px}#cardsGrid>div:hover{transform:none}#bottomInstallBanner>div:first-child{min-width:200px}}
+@media(hover:hover){#portfolio-share-app:hover{transform:translateY(-2px);box-shadow:0 8px 20px #10372a20}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
+@media print{.reaya-hero-photo,#portfolio-share-bar,.reaya-estimate-note{display:none!important}}
+
+/* category chips: readable + 3D active state */
+#categoryFilters{padding:14px 6px 12px;overflow-y:visible}
+#categoryFilters .cat-btn{position:relative;transition:transform .25s cubic-bezier(.2,.9,.3,1.4),box-shadow .25s,background .2s;font-size:14px!important;color:#0f3d33!important;background:#eef3f1!important;border:1px solid #cfdcd7}
+#categoryFilters .cat-btn .cat-ic{display:inline-block;transition:transform .25s cubic-bezier(.2,.9,.3,1.4),filter .25s}
+#categoryFilters .cat-btn.active{background:linear-gradient(160deg,#fff3c4 0%,#f5c542 55%,#d9962b 100%)!important;color:#1a1200!important;border-color:#b8791a;font-weight:900;transform:perspective(500px) translateY(-6px) scale(1.14) rotateX(8deg);box-shadow:0 10px 18px #0004,0 2px 0 #fff9 inset,0 -3px 0 #a96a12 inset;z-index:2;text-shadow:0 1px 0 #fff8}
+#categoryFilters .cat-btn.active .cat-ic{transform:translateY(-3px) scale(1.55);filter:drop-shadow(0 5px 3px #0006)}
+</style>
+<link rel="stylesheet" href="assets/owner-designs.css"><script src="assets/owner-designs.js"></script></head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+  <!-- ======================================================== -->
+  <!-- Top Bar / Header (Responsive, no overflow) -->
+  <!-- ======================================================== -->
+  <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-30 w-full">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2.5">
+
+      <!-- Brand & Secret Trigger (5 clicks on "رعاية طبية") -->
+      <div class="flex items-center space-x-2.5 space-x-reverse select-none" style="min-width:0;max-width:100%">
+        <img src="assets/raaya-tibbiya-logo.png" alt="شعار رعاية طبية" width="96" height="75" style="width:96px;height:75px;object-fit:contain;flex-shrink:0" fetchpriority="high">
+        <div style="min-width:0">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span id="secretSiteTitleTrigger" class="text-lg sm:text-xl font-black text-slate-900 tracking-tight cursor-pointer hover:text-brand-700 transition-colors" title="شبكة رعاية طبية">
+              رعاية طبية
+            </span>
+            <span class="bg-brand-100 text-brand-700 text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold">دليل الخصومات</span>
+          </div>
+          <p id="headerSubtext" style="white-space:normal;overflow-wrap:anywhere;max-width:100%" class="text-[10px] sm:text-xs text-slate-500 break-words-all">دليلك المعتمد لخصومات العيادات والمعامل والمراكز بجميع المحافظات</p>
+        </div>
+      </div>
+
+      <!-- Header Action Buttons (Digital Card, Join Us, Install) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-end">
+        <!-- PWA Install Button -->
+        <button id="pwaInstallBtn" onclick="installPWA()" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl text-xs font-bold transition">
+          <span>📲</span>
+          <span>تثبيت</span>
+        </button>
+
+        <!-- Digital Membership Card Button -->
+        <button id="openCardHeaderBtn" onclick="openMemberCardModal()" class="inline-flex items-center gap-1 px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-black shadow-sm transition">
+          <span>💳</span>
+          <span>بطاقتي الرقمية</span>
+        </button>
+
+        <!-- Doctor Join Us Button -->
+        <button onclick="openJoinModal()" class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+          <span>🩺</span>
+          <span>انضم كجهة</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+<!-- App-link sharing. No referral credit, account state, or customer data. -->
+<div id="portfolio-share-bar" dir="rtl" style="box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:6px 12px;background:#f8fafc;color:#0f172a;font:600 12px/1.5 sans-serif;flex-shrink:0;position:relative;z-index:20">
+<button id="portfolio-share-app" type="button" style="min-height:44px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;cursor:pointer">مشاركة التطبيق ↗</button>
+<span id="portfolio-share-status" role="status" aria-live="polite" style="max-width:100%;overflow-wrap:anywhere"></span>
+<input id="portfolio-share-url" aria-label="رابط التطبيق للنسخ اليدوي" readonly hidden style="width:100%;max-width:430px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;color:#0f172a;background:#fff;direction:ltr">
+</div>
+<script>
+(function(){
+ const button=document.getElementById('portfolio-share-app');
+ const status=document.getElementById('portfolio-share-status');
+ const fallback=document.getElementById('portfolio-share-url');
+ const appUrl="https://almohandis-systems.github.io/reaya-fayoum/";
+ button.addEventListener('click',async function(){
+  status.textContent='';fallback.hidden=true;
+  if(navigator.share){
+   try{await navigator.share({title:document.title,url:appUrl});status.textContent='تمت المشاركة';return;}
+   catch(error){if(error&&error.name==='AbortError')return;}
+  }
+  try{if(!navigator.clipboard)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(appUrl);status.textContent='تم نسخ رابط التطبيق';}
+  catch(error){fallback.value=appUrl;fallback.hidden=false;fallback.focus();fallback.select();status.textContent='انسخ الرابط الظاهر وشاركه بنفسك';}
+ });
+})();
+</script>
+
+
+  <!-- ======================================================== -->
+  <!-- Hero Section -->
+  <!-- ======================================================== -->
+  <section id="reaya-cinematic-hero" class="bg-gradient-to-b from-teal-800 via-brand-900 to-slate-900 text-white py-8 sm:py-12 px-4 w-full">
+    <div class="reaya-hero-grid max-w-7xl mx-auto"><div class="reaya-hero-copy space-y-4"><img src="assets/raaya-tibbiya-logo.png" alt="رعاية طبية، بطاقة العضوية والخدمات الطبية" width="1260" height="980" style="display:block;width:min(100%,320px);height:auto;max-height:250px;object-fit:contain;margin:0 auto 16px" fetchpriority="high"><p class="reaya-eyebrow">رعاية طبية · الدليل الطبي</p>
+      <span id="heroBadge" class="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-teal-100 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full break-words-all">
+        خدمة مجتمعية لأهالي جميع المحافظات
+      </span>
+      <h1 id="heroHeadline" class="text-xl sm:text-3xl md:text-4xl font-black leading-snug break-words-all">
+        وفر حتى <span class="text-emerald-300 underline decoration-wavy decoration-teal-400">30%</span> على كشوفات الأطباء والفحوصات
+      </h1>
+      <p id="heroSubtext" class="text-slate-200 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed break-words-all">
+        دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بجميع المحافظات. بطاقة عائلية رقمية تشمل حتى 5 أفراد. اضغط على أي بطاقة لعرض تفاصيلها الكاملة والحجز.
+      </p>
+
+      <p style="font-size:14px;line-height:1.8;color:#cde8de;border-right:2px solid #b7975b;padding-right:10px">الجهات والخصومات المعروضة تحتاج تأكيداً مباشراً من الجهة قبل الزيارة. إصدار بطاقة على هذا الجهاز لا يُثبت قبولها لدى أي جهة أو وجود تعاقد معها.</p>
+      <!-- Live Search Box -->
+      <div class="pt-2 max-w-2xl mx-auto w-full">
+        <div class="relative w-full">
+          <input type="text" id="searchInput" placeholder="ابحث بالاسم، التخصص، المركز، أو اسم الشارع..."
+                 class="w-full pr-11 pl-4 py-3 sm:py-3.5 rounded-2xl bg-white text-slate-800 placeholder-slate-400 shadow-xl focus:outline-none focus:ring-4 focus:ring-teal-400/40 text-xs sm:text-sm transition break-words-all">
+          <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div><figure class="reaya-hero-photo"><img src="assets/medical-interior.webp" alt="صورة توضيحية لممر طبي حديث، ليست صورة جهة مدرجة بالدليل" width="1125" height="750" fetchpriority="high"><figcaption>صورة توضيحية: Enrique Silva / Pexels، مش صورة لجهة داخل الدليل</figcaption></figure></div>
+</section>
+
+  <!-- ======================================================== -->
+  <!-- Savings Calculator Widget Section (Responsive, no side spill) -->
+  <!-- ======================================================== -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-5 z-10 w-full mb-5">
+    <div class="bg-white rounded-3xl shadow-xl border border-slate-200/90 p-4 sm:p-6 w-full overflow-hidden">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+
+        <!-- Info Column -->
+        <div class="lg:w-1/3 space-y-2">
+          <div class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded-full text-xs font-black">
+            <span>💰</span>
+            <span>حاسبة التوفير التقديرية لأسرتك</span>
+          </div>
+          <h2 class="text-base sm:text-lg font-black text-slate-900 leading-snug break-words-all">
+            احسب كم ستوفر شهرياً مع بطاقة رعاية طبية
+          </h2>
+          <p class="text-xs text-slate-500 leading-relaxed break-words-all">
+            حدد استهلاك عائلتك الطبي الشهري التقريبي وشاهد حجم الوفر المالي المباشر في كشوفاتك وفحوصاتك.
+          </p>
+        </div>
+
+        <!-- Controls Column -->
+        <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 text-center">
+            <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">كشوفات أطباء شهرياً</label>
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="adjustCalc('doctor', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition">-</button>
+              <span id="calcDoctorCount" class="w-8 text-base font-black text-brand-700 font-mono">2</span>
+              <button onclick="adjustCalc('doctor', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition">+</button>
+            </div>
+            <span class="text-[10px] text-slate-400 mt-1 block">متوسط خصم 25%</span>
+          </div>
+
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 text-center">
+            <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">تحاليل وأشعات شهرياً</label>
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="adjustCalc('lab', -1)" class="w-7 h-7 rounded-lg bg-white border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition">-</button>
+              <span id="calcLabCount" class="w-8 text-base font-black text-purple-700 font-mono">1</span>
+              <button onclick="adjustCalc('lab', 1)" class="w-7 h-7 rounded-lg bg-white border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition">+</button>
+            </div>
+            <span class="text-[10px] text-slate-400 mt-1 block">خصم 25% - 30%</span>
+          </div>
+
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 text-center">
+            <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">مستلزمات صيدلية</label>
+            <div class="flex items-center justify-center gap-2">
+              <select id="calcPharmacySpend" onchange="calculateSavings()" class="bg-white border border-slate-300 rounded-lg text-xs font-bold p-1 text-emerald-700">
+                <option value="0">0 ج</option>
+                <option value="300">300 ج</option>
+                <option value="600" selected>600 ج</option>
+                <option value="1000">1000 ج</option>
+                <option value="1500">1500 ج</option>
+              </select>
+            </div>
+            <span class="text-[10px] text-slate-400 mt-1 block">مستلزمات ورعاية</span>
+          </div>
+        </div>
+
+        <!-- Result Badge -->
+        <div class="lg:w-1/4 bg-gradient-to-tr from-brand-700 to-teal-600 rounded-2xl p-4 text-white text-center shadow-md flex flex-col justify-center items-center">
+          <span class="text-[11px] font-bold text-teal-100">إجمالي التوفير المقدر لأسرتك:</span>
+          <div class="text-2xl sm:text-3xl font-black tracking-tight text-white my-1">
+            <span id="savingsMin">350</span> - <span id="savingsMax">520</span>
+            <span class="text-xs font-normal">جنيه/شهرياً</span>
+          </div>
+          <button onclick="openMemberCardModal()" class="mt-2 bg-white text-brand-800 text-xs font-black px-4 py-1.5 rounded-xl shadow-sm hover:bg-teal-50 transition">
+            احصل على بطاقتك الآن
+          </button>
+        </div>
+
+      </div>
+    </div>
+  <p class="reaya-estimate-note">حاسبة توضيحية وليست وعداً بالتوفير. الافتراضات: 65 جنيه للكشف، 115 جنيه للتحليل، و15% للأدوية. اسأل الجهة عن السعر والخصم قبل الحجز.</p></section>
+
+  <!-- ======================================================== -->
+  <!-- Navigation Filters & Center Selector -->
+  <!-- ======================================================== -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 z-10 w-full mb-4">
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-3 sm:p-4 w-full">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 hide-scrollbar w-full md:w-auto" id="categoryFilters">
+          <button data-category="all" class="cat-btn active px-3 py-1.5 rounded-xl text-xs font-bold bg-brand-600 text-white shadow-sm transition shrink-0">
+            الكل (<span id="count-all">0</span>)
+          </button>
+          <button data-category="doctor" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition shrink-0">
+            👨‍⚕️ أطباء (<span id="count-doctor">0</span>)
+          </button>
+          <button data-category="pharmacy" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition shrink-0">
+            💊 صيدليات (<span id="count-pharmacy">0</span>)
+          </button>
+          <button data-category="lab" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition shrink-0">
+            🔬 معامل (<span id="count-lab">0</span>)
+          </button>
+          <button data-category="radiology" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition shrink-0">
+            🩻 أشعة (<span id="count-radiology">0</span>)
+          </button>
+        </div>
+
+        <!-- Center / City Selector & Schedule Filter -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <div class="flex items-center gap-1.5">
+            <label for="governorateFilter" class="text-xs font-bold text-slate-600">المحافظة:</label><select id="governorateFilter" class="bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs"><option value="all">جميع المحافظات</option></select></div>
+          <div class="flex items-center gap-1.5">
+            <label for="centerFilter" class="text-xs font-bold text-slate-600">المركز:</label>
+            <select id="centerFilter" class="bg-slate-50 border border-slate-300 text-slate-700 text-xs rounded-xl focus:ring-brand-500 focus:border-brand-500 p-2 font-semibold pr-7">
+              <option value="all">جميع المناطق والمراكز</option>
+            </select>
+          </div>
+
+          <div class="flex items-center gap-1.5">
+            <label for="scheduleFilter" class="text-xs font-bold text-slate-600">المواعيد:</label>
+            <select id="scheduleFilter" class="bg-slate-50 border border-slate-300 text-slate-700 text-xs rounded-xl focus:ring-brand-500 focus:border-brand-500 p-2 font-semibold pr-7">
+              <option value="all">كل الأوقات</option>
+              <option value="daily">يومياً</option>
+              <option value="evening">مسائية</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- Main Directory Cards Grid (No side-spill, fully clickable) -->
+  <!-- ======================================================== -->
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex-1 w-full">
+    <div id="resultsCountText" class="text-xs text-slate-500 mb-3 font-semibold break-words-all"></div>
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 w-full">
+      <!-- Cards dynamically generated via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-12 bg-white rounded-2xl border border-dashed border-slate-300 p-6 my-4 w-full">
+      <div class="w-14 h-14 mx-auto bg-slate-100 rounded-full flex items-center justify-center text-slate-400 mb-2 text-2xl">
+        🔍
+      </div>
+      <h3 class="text-base font-bold text-slate-800">لا توجد نتائج مطابقة لبحثك</h3>
+      <p class="text-xs text-slate-500 mt-1">جرب تغيير كلمات البحث أو اختيار مركز أو تصنيف آخر.</p>
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- NEW: Provider Full Details Modal (Opens on Card Click) -->
+  <!-- ======================================================== -->
+  <div id="providerDetailsModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full border border-slate-100 my-auto overflow-hidden flex flex-col max-h-[90vh]">
+
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-teal-900 to-brand-800 text-white p-5 flex items-start justify-between gap-3">
+        <div class="space-y-1.5 flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span id="modalProviderCategoryBadge" class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold bg-white/20 text-white"></span>
+            <span id="modalProviderDiscountBadge" class="px-2.5 py-0.5 rounded-lg text-xs font-black bg-rose-500 text-white shadow-sm"></span>
+          </div>
+          <h3 id="modalProviderName" class="text-lg sm:text-xl font-black text-white leading-snug break-words-all"></h3>
+          <p id="modalProviderSpecialty" class="text-xs sm:text-sm text-teal-100 font-semibold break-words-all"></p>
+        </div>
+        <button onclick="closeProviderDetailsModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white font-bold flex items-center justify-center text-base shrink-0 transition">
+          &times;
+        </button>
+      </div>
+
+      <!-- Modal Body (No truncation, full text wrapping cleanly in extra lines) -->
+      <div class="p-5 overflow-y-auto space-y-4 text-xs sm:text-sm bg-slate-50 flex-1">
+
+        <!-- Location & Address -->
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 space-y-1.5">
+          <div class="flex items-center gap-2 text-slate-800 font-bold">
+            <span class="text-base">📍</span>
+            <span>المركز والعنوان التفصيلي:</span>
+          </div>
+          <p id="modalProviderAddress" class="text-slate-600 leading-relaxed break-words-all pr-6"></p>
+        </div>
+
+        <!-- Schedule / Hours -->
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 space-y-1.5">
+          <div class="flex items-center gap-2 text-slate-800 font-bold">
+            <span class="text-base">🕒</span>
+            <span>مواعيد وأيام العمل:</span>
+          </div>
+          <p id="modalProviderSchedule" class="text-slate-700 font-semibold leading-relaxed break-words-all pr-6"></p>
+        </div>
+
+        <!-- Discount Terms & Notes -->
+        <div class="bg-amber-50/80 border border-amber-200/80 p-3.5 rounded-2xl space-y-1.5">
+          <div class="flex items-center gap-2 text-amber-900 font-bold">
+            <span class="text-base">ℹ️</span>
+            <span>تفاصيل وشروط الخصم للعملاء:</span>
+          </div>
+          <p id="modalProviderNotes" class="text-amber-800 leading-relaxed break-words-all pr-6"></p>
+        </div>
+
+        <!-- Phone Info -->
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] text-slate-400 block font-bold">رقم الحجز والتواصل:</span>
+            <span id="modalProviderPhone" class="text-base font-black font-mono text-slate-800 tracking-wider" dir="ltr"></span>
+          </div>
+          <span class="text-xs text-brand-700 bg-brand-50 border border-brand-200 px-2.5 py-1 rounded-xl font-bold">معتمد بالشبكة</span>
+        </div>
+
+      </div>
+
+      <!-- Modal Actions Bar -->
+      <div class="bg-white p-4 border-t border-slate-200 flex items-center justify-between gap-2 flex-wrap">
+        <div class="flex items-center gap-2 flex-1">
+          <a id="modalProviderCallBtn" href="#" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-brand-600 hover:bg-brand-700 text-white py-2.5 px-3 rounded-xl text-xs font-black shadow-sm transition">
+            <span>📞</span>
+            <span>اتصال فوري</span>
+          </a>
+          <a id="modalProviderWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-3 rounded-xl text-xs font-black shadow-sm transition">
+            <span>💬</span>
+            <span>حجز واتساب</span>
+          </a>
+          <a id="modalProviderMapBtn" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center justify-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 py-2.5 px-3 rounded-xl text-xs font-bold transition">
+            <span>🗺️</span>
+            <span>الخريطة</span>
+          </a>
+        </div>
+        <button onclick="closeProviderDetailsModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl text-xs font-bold transition">
+          إغلاق
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Digital Membership Card Modal (Self-contained QR & Robust Open) -->
+  <!-- ======================================================== -->
+  <div id="memberCardModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-4 sm:p-6 border border-slate-100 my-auto max-h-[92vh] overflow-y-auto">
+
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">💳</span>
+          <div>
+            <h3 class="text-base font-black text-slate-800 break-words-all">بطاقة العضوية الرقمية لرعاية طبية</h3>
+            <p class="text-[11px] text-slate-400 break-words-all">أظهر هذه البطاقة لسكرتير العيادة أو المعمل للحصول على الخصم</p>
+          </div>
+        </div>
+        <button onclick="closeMemberCardModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
+      </div>
+
+      <!-- Card Search / Phone Lookup -->
+      <div class="mb-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+        <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">ابحث برقم الهاتف أو كود العضوية:</label>
+        <div class="flex gap-2">
+          <input type="text" id="memberSearchInput" placeholder="رقم الهاتف أو كود العضوية"
+                 class="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-bold">
+          <button onclick="lookupMemberCard()" class="px-3.5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition shrink-0">
+            عرض البطاقة
+          </button>
+        </div>
+      </div>
+
+      <p id="memberCardEmptyState" class="hidden p-5 text-center text-slate-600">لا توجد بطاقات عضوية محفوظة.</p>
+      <!-- Printable Visual Card Container (Fully Responsive) -->
+      <div id="printableCardArea" class="rounded-3xl p-4 sm:p-5 text-white card-gradient shadow-2xl relative overflow-hidden border border-emerald-400/30 w-full">
+        <!-- Background decorative blur -->
+        <div class="absolute -left-10 -bottom-10 w-36 h-36 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+
+        <!-- Card Header -->
+        <div class="flex items-center justify-between mb-3 gap-2">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-md flex items-center justify-center font-black text-sm shrink-0">
+              🏥
+            </div>
+            <div>
+              <span class="block text-xs sm:text-sm font-black tracking-wide break-words-all">رعاية طبية</span>
+              <span class="block text-[9px] sm:text-[10px] text-emerald-200 break-words-all">بطاقة الرعاية الصحية العائلية المعتمدة</span>
+            </div>
+          </div>
+          <span class="bg-emerald-400/20 text-emerald-300 border border-emerald-300/30 text-[9px] sm:text-[10px] px-2.5 py-0.5 rounded-full font-black shrink-0">
+            عضوية نشطة
+          </span>
+        </div>
+
+        <!-- Card Body: Member & Family Names -->
+        <div class="space-y-2.5 py-2.5 border-y border-white/15">
+          <div>
+            <span class="text-[9px] sm:text-[10px] text-emerald-200 block">اسم العميل الرئيسي (رب الأسرة):</span>
+            <span id="displayCardHolder" class="text-sm sm:text-base font-black text-white tracking-wide break-words-all leading-snug"></span>
+          </div>
+
+          <p class="text-xs text-emerald-200">المحافظة: <span id="displayCardGovernorate"></span></p>
+          <!-- Up to 5 Family Members (Wraps cleanly without overflow) -->
+          <div>
+            <span class="text-[9px] sm:text-[10px] text-emerald-200 block mb-1">المشمولين بالخصم العائلي (حتى 5 أفراد):</span>
+            <div id="displayFamilyMembers" class="flex flex-wrap gap-1 text-[11px]">
+              <!-- Family tags injected here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Bottom Bar: Code, Expiry, and Vector SVG QR Code -->
+        <div class="pt-3 flex items-center justify-between gap-2.5">
+          <div class="space-y-1">
+            <div>
+              <span class="text-[9px] text-emerald-200 block">كود العضوية:</span>
+              <span id="displayCardCode" style="font-size:11px;white-space:nowrap;letter-spacing:0" class="text-xs sm:text-sm font-black font-mono tracking-wider bg-white/15 px-2 py-0.5 rounded-lg inline-block"></span>
+            </div>
+            <div>
+              <span class="text-[9px] text-emerald-200 block">صالحة حتى:</span>
+              <span id="displayCardExpiry" class="text-[10px] sm:text-[11px] font-bold font-mono"></span>
+            </div>
+          </div>
+
+          <!-- Self-contained SVG QR Code Container -->
+          <div class="bg-white p-1 rounded-xl shadow-inner shrink-0 flex items-center justify-center">
+            <div id="cardQrCode" class="w-[160px] h-[160px] flex items-center justify-center"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-4 flex gap-2 justify-end">
+        <button onclick="window.print()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center gap-1">
+          <span>🖨️</span>
+          <span>طباعة</span>
+        </button>
+        <button onclick="closeMemberCardModal()" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition">
+          إغلاق
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Doctor / Center Join Request Modal -->
+  <!-- ======================================================== -->
+  <div id="joinModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-xl w-full p-4 sm:p-6 border border-slate-100 my-auto max-h-[92vh] overflow-y-auto">
+
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🩺</span>
+          <div>
+            <h3 class="text-base font-black text-slate-800 break-words-all">طلب انضمام جهة طبية لرعاية طبية</h3>
+            <p class="text-[11px] text-slate-400 break-words-all">سجل بيانات عيادتك أو معملك للانضمام لقائمة الخصومات المعتمدة</p>
+          </div>
+        </div>
+        <button onclick="closeJoinModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
+      </div>
+
+      <form id="joinForm" onsubmit="event.preventDefault(); submitJoinRequest();" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs"><div><label class="block font-bold text-slate-700 mb-1" for="joinGovernorate">المحافظة *</label><input id="joinGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">نوع الجهة الطبية *</label>
+          <select id="joinCategory" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-bold">
+            <option value="doctor">طبيب / عيادة</option>
+            <option value="pharmacy">صيدلية</option>
+            <option value="lab">معمل تحاليل</option>
+            <option value="radiology">مركز أشعة</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">الاسم بالكامل (أو اسم المركز) *</label>
+          <input type="text" id="joinName" required placeholder="اسم الجهة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">التخصص أو الوصف *</label>
+          <input type="text" id="joinSpecialty" required placeholder="مثال: أخصائي رمد وجراحة عيون" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">المركز / المدينة التابع لها *</label>
+          <input id="joinCenter" type="text" required placeholder="المدينة أو المنطقة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">رقم هاتف العيادة / الحجز *</label>
+          <input type="tel" id="joinPhone" required placeholder="010XXXXXXXX" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-left font-mono" dir="ltr">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">نسبة الخصم المقترحة *</label>
+          <input type="text" id="joinDiscount" required placeholder="مثال: 25% أو 20%" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-bold text-brand-700">
+        </div>
+
+        <div class="sm:col-span-2">
+          <label class="block font-bold text-slate-700 mb-1">العنوان بالتفصيل *</label>
+          <input type="text" id="joinAddress" required placeholder="مثال: شارع بورسعيد، برج الأطباء، الدور الثاني" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">مواعيد وأيام العمل *</label>
+          <input type="text" id="joinSchedule" required placeholder="مثال: يومياً من 5 إلى 9 م عدا الجمعة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">رابط خرائط جوجل (اختياري)</label>
+          <input type="url" id="joinMapUrl" placeholder="https://maps.google.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-left font-mono" dir="ltr">
+        </div>
+
+        <div class="sm:col-span-2">
+          <label class="block font-bold text-slate-700 mb-1">شروط أو تفاصيل إضافية للخصم</label>
+          <input type="text" id="joinNotes" placeholder="مثال: الخصم يسري على الكشف والاستشارة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div class="sm:col-span-2 flex justify-end gap-2 pt-2 border-t border-slate-100">
+          <button type="button" onclick="closeJoinModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl font-bold transition">
+            إلغاء
+          </button>
+          <button type="submit" class="px-6 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition shadow-md shadow-brand-600/20">
+            إرسال طلب الانضمام
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Secret Admin PIN Modal (Prompted ONLY after 5 clicks on "رعاية طبية") -->
+  <!-- ======================================================== -->
+  <div id="pinModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 border border-slate-100 transform transition-all">
+      <div class="w-12 h-12 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg font-bold text-center text-slate-800 mb-1">التحقق من هوية المسؤول</h3>
+      <p class="text-xs text-center text-slate-500 mb-4">الدخول متاح لحساب Google المصرح به فقط</p>
+
+      <button onclick="verifyPin()" class="w-full bg-brand-600 text-white p-3 rounded-xl font-bold">الدخول باستخدام Google</button>
+      <button onclick="closePinModal()" class="w-full p-3">إلغاء</button>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Admin Control Dashboard -->
+  <!-- ======================================================== -->
+  <div id="adminDashboard" class="fixed inset-0 bg-slate-900/85 backdrop-blur-sm z-50 overflow-y-auto hidden">
+    <div class="min-h-screen p-2 sm:p-4 lg:p-6 flex justify-center items-center">
+      <div class="bg-white rounded-3xl shadow-2xl max-w-6xl w-full border border-slate-200 overflow-hidden flex flex-col my-auto max-h-[95vh]">
+
+        <!-- Admin Dashboard Header -->
+<button onclick="ownerSignOut()" class="p-2 text-sm">تسجيل الخروج</button><button onclick="importLegacyData()" class="p-2 text-sm">نقل البيانات المحلية الخاصة بي</button>
+        <div class="bg-slate-900 text-white p-3.5 sm:p-5 flex items-center justify-between border-b border-slate-800 gap-2 flex-wrap">
+          <div class="flex items-center gap-2.5">
+            <button id="gearSettingsBtn" onclick="openAdvancedSettingsModal()"
+                    class="p-2 bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-400 hover:text-emerald-300 rounded-xl transition transform hover:rotate-45 duration-300 cursor-pointer border border-emerald-500/30"
+                    title="الإعدادات المتقدمة والصلاحيات">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </button>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="text-sm sm:text-base font-black">لوحة الإدارة والتحكم</h2>
+                <span class="bg-emerald-400/20 text-emerald-300 text-[10px] px-2 py-0.5 rounded-full font-bold border border-emerald-400/30">خاص بالمسؤول</span>
+              </div>
+              <p class="text-[11px] text-slate-400">إدارة الأطباء، طلبات الانضمام، وبطاقات المشتركين</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5">
+            <button onclick="openAdvancedSettingsModal()" class="hidden sm:flex items-center gap-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 rounded-xl text-xs font-bold border border-slate-700 transition">
+              ⚙️ الإعدادات
+            </button>
+            <button onclick="exportDataJSON()" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-semibold border border-slate-700 transition" title="تصدير نسخة">
+              📥 تصدير
+            </button>
+            <button onclick="closeAdminDashboard()" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition">
+              إغلاق
+            </button>
+          </div>
+        </div>
+
+        <!-- Admin Navigation Tabs -->
+        <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 flex items-center gap-1.5 overflow-x-auto hide-scrollbar text-xs font-bold">
+          <button onclick="switchAdminSection('providersSection')" id="btn-sec-providers" class="admin-sec-btn active px-3 py-1.5 rounded-xl bg-white text-brand-800 shadow-sm transition shrink-0">
+            🏥 الأطباء والمراكز (<span id="adminTotalCount">0</span>)
+          </button>
+          <button onclick="switchAdminSection('requestsSection')" id="btn-sec-requests" class="admin-sec-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0 flex items-center gap-1">
+            <span>📥 طلبات الانضمام</span>
+            <span id="pendingRequestsBadge" class="bg-amber-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-black hidden">0</span>
+          </button>
+          <button onclick="switchAdminSection('membersSection')" id="btn-sec-members" class="admin-sec-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
+            💳 بطاقات المشتركين (<span id="adminMembersCount">0</span>)
+          </button>
+        </div>
+
+        <!-- Admin Main Content Area -->
+        <div class="p-3 sm:p-5 overflow-y-auto space-y-5 flex-1 bg-slate-50">
+
+          <!-- Section 1: Active Providers -->
+          <div id="sec-providersSection" class="admin-section-content space-y-5">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 id="formTitle" class="text-sm sm:text-base font-extrabold text-slate-800 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+                إضافة جهة جديدة إلى الدليل
+              </h3>
+
+              <div class="mb-4 rounded-xl bg-amber-50 border border-amber-200 p-3 text-xs"><p>التعديل والحذف هنا على هذا المتصفح فقط، ولا يغيران بيانات أجهزة الزوار.</p><button type="button" onclick="clearStarterRecords()" style="background:#be123c;color:#fff" class="mt-2 rounded-lg bg-rose-700 text-white px-3 py-2 font-bold">حذف كل السجلات الأولية</button></div>
+              <form id="itemForm" onsubmit="event.preventDefault(); saveItem();" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                <input type="hidden" id="itemId"><div><label class="block font-bold text-slate-700 mb-1" for="itemGovernorate">المحافظة *</label><input id="itemGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">نوع الجهة *</label>
+                  <select id="itemCategory" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium">
+                    <option value="doctor">طبيب / عيادة</option>
+                    <option value="pharmacy">صيدلية</option>
+                    <option value="lab">معمل تحاليل</option>
+                    <option value="radiology">مركز أشعة</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">الاسم بالكامل *</label>
+                  <input type="text" id="itemName" required placeholder="اسم الجهة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">التخصص / الوصف *</label>
+                  <input type="text" id="itemSpecialty" required placeholder="مثال: استشاري باطنة وقلب" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">المدينة أو المنطقة *</label>
+                  <input id="itemCenter" type="text" required placeholder="المدينة أو المنطقة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">رقم الهاتف / العيادة *</label>
+                  <input type="tel" id="itemPhone" required placeholder="رقم التواصل" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-left font-mono" dir="ltr">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">نسبة الخصم *</label>
+                  <input type="text" id="itemDiscount" required placeholder="مثال: 25% أو 30%" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-bold text-brand-700">
+                </div>
+
+                <div class="sm:col-span-2">
+                  <label class="block font-bold text-slate-700 mb-1">العنوان بالتفصيل *</label>
+                  <input type="text" id="itemAddress" required placeholder="مثال: شارع جمال عبد الناصر، برج مكة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">مواعيد وأيام العمل *</label>
+                  <input type="text" id="itemSchedule" required placeholder="مثال: يومياً من 5م إلى 9م عدا الجمعة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div class="sm:col-span-2">
+                  <label class="block font-bold text-slate-700 mb-1">رابط خرائط جوجل (اختياري)</label>
+                  <input type="url" id="itemMapUrl" placeholder="https://maps.google.com/..." class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-left font-mono" dir="ltr">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">شروط أو تفاصيل الخصم</label>
+                  <input type="text" id="itemNotes" placeholder="مثال: الخصم يسري على الكشف والاستشارة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3 flex justify-end gap-2 pt-2 border-t border-slate-100">
+                  <button type="button" onclick="resetItemForm()" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 font-bold transition">
+                    إلغاء التعديل
+                  </button>
+                  <button type="submit" class="px-6 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold transition shadow-md">
+                    حفظ في الدليل
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Table of Active Providers -->
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3">
+                <h3 class="text-sm sm:text-base font-extrabold text-slate-800">قائمة الجهات النشطة في الدليل</h3>
+                <input type="text" id="adminSearchInput" oninput="renderAdminTable()" placeholder="تصفية سريعة بالاسم أو التخصص..." class="bg-slate-50 border border-slate-300 rounded-xl px-3 py-1.5 text-xs w-full sm:w-64">
+              </div>
+
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-right text-xs">
+                  <thead class="bg-slate-100 text-slate-700 font-extrabold uppercase border-b border-slate-200">
+                    <tr>
+                      <th class="p-2.5">النوع</th>
+                      <th class="p-2.5">الاسم</th>
+                      <th class="p-2.5">التخصص</th>
+                      <th class="p-2.5">المركز والمواعيد</th>
+                      <th class="p-2.5">الهاتف</th>
+                      <th class="p-2.5 text-center">الخصم</th>
+                      <th class="p-2.5 text-center">إجراءات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminTableBody" class="divide-y divide-slate-100">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Pending Requests -->
+          <div id="sec-requestsSection" class="admin-section-content hidden space-y-5">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+                <div>
+                  <h3 class="text-sm sm:text-base font-extrabold text-slate-800">طلبات انضمام الأطباء والمراكز الجديدة</h3>
+                  <p class="text-[11px] text-slate-500">راجع الطلبات واعتمد إضافتها للدليل بضغطة زر واحدة</p>
+                </div>
+                <span id="requestsCountHeader" class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">0 طلب</span>
+              </div>
+
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-right text-xs">
+                  <thead class="bg-slate-100 text-slate-700 font-extrabold uppercase border-b border-slate-200">
+                    <tr>
+                      <th class="p-2.5">النوع</th>
+                      <th class="p-2.5">الاسم والجهة</th>
+                      <th class="p-2.5">التخصص</th>
+                      <th class="p-2.5">المركز والعنوان</th>
+                      <th class="p-2.5">الهاتف والمواعيد</th>
+                      <th class="p-2.5 text-center">الخصم المقترح</th>
+                      <th class="p-2.5 text-center">القرار</th>
+                    </tr>
+                  </thead>
+                  <tbody id="requestsTableBody" class="divide-y divide-slate-100">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Members Cards Management -->
+          <div id="sec-membersSection" class="admin-section-content hidden space-y-5">
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 class="text-sm sm:text-base font-extrabold text-slate-800 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                إصدار بطاقة عضوية عائلية رقمية جديدة
+              </h3>
+
+              <form id="memberCardForm" onsubmit="event.preventDefault(); saveMemberCard();" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                <input type="hidden" id="memberCardId"><div><label class="block font-bold text-slate-700 mb-1" for="mGovernorate">المحافظة *</label><input id="mGovernorate" type="text" required placeholder="اكتب اسم أي محافظة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5"></div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">اسم العميل الرئيسي (رب الأسرة) *</label>
+                  <input type="text" id="mHolderName" required placeholder="اسم صاحب البطاقة" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">رقم هاتف العميل *</label>
+                  <input type="tel" id="mHolderPhone" required placeholder="010XXXXXXXX" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-left font-mono" dir="ltr">
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">كود العضوية (يولد تلقائياً)</label>
+                  <input type="text" id="mCardCode" class="w-full bg-slate-100 border border-slate-300 rounded-xl p-2.5 font-bold font-mono text-emerald-800">
+                </div>
+
+                <div class="sm:col-span-2 md:col-span-3 bg-emerald-50/70 p-3 rounded-2xl border border-emerald-200/80">
+                  <label class="block font-black text-emerald-900 mb-1">أفراد الأسرة المشمولين بالخصم (حتى 5 أفراد):</label>
+                  <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 pt-1">
+                    <input type="text" id="mFamily1" placeholder="فرد 1 (الزوجة مثلاً)" class="bg-white border border-slate-300 rounded-xl p-2 text-xs">
+                    <input type="text" id="mFamily2" placeholder="فرد 2 (ابن/ابنة)" class="bg-white border border-slate-300 rounded-xl p-2 text-xs">
+                    <input type="text" id="mFamily3" placeholder="فرد 3 (ابن/ابنة)" class="bg-white border border-slate-300 rounded-xl p-2 text-xs">
+                    <input type="text" id="mFamily4" placeholder="فرد 4 (ابن/ابنة)" class="bg-white border border-slate-300 rounded-xl p-2 text-xs">
+                    <input type="text" id="mFamily5" placeholder="فرد 5 (ابن/ابنة)" class="bg-white border border-slate-300 rounded-xl p-2 text-xs">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">تاريخ انتهاء البطاقة *</label>
+                  <input type="date" id="mExpiryDate" required class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-mono">
+                </div>
+
+                <div class="sm:col-span-2 flex justify-end items-end gap-2">
+                  <button type="button" onclick="resetMemberForm()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold transition">
+                    إلغاء
+                  </button>
+                  <button type="submit" class="px-6 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition shadow-md">
+                    إصدار وتفعيل البطاقة
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Table of Member Cards -->
+            <div class="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 class="text-sm sm:text-base font-extrabold text-slate-800 mb-3">قائمة بطاقات الأعضاء المفعلة</h3>
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-right text-xs">
+                  <thead class="bg-slate-100 text-slate-700 font-extrabold uppercase border-b border-slate-200">
+                    <tr>
+                      <th class="p-2.5">كود البطاقة</th>
+                      <th class="p-2.5">اسم العميل (رب الأسرة)</th>
+                      <th class="p-2.5">الهاتف</th>
+                      <th class="p-2.5">أفراد الأسرة المشمولين</th>
+                      <th class="p-2.5">الانتهاء</th>
+                      <th class="p-2.5 text-center">إجراءات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="membersTableBody" class="divide-y divide-slate-100">
+                    <!-- Populated via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Advanced Settings Modal (Gear ⚙️ Trigger) -->
+  <!-- ======================================================== -->
+  <div id="settingsModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
+
+      <div class="bg-slate-900 text-white p-4 flex items-center justify-between border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">⚙️</span>
+          <div>
+            <h3 class="text-base font-black">إعدادات وصلاحيات النظام المتقدمة</h3>
+            <p class="text-[11px] text-slate-400">تغيير الرقم السري، تخصيص النصوص، وإدارة المناطق والمراكز</p>
+          </div>
+        </div>
+        <button onclick="closeAdvancedSettingsModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center font-bold">&times;</button>
+      </div>
+
+      <div class="flex border-b border-slate-200 bg-slate-100 px-3 text-xs font-bold overflow-x-auto hide-scrollbar gap-1.5 py-2">
+        <button onclick="switchSettingsTab('pinTab')" id="btn-pinTab" class="settings-tab-btn active px-3 py-1.5 rounded-xl bg-white text-slate-900 shadow-sm transition shrink-0">
+          🔑 تغيير الرقم السري
+        </button>
+        <button onclick="switchSettingsTab('siteTab')" id="btn-siteTab" class="settings-tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
+          🎨 تخصيص نصوص الموقع
+        </button>
+        <button onclick="switchSettingsTab('centersTab')" id="btn-centersTab" class="settings-tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
+          📍 المناطق والمراكز
+        </button>
+        <button onclick="switchSettingsTab('statsTab')" id="btn-statsTab" class="settings-tab-btn px-3 py-1.5 rounded-xl text-slate-600 hover:bg-slate-200 transition shrink-0">
+          📊 تقرير وإحصائيات
+        </button>
+      </div>
+
+      <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1 text-xs bg-slate-50">
+
+        <!-- Tab 1: PIN -->
+        <div id="tab-pinTab" class="settings-tab-content space-y-3">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
+            <h4 class="font-black text-slate-800 text-sm">تعديل الرقم السري للإدارة</h4>
+            <form onsubmit="event.preventDefault(); updateSecretPin();" class="space-y-2.5">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">الرقم السري الحالي *</label>
+                <input type="password" id="currentPinInput" required placeholder="••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-bold tracking-widest text-center">
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">الرقم السري الجديد *</label>
+                  <input type="password" id="newPinInput" required placeholder="••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-bold tracking-widest text-center">
+                </div>
+                <div>
+                  <label class="block font-bold text-slate-700 mb-1">تأكيد الرقم الجديد *</label>
+                  <input type="password" id="confirmNewPinInput" required placeholder="••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2 font-bold tracking-widest text-center">
+                </div>
+              </div>
+              <p id="changePinMsg" class="font-bold hidden"></p>
+              <div class="flex justify-end pt-1">
+                <button type="submit" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition shadow-sm">
+                  تحديث الرقم السري
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Tab 2: Site Settings -->
+        <div id="tab-siteTab" class="settings-tab-content hidden space-y-3"><section class="owner-design-panel" data-owner-design-panel aria-label="اختيار تصميم الواجهة">
+<h4>مجموعة تصميمات الواجهة</h4><p>التصميم الحالي: <strong data-owner-design-current>الزمرد السينمائي</strong></p>
+<label>اختر التصميم<select data-owner-design-select aria-label="اختر تصميم الواجهة"><option value="original">الأصلي، مع إصلاحات التشغيل</option><option value="cinematic">الزمرد السينمائي، صور وانحناءات</option><option value="midnight">ليلي أزرق، بطاقات داكنة</option><option value="ivory">عاجي تحريري، بطاقات مستطيلة</option></select></label>
+<div class="owner-design-actions"><button type="button" data-owner-design-save>تطبيق وحفظ التصميم</button><button type="button" data-owner-design-reset>الرجوع للتصميم الأصلي</button></div>
+<p role="status" aria-live="polite" data-owner-design-status></p><small>بدون تفعيل المزامنة يبقى الاختيار محلياً لهذه الصفحة والمتصفح فقط. بعد تفعيل مزامنة المالك بالأسفل يظهر اختيارك لكل عملاء هذه الصفحة على كل الأجهزة. لا يحذف أصنافاً أو أعضاء أو طلبات أو أرصدة. إصلاحات التشغيل والمشاركة وQR تبقى في كل التصميمات.</small></section>
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
+            <h4 class="font-black text-slate-800 text-sm">تخصيص نصوص الموقع</h4>
+            <form onsubmit="event.preventDefault(); saveSiteSettings();" class="space-y-2.5">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">اسم المنظومة / الموقع</label>
+                <input type="text" id="settingSiteName" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">العنوان الرئيسي بالبانر</label>
+                <input type="text" id="settingHeadline" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2">
+              </div>
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">الوصف الفرعي</label>
+                <textarea id="settingSubtext" rows="2" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2"></textarea>
+              </div>
+              <div class="flex justify-end pt-1">
+                <button type="submit" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition">
+                  تطبيق التعديلات
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Tab 3: Centers -->
+        <div id="tab-centersTab" class="settings-tab-content hidden space-y-3">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
+            <h4 class="font-black text-slate-800 text-sm">إدارة جميع المحافظات</h4>
+            <div class="flex gap-2">
+              <input type="text" id="newCenterInput" placeholder="اسم المركز أو القرية الجديدة..." class="flex-1 bg-slate-50 border border-slate-300 rounded-xl p-2 text-xs">
+              <button onclick="addNewCenter()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold transition shrink-0">
+                + إضافة
+              </button>
+            </div>
+            <div id="centersTagsList" class="flex flex-wrap gap-1.5 pt-2"></div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Stats & Clinic Poster Trigger -->
+        <div id="tab-statsTab" class="settings-tab-content hidden space-y-3">
+          <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
+            <h4 class="font-black text-slate-800 text-sm">إحصائيات المنظومة</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+              <div class="bg-blue-50 p-2.5 rounded-xl"><span class="block text-xl font-black text-blue-700" id="statDoctors">0</span>أطباء</div>
+              <div class="bg-emerald-50 p-2.5 rounded-xl"><span class="block text-xl font-black text-emerald-700" id="statPharmacies">0</span>صيدليات</div>
+              <div class="bg-purple-50 p-2.5 rounded-xl"><span class="block text-xl font-black text-purple-700" id="statLabs">0</span>معامل تحاليل</div>
+              <div class="bg-amber-50 p-2.5 rounded-xl"><span class="block text-xl font-black text-amber-700" id="statRadiology">0</span>مراكز أشعة</div>
+            </div>
+            <div class="pt-2 border-t border-slate-100 flex justify-between items-center">
+              <span>إجمالي بطاقات الأعضاء المفعلة:</span>
+              <span class="font-black text-brand-700" id="statMembersTotal">0</span>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex justify-end">
+              <button type="button" onclick="openClinicPosterModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-sm transition">
+                <span>🖨️</span>
+                <span>طباعة بوستر / استاند الـ QR للعيادات والمراكز</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Smart Floating Bottom Install Banner -->
+  <!-- ======================================================== -->
+  <div id="bottomInstallBanner" class="fixed bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-auto sm:left-4 sm:max-w-md z-40 bg-slate-900/95 backdrop-blur-md text-white p-3.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center justify-between gap-3 transition-all duration-300">
+    <div class="flex items-center gap-2.5 flex-1 min-w-0">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white font-black text-lg shrink-0 shadow-md">
+        📲
+      </div>
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <h4 class="text-xs font-black text-white">تطبيق رعاية طبية</h4>
+          <span class="bg-emerald-500/20 text-emerald-300 text-[9px] px-1.5 py-0.5 rounded font-bold border border-emerald-500/30">أقل من 1 ميجا</span>
+        </div>
+        <p class="text-[10px] text-slate-300 break-words-all leading-tight mt-0.5">الدليل وبطاقتك من شاشة هاتفك. البيانات المحفوظة تخص هذا الجهاز.</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-1.5 shrink-0">
+      <button onclick="handleSmartInstall()" class="bg-brand-500 hover:bg-brand-600 text-white text-xs font-black px-3 py-2 rounded-xl shadow-md transition whitespace-nowrap">
+        تثبيت الآن
+      </button>
+      <button onclick="openInstallGuideModal()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-2 py-2 rounded-xl border border-slate-700 transition" title="طريقة التثبيت">
+        ❓
+      </button>
+      <button onclick="dismissBottomBanner()" class="text-slate-400 hover:text-white text-base font-bold p-1 leading-none ml-1" title="إغلاق">&times;</button>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Visual Step-by-Step Install Guide Modal (Android & iOS) -->
+  <!-- ======================================================== -->
+  <div id="installGuideModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-5 border border-slate-100 my-auto overflow-hidden">
+
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">📲</span>
+          <div>
+            <h3 class="text-base font-black text-slate-800">طريقة تثبيت التطبيق على هاتفك</h3>
+            <p class="text-[11px] text-slate-400">بخطوات سهلة جداً خلال 5 ثوانٍ فقط</p>
+          </div>
+        </div>
+        <button onclick="closeInstallGuideModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
+      </div>
+
+      <!-- Tabs: Android vs iPhone -->
+      <div class="flex border-b border-slate-200 bg-slate-100 px-2 text-xs font-bold rounded-xl p-1 gap-1 mb-4">
+        <button onclick="switchGuideTab('androidGuide')" id="btn-androidGuide" class="guide-tab-btn active flex-1 py-1.5 rounded-lg bg-white text-slate-900 shadow-sm transition text-center">
+          🤖 هواتف أندرويد (سامسونج، شاومي...)
+        </button>
+        <button onclick="switchGuideTab('iosGuide')" id="btn-iosGuide" class="guide-tab-btn flex-1 py-1.5 rounded-lg text-slate-600 hover:bg-slate-200 transition text-center">
+          🍏 هواتف آيفون (Apple)
+        </button>
+      </div>
+
+      <!-- Android Content -->
+      <div id="tab-androidGuide" class="guide-tab-content space-y-3 text-xs">
+        <div class="flex items-start gap-3 p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
+          <div>
+            <span class="font-bold text-slate-800 block">الضغط المباشر:</span>
+            <span class="text-slate-600">اضغط على زر الأخضر <strong class="text-brand-700">"تثبيت الآن"</strong> في الشريط السفلي.</span>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</span>
+          <div>
+            <span class="font-bold text-slate-800 block">أو من قائمة المتصفح (Chrome):</span>
+            <span class="text-slate-600">اضغط على النقاط الثلاث (⋮) أعلى يسار المتصفح واختر <strong class="text-slate-800">"تثبيت التطبيق"</strong> أو <strong class="text-slate-800">"إضافة إلى الشاشة الرئيسية"</strong>.</span>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 p-2.5 bg-emerald-50 text-emerald-900 rounded-xl border border-emerald-200">
+          <span class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+          <div>
+            <span class="font-bold block">جاهز للاستخدام!</span>
+            <span>ستظهر أيقونة "رعاية طبية" بجانب واتساب وفيسبوك على شاشتك.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- iOS Content -->
+      <div id="tab-iosGuide" class="guide-tab-content hidden space-y-3 text-xs">
+        <div class="flex items-start gap-3 p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
+          <div>
+            <span class="font-bold text-slate-800 block">افتح الموقع في Safari:</span>
+            <span class="text-slate-600">تأكد أنك تفتح الرابط في متصفح سفاري الخاص بالآيفون.</span>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</span>
+          <div>
+            <span class="font-bold text-slate-800 block">زر المشاركة:</span>
+            <span class="text-slate-600">اضغط على أيقونة المشاركة (مربع مع سهم لأعلى ⎋) في أسفل شاشة الهاتف.</span>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+          <span class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</span>
+          <div>
+            <span class="font-bold text-slate-800 block">إضافة للشاشة:</span>
+            <span class="text-slate-600">مرر للأسفل واضغط <strong class="text-slate-900">"إضافة إلى الصفحة الرئيسية (Add to Home Screen) ➕"</strong> ثم اضغط "إضافة (Add)".</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features note -->
+      <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+        <span>⚡ حجم خفيف: أقل من 1 ميجابايت</span>
+        <span>🔒 آمن تماماً ولا يستهلك باقة نت</span>
+      </div>
+
+      <div class="mt-3 flex justify-end">
+        <button onclick="closeInstallGuideModal()" class="px-5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition">
+          فهمت ذلك
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Printable Clinic Countertop QR Sign / Poster Modal -->
+  <!-- ======================================================== -->
+  <div id="clinicPosterModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-5 border border-slate-100 my-auto max-h-[92vh] overflow-y-auto">
+
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🖨️</span>
+          <div>
+            <h3 class="text-base font-black text-slate-800">ستاند / ملصق الـ QR للعيادات والمراكز</h3>
+            <p class="text-[11px] text-slate-400">للطباعة ووضعه على مكتب الاستقبال للمرضى</p>
+          </div>
+        </div>
+        <button onclick="closeClinicPosterModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 font-bold flex items-center justify-center text-lg">&times;</button>
+      </div>
+
+      <!-- Printable Area -->
+      <div id="printablePosterArea" class="bg-gradient-to-b from-teal-900 via-brand-900 to-slate-900 text-white p-6 rounded-3xl shadow-xl border-4 border-emerald-400/40 text-center space-y-4">
+
+        <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md mx-auto flex items-center justify-center text-2xl shadow-inner">
+          🏥
+        </div>
+
+        <div>
+          <h2 class="text-xl font-black text-white tracking-tight">شبكة رعاية طبية للخصم الطبي</h2>
+          <p class="text-xs text-emerald-200 mt-0.5 font-bold">دليلك المعتمد لخصومات العيادات والمعامل والمراكز</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-3 rounded-2xl">
+          <p class="text-xs font-bold text-teal-100 leading-relaxed">
+            امسح الكود بكاميرا هاتفك لتثبيت التطبيق فوراً وعرض بطاقتك وأطباء الخصم بجميع المحافظات
+          </p>
+        </div>
+
+        <!-- Big Center QR Code for the Website URL -->
+        <div class="bg-white p-3 rounded-2xl shadow-2xl inline-block mx-auto border-2 border-emerald-300">
+          <div id="clinicPosterQrCode" class="w-[140px] h-[140px] flex items-center justify-center"></div>
+        </div>
+
+        <div class="pt-2 text-[11px] text-slate-300 space-y-1">
+          <p class="font-bold text-white">بدون تحميل برامج معقدة • حجم خفيف جداً • يعمل بدون إنترنت</p>
+          <p class="text-[10px] text-emerald-300">خدمة مجتمعية لأهالي جميع المحافظات</p>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-4 flex gap-2 justify-end">
+        <button onclick="window.print()" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-black shadow-sm transition flex items-center gap-1.5">
+          <span>🖨️</span>
+          <span>طباعة البوستر الآن</span>
+        </button>
+        <button onclick="closeClinicPosterModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+          إغلاق
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- Footer -->
+  <!-- ======================================================== -->
+  <div id="connectionStatus" role="status" class="text-center text-xs text-slate-500 py-2">جارٍ الاتصال</div>
+  <footer class="bg-white border-t border-slate-200 py-6 mt-auto w-full">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 space-y-2">
+      <p id="footerTitle" class="font-bold text-slate-700 break-words-all">شبكة الرعاية والخصم الطبي - جميع المحافظات</p>
+      <p class="break-words-all">خدمة الربط بين المواطنين ومقدمي الخدمات الطبية في المناطق والمراكز للحصول على كشوفات وفحوصات مخفضة.</p>
+      <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-100">
+        جميع الحقوق محفوظة &copy; <span id="currentYear"></span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- JavaScript Core Logic -->
+  <!-- ======================================================== -->
+  <script>
+    // -------------------------------------------------------------
+    // Initial Seed Data
+    // -------------------------------------------------------------
+    const defaultData = [
+  {
+    "id": "1",
+    "category": "doctor",
+    "name": "عيادة ١٠١",
+    "specialty": "استشاري أمراض القلب والقسطرة التداخلية",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 101، ممر أ، وحدة 1",
+    "phone": "0107340011",
+    "discount": "25%",
+    "schedule": "يومياً من 5م إلى 10م عدا الجمعة",
+    "mapUrl": "",
+    "notes": "الخصم يسري على الكشف ورسم القلب بموجب الكارت",
+    "seedRecord": true
+  },
+  {
+    "id": "2",
+    "category": "doctor",
+    "name": "عيادة ١٠٢",
+    "specialty": "أخصائية طب الأطفال وحديثي الولادة",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 102، ممر أ، وحدة 2",
+    "phone": "0117340012",
+    "discount": "30%",
+    "schedule": "السبت والإثنين والأربعاء من 4م إلى 8م",
+    "mapUrl": "",
+    "notes": "يشمل متابعة النمو والتطعيمات الدورية للأطفال",
+    "seedRecord": true
+  },
+  {
+    "id": "3",
+    "category": "doctor",
+    "name": "عيادة ١٠٣",
+    "specialty": "استشاري جراحة العظام والمفاصل والمناظير",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 103، ممر أ، وحدة 3",
+    "phone": "0127340013",
+    "discount": "20%",
+    "schedule": "يومياً من 6م إلى 10م",
+    "mapUrl": "",
+    "notes": "الخصم على قيمة الكشف والاستشارة ومتابعة الجبائر",
+    "seedRecord": true
+  },
+  {
+    "id": "4",
+    "category": "doctor",
+    "name": "عيادة ١٠٤",
+    "specialty": "استشاري الباطنة العامة والجهاز الهضمي والكبد",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 104، ممر أ، وحدة 4",
+    "phone": "0157340014",
+    "discount": "20%",
+    "schedule": "الأحد والثلاثاء والخميس من 5م إلى 9م",
+    "mapUrl": "",
+    "notes": "خصم 20% على الكشف وسونار البطن",
+    "seedRecord": true
+  },
+  {
+    "id": "5",
+    "category": "pharmacy",
+    "name": "صيدلية ٢٠١",
+    "specialty": "صيدلية ومركز مستلزمات طبية وتجميل",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 105، ممر أ، وحدة 5",
+    "phone": "0107340015",
+    "discount": "15%",
+    "schedule": "خدمة 24 ساعة طوال أيام الأسبوع",
+    "mapUrl": "",
+    "notes": "خصم 15% على مستحضرات العناية والمستلزمات الطبية وأجهزة قياس السكر والضغط",
+    "seedRecord": true
+  },
+  {
+    "id": "6",
+    "category": "pharmacy",
+    "name": "صيدلية ٢٠٢",
+    "specialty": "صيدلية وصحة عامة ومستلزمات أطفال",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 106، ممر أ، وحدة 6",
+    "phone": "0117340016",
+    "discount": "15%",
+    "schedule": "يومياً من 8 صباحاً حتى 1 بعد منتصف الليل",
+    "mapUrl": "",
+    "notes": "خصم على منتجات التجميل ومستلزمات الأطفال وكبار السن",
+    "seedRecord": true
+  },
+  {
+    "id": "7",
+    "category": "lab",
+    "name": "معمل ٣٠١",
+    "specialty": "فحوصات دم شاملة، هرمونات، وأورام",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 107، ممر أ، وحدة 7",
+    "phone": "0127340017",
+    "discount": "30%",
+    "schedule": "يومياً من 9 ص إلى 11 م عدا الجمعة من 2 ظ إلى 10 م",
+    "mapUrl": "",
+    "notes": "خصم 30% على كافة التحاليل الفردية وباقات الفحص الشامل",
+    "seedRecord": true
+  },
+  {
+    "id": "8",
+    "category": "lab",
+    "name": "معمل ٣٠٢",
+    "specialty": "تحاليل مناعية وجينات وفحوصات كبدية",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 108، ممر أ، وحدة 8",
+    "phone": "0157340018",
+    "discount": "25%",
+    "schedule": "يومياً من 10 ص إلى 10 م",
+    "mapUrl": "",
+    "notes": "خصم فوري 25% وسحب العينات للمنازل مجاناً لحاملي الكارت",
+    "seedRecord": true
+  },
+  {
+    "id": "9",
+    "category": "radiology",
+    "name": "مركز أشعة ٤٠١",
+    "specialty": "أشعة رنين مغناطيسي، مقطعية، وسونار 4D",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 109، ممر أ، وحدة 9",
+    "phone": "0107340019",
+    "discount": "25%",
+    "schedule": "يومياً من 9 ص حتى 11 م",
+    "mapUrl": "",
+    "notes": "خصم 25% على السونار والدوبلر وأشعة الصدر والعظام",
+    "seedRecord": true
+  },
+  {
+    "id": "10",
+    "category": "radiology",
+    "name": "مركز أشعة ٤٠٢",
+    "specialty": "أشعة عادية، موجات صوتية، وبانوراما أسنان",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "address": "مبنى 110، ممر أ، وحدة 10",
+    "phone": "0117340020",
+    "discount": "20%",
+    "schedule": "يومياً من 12 ظ إلى 9 م عدا الجمعة",
+    "mapUrl": "",
+    "notes": "خصم 20% على الأشعات العادية وبانوراما الأسنان",
+    "seedRecord": true
+  }
+];
+    const defaultMemberCards = [
+  {
+    "id": "card-1",
+    "code": "RF-Z7Q2-1001",
+    "holderName": "أحمد محمود محمد",
+    "governorate": "غير محددة",
+    "holderPhone": "0114827365",
+    "familyMembers": [
+      "منى حسن علي",
+      "عمر أحمد محمود",
+      "نور أحمد محمود",
+      "يوسف أحمد محمود"
+    ],
+    "expiryDate": "2027-12-31",
+    "seedRecord": true
+  }
+];
+    const defaultRequests = [
+  {
+    "id": "req-1",
+    "category": "doctor",
+    "name": "عيادة ١٠٥",
+    "specialty": "أخصائي جراحة المسالك البولية والكلى",
+    "center": "منطقة ١",
+    "governorate": "غير محددة",
+    "phone": "0127340021",
+    "discount": "25%",
+    "address": "مبنى ١١١، ممر ب، وحدة ١",
+    "schedule": "السبت والثلاثاء من 5م إلى 9م",
+    "mapUrl": "",
+    "notes": "يشمل كشف السونار وفحص الكلى",
+    "seedRecord": true
+  }
+];
+
+    const defaultCenters = ['منطقة ١'];
+    const defaultSettings = {
+      siteName: 'رعاية طبية',
+      headline: 'وفر حتى 30% على كشوفات الأطباء والفحوصات',
+      subtext: 'دليل الأطباء، الصيدليات، معامل التحاليل، ومراكز الأشعة بجميع المحافظات. بطاقة عائلية رقمية تشمل حتى 5 أفراد.'
+    };
+
+    // Storage keys
+    const STORAGE_KEY = 'fayoum_medical_directory_db';
+    const PIN_STORAGE_KEY = 'fayoum_admin_secret_pin';
+    const CENTERS_STORAGE_KEY = 'fayoum_centers_list';
+    const SETTINGS_STORAGE_KEY = 'fayoum_site_settings';
+    const MEMBERS_STORAGE_KEY = 'fayoum_member_cards';
+    const REQUESTS_STORAGE_KEY = 'fayoum_join_requests';
+
+    // Replace unchanged legacy starter records once, without overwriting owner edits or deletions.
+    const STARTER_MIGRATION_KEY = 'fayoum_starter_values_v2';
+    const LEGACY_STARTER_HASHES = {"defaultData":{"1":"9a98ca19","2":"8000fe76","3":"b8d3f5e4","4":"8f97777c","5":"31d10a61","6":"c5d272df","7":"27958ca4","8":"7502bad8","9":"426f7f93","10":"f1fe4818"},"defaultMemberCards":{"card-1":"8c4226f7"},"defaultRequests":{"req-1":"5eea2310"}};
+    function starterFingerprint(value) {
+      let hash = 2166136261;
+      for (const char of JSON.stringify(value)) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+      return (hash >>> 0).toString(16);
+    }
+    function migrateStarterValues() {
+      if (localStorage.getItem(STARTER_MIGRATION_KEY)) return;
+      [[STORAGE_KEY, defaultData, LEGACY_STARTER_HASHES.defaultData],
+       [MEMBERS_STORAGE_KEY, defaultMemberCards, LEGACY_STARTER_HASHES.defaultMemberCards],
+       [REQUESTS_STORAGE_KEY, defaultRequests, LEGACY_STARTER_HASHES.defaultRequests]].forEach(([key, defaults, hashes]) => {
+        const stored = localStorage.getItem(key);
+        if (stored === null) return;
+        try {
+          const rows = JSON.parse(stored);
+          if (!Array.isArray(rows)) return;
+          localStorage.setItem(key, JSON.stringify(rows.map(row =>
+            hashes[row.id] === starterFingerprint(row) ? defaults.find(d => d.id === row.id) : row)));
+        } catch (error) { console.warn('Could not migrate starter records'); }
+      });
+      localStorage.setItem(STARTER_MIGRATION_KEY, '1');
+    }
+    migrateStarterValues();
+
+    function clearStarterRecords() {
+      if (!confirm('حذف السجلات الأولية من هذا المتصفح فقط؟ السجلات التي أضفتها بنفسك ستبقى.')) return;
+      saveItems(getItems().filter(row => !row.seedRecord));
+      saveMemberCards(getMemberCards().filter(row => !row.seedRecord));
+      saveJoinRequests(getJoinRequests().filter(row => !row.seedRecord));
+      resetMemberForm();
+      alert('تم حذف السجلات الأولية من هذا المتصفح.');
+    }
+
+    // -------------------------------------------------------------
+    // Data Getters & Setters
+    // -------------------------------------------------------------
+    function getItems() { return []; }
+    function saveItems() { throw Error('Connection not ready'); }
+
+    function getMemberCards() { return []; }
+    function saveMemberCards() { throw Error('Connection not ready'); }
+
+    function getJoinRequests() { return []; }
+    function saveJoinRequests() { throw Error('Connection not ready'); }
+
+    function getCenters() {
+      const stored = localStorage.getItem(CENTERS_STORAGE_KEY);
+      if (!stored) {
+        localStorage.setItem(CENTERS_STORAGE_KEY, JSON.stringify(defaultCenters));
+        return defaultCenters;
+      }
+      try { return JSON.parse(stored); } catch (e) { return defaultCenters; }
+    }
+    function saveCenters(centers) {
+      localStorage.setItem(CENTERS_STORAGE_KEY, JSON.stringify(centers));
+      populateCentersSelectors();
+      renderCentersTags();
+    }
+
+    function getSiteSettings() {
+      const stored = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (!stored) return defaultSettings;
+      try { return Object.assign({}, defaultSettings, JSON.parse(stored)); } catch (e) { return defaultSettings; }
+    }
+    function saveSiteSettingsState(settings) {
+      localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+      applySiteSettings();
+    }
+
+    // -------------------------------------------------------------
+    // Pure Self-Contained SVG QR Code Generator (Zero Dependencies)
+    // -------------------------------------------------------------
+    function createPureQRCodeSVG(text, size = 160) {
+      const code = qrcode(0, 'M');
+      code.addData(String(text), 'Byte');
+      code.make();
+      const modules = code.getModuleCount(), quiet = 4, total = modules + quiet * 2;
+      let cells = '';
+      for (let row=0; row<modules; row++) for (let col=0; col<modules; col++) {
+        if (code.isDark(row,col)) cells += '<rect x="'+(col+quiet)+'" y="'+(row+quiet)+'" width="1" height="1"/>';
+      }
+      return '<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="رمز QR قابل للمسح" viewBox="0 0 '+total+' '+total+'" width="'+size+'" height="'+size+'" shape-rendering="crispEdges"><rect width="'+total+'" height="'+total+'" fill="white"/><g fill="#064e3b">'+cells+'</g></svg>';
+    }
+
+    function renderQRCode(payloadText) {
+      const qrContainer = document.getElementById('cardQrCode');
+      if (!qrContainer) return;
+      qrContainer.innerHTML = createPureQRCodeSVG(payloadText, 160);
+    }
+
+    function displayCardData(card) {
+      if (!card) return;
+      document.getElementById('printableCardArea').classList.remove('hidden');
+      document.getElementById('memberCardEmptyState').classList.add('hidden');
+      document.getElementById('displayCardHolder').textContent = card.holderName || 'اسم العميل';
+      document.getElementById('displayCardGovernorate').textContent = card.governorate || 'غير محددة';
+      document.getElementById('displayCardCode').textContent = card.code || 'RT-2026';
+      document.getElementById('displayCardExpiry').textContent = card.expiryDate || '2027-09-30';
+
+      const familyContainer = document.getElementById('displayFamilyMembers');
+      if (card.familyMembers && card.familyMembers.length > 0) {
+        familyContainer.innerHTML = card.familyMembers.map(m => `
+          <span class="inline-block bg-white/20 px-2 py-0.5 rounded-lg border border-white/20 font-bold break-words-all leading-normal">
+            👤 ${m}
+          </span>
+        `).join('');
+      } else {
+        familyContainer.innerHTML = '<span class="text-[10px] text-emerald-200">لا يوجد أفراد مسجلين</span>';
+      }
+
+      const qrPayload = `RF-CARD|${card.code}|${card.expiryDate}`;
+      renderQRCode(qrPayload);
+    }
+
+    function openMemberCardModal() {
+      const modal = document.getElementById('memberCardModal');
+      modal.classList.remove('hidden');
+
+      const cards = getMemberCards();
+      const initialCard = cards[0];
+      document.getElementById('printableCardArea').classList.toggle('hidden', !initialCard);
+      document.getElementById('memberCardEmptyState').classList.toggle('hidden', !!initialCard);
+      if (initialCard) displayCardData(initialCard);
+      else {
+        document.getElementById('displayCardHolder').textContent = '';
+        document.getElementById('displayCardCode').textContent = '';
+        document.getElementById('displayCardExpiry').textContent = '';
+        document.getElementById('displayFamilyMembers').textContent = '';
+        document.getElementById('cardQrCode').textContent = '';
+      }
+      document.getElementById('memberSearchInput').value = initialCard?.holderPhone || '';
+    }
+
+    function closeMemberCardModal() {
+      document.getElementById('memberCardModal').classList.add('hidden');
+    }
+
+    function lookupMemberCard() {
+      const query = document.getElementById('memberSearchInput').value.trim();
+      if (!query) return;
+      const cards = getMemberCards();
+      const found = cards.find(c => (c.holderPhone && c.holderPhone.includes(query)) || (c.code && c.code.toLowerCase().includes(query.toLowerCase())) || (c.holderName && c.holderName.includes(query)));
+      if (found) {
+        displayCardData(found);
+      } else {
+        alert('لم يتم العثور على بطاقة مطابقة لرقم الهاتف أو الكود المدخل.');
+      }
+    }
+
+    // -------------------------------------------------------------
+    // Provider Full Details Modal (When Clicking on Any Card)
+    // -------------------------------------------------------------
+    function openProviderDetailsModal(itemId) {
+      const items = getItems();
+      const item = items.find(i => i.id === itemId);
+      if (!item) return;
+
+      const cat = getCategoryDetails(item.category);
+      document.getElementById('modalProviderCategoryBadge').textContent = `${cat.icon} ${cat.name}`;
+      document.getElementById('modalProviderDiscountBadge').textContent = `خصم ${item.discount}`;
+      document.getElementById('modalProviderName').textContent = item.name;
+      document.getElementById('modalProviderSpecialty').textContent = `التخصص: ${item.specialty}`;
+      document.getElementById('modalProviderAddress').textContent = `${item.governorate || 'غير محددة'} / ${item.center}: ${item.address}`;
+      document.getElementById('modalProviderSchedule').textContent = item.schedule || 'المواعيد: متوفر حسب الحجز المسبق';
+      document.getElementById('modalProviderNotes').textContent = item.notes || 'الخصم متاح لحاملي بطاقة رعاية طبية على الكشوفات والفحوصات.';
+      document.getElementById('modalProviderPhone').textContent = item.phone;
+
+      // Phone link
+      const cleanPhone = item.phone.replace(/[^0-9]/g, '');
+      document.getElementById('modalProviderCallBtn').href = item.seedRecord ? '#' : `tel:${cleanPhone}`;
+      document.getElementById('modalProviderCallBtn').classList.toggle('hidden', !!item.seedRecord);
+
+      // WhatsApp link
+      const waPhone = cleanPhone.startsWith('0') ? ('2' + cleanPhone) : cleanPhone;
+      const waMessage = encodeURIComponent(`السلام عليكم، أرغب في حجز كشف مع الطبيب من خلال شبكة رعاية طبية - كود العضوية: `);
+      document.getElementById('modalProviderWaBtn').href = item.seedRecord ? '#' : `https://wa.me/${waPhone}?text=${waMessage}`;
+      document.getElementById('modalProviderWaBtn').classList.toggle('hidden', !!item.seedRecord);
+
+      // Map link
+      const mapBtn = document.getElementById('modalProviderMapBtn');
+      if (item.mapUrl) {
+        mapBtn.href = item.mapUrl;
+        mapBtn.classList.remove('hidden');
+      } else {
+        mapBtn.classList.add('hidden');
+      }
+
+      document.getElementById('providerDetailsModal').classList.remove('hidden');
+    }
+
+    function closeProviderDetailsModal() {
+      document.getElementById('providerDetailsModal').classList.add('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // Secret 5-Clicks Admin Trigger
+    // -------------------------------------------------------------
+    let clickCount = 0;
+    let clickResetTimer = null;
+    const titleTrigger = document.querySelector('header img');
+
+    titleTrigger.addEventListener('click', () => {
+      clickCount++;
+      clearTimeout(clickResetTimer);
+      if (clickCount >= 5) {
+        clickCount = 0;
+        openPinModal();
+      } else {
+        clickResetTimer = setTimeout(() => { clickCount = 0; }, 2500);
+      }
+    });
+
+    function openPinModal() { document.getElementById('pinModal').classList.remove('hidden'); }
+    function closePinModal() { document.getElementById('pinModal').classList.add('hidden'); }
+    function verifyPin() { alert('جارٍ تحميل الاتصال الآمن.'); }
+
+    function openAdminDashboard() {
+      document.getElementById('adminDashboard').classList.remove('hidden');
+      resetItemForm();
+      renderAdminTable();
+      renderRequestsTable();
+      renderMembersTable();
+      calculateStats();
+    }
+    function closeAdminDashboard() {
+      document.getElementById('adminDashboard').classList.add('hidden');
+    }
+
+    function switchAdminSection(sectionId) {
+      document.querySelectorAll('.admin-sec-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-white', 'text-brand-800', 'shadow-sm');
+        btn.classList.add('text-slate-600');
+      });
+      const activeBtn = document.getElementById(`btn-sec-${sectionId.replace('Section', '')}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'bg-white', 'text-brand-800', 'shadow-sm');
+        activeBtn.classList.remove('text-slate-600');
+      }
+
+      document.querySelectorAll('.admin-section-content').forEach(c => c.classList.add('hidden'));
+      const activeSec = document.getElementById(`sec-${sectionId}`);
+      if (activeSec) activeSec.classList.remove('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // Savings Calculator Logic
+    // -------------------------------------------------------------
+    let doctorCount = 2;
+    let labCount = 1;
+
+    function adjustCalc(type, delta) {
+      if (type === 'doctor') {
+        doctorCount = Math.max(0, Math.min(10, doctorCount + delta));
+        document.getElementById('calcDoctorCount').textContent = doctorCount;
+      } else {
+        labCount = Math.max(0, Math.min(10, labCount + delta));
+        document.getElementById('calcLabCount').textContent = labCount;
+      }
+      calculateSavings();
+    }
+
+    function calculateSavings() {
+      const pharmSpend = Math.max(0, Number(document.getElementById('calcPharmacySpend').value) || 0);
+      const docSavings = doctorCount * 65;
+      const labSavings = labCount * 115;
+      const pharmSavings = pharmSpend * 0.15;
+
+      const totalBase = Math.round(docSavings + labSavings + pharmSavings);
+      const minSavings = Math.max(0, Math.round(totalBase * 0.9));
+      const maxSavings = Math.round(totalBase * 1.2);
+
+      document.getElementById('savingsMin').textContent = minSavings;
+      document.getElementById('savingsMax').textContent = maxSavings;
+    }
+
+    // -------------------------------------------------------------
+    // Join Requests Handlers
+    // -------------------------------------------------------------
+    function openJoinModal() {
+      document.getElementById('joinForm').reset();
+      populateCentersSelectors();
+      document.getElementById('joinModal').classList.remove('hidden');
+    }
+    function closeJoinModal() {
+      document.getElementById('joinModal').classList.add('hidden');
+    }
+
+    function submitJoinRequest() {
+      const category = document.getElementById('joinCategory').value;
+      const name = document.getElementById('joinName').value.trim();
+      const specialty = document.getElementById('joinSpecialty').value.trim();
+      const center = document.getElementById('joinCenter').value;
+      const governorate = document.getElementById('joinGovernorate').value.trim();
+      const phone = document.getElementById('joinPhone').value.trim();
+      const discount = document.getElementById('joinDiscount').value.trim();
+      const address = document.getElementById('joinAddress').value.trim();
+      const schedule = document.getElementById('joinSchedule').value.trim();
+      const mapUrl = document.getElementById('joinMapUrl').value.trim();
+      const notes = document.getElementById('joinNotes').value.trim();
+
+      const newReq = {
+        id: 'req-' + Date.now(),
+        category,
+        name,
+        specialty,
+        center, governorate,
+        phone,
+        discount,
+        address,
+        schedule,
+        mapUrl,
+        notes
+      };
+
+      const requests = getJoinRequests();
+      requests.unshift(newReq);
+      saveJoinRequests(requests);
+
+      closeJoinModal();
+      alert('شكراً لك! تم حفظ طلب انضمامك على هذا الجهاز فقط. الإرسال للإدارة والمزامنة لم يتم تفعيلهما بعد.');
+    }
+
+    function approveJoinRequest(reqId) {
+      let requests = getJoinRequests();
+      const req = requests.find(r => r.id === reqId);
+      if (!req) return;
+
+      const items = getItems();
+      const newItem = {
+        id: Date.now().toString(),
+        category: req.category,
+        name: req.name,
+        specialty: req.specialty,
+        center: req.center,
+        governorate: req.governorate || 'غير محددة',
+        address: req.address,
+        phone: req.phone,
+        discount: req.discount,
+        schedule: req.schedule,
+        mapUrl: req.mapUrl || '',
+        notes: req.notes || '',
+        ...(req.seedRecord ? { seedRecord: true } : {})
+      };
+      items.unshift(newItem);
+      saveItems(items);
+
+      requests = requests.filter(r => r.id !== reqId);
+      saveJoinRequests(requests);
+
+      alert(`تم اعتماد وإضافة "${req.name}" إلى دليل الشبكة النشط فوراً!`);
+    }
+
+    function rejectJoinRequest(reqId) {
+      if (!confirm('هل تريد حذف طلب الانضمام هذا؟')) return;
+      let requests = getJoinRequests().filter(r => r.id !== reqId);
+      saveJoinRequests(requests);
+    }
+
+    function renderRequestsTable() {
+      const requests = getJoinRequests();
+      const tbody = document.getElementById('requestsTableBody');
+      const badge = document.getElementById('pendingRequestsBadge');
+      const headerCount = document.getElementById('requestsCountHeader');
+
+      if (requests.length > 0) {
+        badge.textContent = requests.length;
+        badge.classList.remove('hidden');
+        headerCount.textContent = `${requests.length} طلب جديد`;
+      } else {
+        badge.classList.add('hidden');
+        headerCount.textContent = 'لا توجد طلبات جديدة';
+      }
+
+      if (requests.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-400">لا توجد طلبات انضمام قيد المراجعة حالياً.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = requests.map(r => {
+        const cat = getCategoryDetails(r.category);
+        return `
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-2.5 whitespace-nowrap">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold border ${cat.bg}">
+                ${cat.icon} ${cat.name}
+              </span>
+            </td>
+            <td class="p-2.5 font-bold text-slate-900 break-words-all">${r.name}</td>
+            <td class="p-2.5 text-slate-600 break-words-all">${r.specialty}</td>
+            <td class="p-2.5 text-slate-600 break-words-all">
+              <span class="font-bold text-slate-800">${r.center}:</span> ${r.address}
+            </td>
+            <td class="p-2.5">
+              <div class="font-mono text-slate-700" dir="ltr">${r.phone}</div>
+              <div class="text-[10px] text-slate-400 break-words-all">${r.schedule}</div>
+            </td>
+            <td class="p-2.5 text-center font-extrabold text-brand-700">${r.discount}</td>
+            <td class="p-2.5 text-center whitespace-nowrap space-x-1 space-x-reverse">
+              <button onclick="approveJoinRequest('${r.id}')" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition">
+                ✓ اعتماد
+              </button>
+              <button onclick="rejectJoinRequest('${r.id}')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-xs font-bold transition">
+                رفض
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // -------------------------------------------------------------
+    // Members & Family Management (Up to 5)
+    // -------------------------------------------------------------
+    function resetMemberForm() {
+      document.getElementById('memberCardForm').reset();
+      document.getElementById('memberCardId').value = '';
+      document.getElementById('mCardCode').value = 'RT-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+      const nextYear = new Date();
+      nextYear.setFullYear(nextYear.getFullYear() + 1);
+      document.getElementById('mExpiryDate').value = nextYear.toISOString().slice(0, 10);
+    }
+
+    async function saveMemberCard() {try {
+      const id = document.getElementById('memberCardId').value;
+      const holderName = document.getElementById('mHolderName').value.trim();
+      const governorate = document.getElementById('mGovernorate').value.trim();
+      const holderPhone = document.getElementById('mHolderPhone').value.trim();
+      const code = document.getElementById('mCardCode').value.trim();
+      const expiryDate = document.getElementById('mExpiryDate').value;
+
+      const family = [];
+      for (let i = 1; i <= 5; i++) {
+        const val = document.getElementById(`mFamily${i}`).value.trim();
+        if (val) family.push(val);
+      }
+
+      let cards = getMemberCards();
+      if (id) {
+        const idx = cards.findIndex(c => c.id === id);
+        if (idx !== -1) {
+          cards[idx] = { ...cards[idx], id, code, holderName, holderPhone, governorate, familyMembers: family, expiryDate };
+        }
+      } else {
+        const newCard = {
+          id: 'card-' + Date.now(),
+          code: code || ('RT-2026-' + Math.floor(1000 + Math.random() * 9000)),
+          holderName,
+          holderPhone, governorate,
+          familyMembers: family,
+          expiryDate
+        };
+        cards.unshift(newCard);
+      }
+
+      await saveMemberCards(cards);
+      resetMemberForm();
+      alert('تم حفظ وتفعيل بطاقة العضوية بنجاح!');
+    } catch(e) { alert('تعذر الحفظ. تحقق من الاتصال والصلاحيات.'); }}
+
+    function editMemberCard(cardId) {
+      const cards = getMemberCards();
+      const card = cards.find(c => c.id === cardId);
+      if (!card) return;
+
+      document.getElementById('memberCardId').value = card.id;
+      document.getElementById('mHolderName').value = card.holderName;
+      document.getElementById('mHolderPhone').value = card.holderPhone;
+      document.getElementById('mGovernorate').value = card.governorate || '';
+      document.getElementById('mCardCode').value = card.code;
+      document.getElementById('mExpiryDate').value = card.expiryDate;
+
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById(`mFamily${i}`).value = (card.familyMembers && card.familyMembers[i-1]) || '';
+      }
+
+      document.getElementById('memberCardForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function deleteMemberCard(cardId) {try {
+      if (!confirm('هل أنت متأكد من حذف هذه البطاقة؟')) return;
+      let cards = getMemberCards().filter(c => c.id !== cardId);
+      await saveMemberCards(cards);
+    } catch(e) { alert('تعذر الحفظ. تحقق من الاتصال والصلاحيات.'); }}
+
+    function viewCardDirectly(cardId) {
+      const cards = getMemberCards();
+      const card = cards.find(c => c.id === cardId);
+      if (!card) return;
+      closeAdminDashboard();
+      displayCardData(card);
+      document.getElementById('memberCardModal').classList.remove('hidden');
+    }
+
+    function renderMembersTable() {
+      const cards = getMemberCards();
+      const tbody = document.getElementById('membersTableBody');
+      document.getElementById('adminMembersCount').textContent = cards.length;
+
+      if (cards.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="p-4 text-center text-slate-400">لا توجد بطاقات مصدرة حتى الآن.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = cards.map(c => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="p-2.5 font-mono font-bold text-emerald-800">${c.code}</td>
+          <td class="p-2.5 font-bold text-slate-900 break-words-all">${c.holderName}</td>
+          <td class="p-2.5 font-mono" dir="ltr">${c.holderPhone}</td>
+          <td class="p-2.5 text-slate-600 break-words-all">
+            ${c.familyMembers && c.familyMembers.length > 0 ? c.familyMembers.map(m => `<span class="inline-block bg-slate-100 border border-slate-200 px-1.5 py-0.5 rounded text-[10px] m-0.5">${m}</span>`).join('') : '<span class="text-slate-400">-</span>'}
+          </td>
+          <td class="p-2.5 font-mono text-slate-600">${c.expiryDate}</td>
+          <td class="p-2.5 text-center whitespace-nowrap space-x-1 space-x-reverse">
+            <button onclick="sendMemberCardWhatsApp('${c.id}')" class="px-2 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1 inline-flex" title="إرسال رابط الكارت والتطبيق للعميل عبر واتساب">
+              <span>💬</span>
+              <span>واتساب</span>
+            </button>
+            <button onclick="viewCardDirectly('${c.id}')" class="px-2 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-lg text-xs font-bold border border-emerald-200 transition">
+              عرض
+            </button>
+            <button onclick="editMemberCard('${c.id}')" class="px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg text-xs font-bold border border-amber-200 transition">
+              تعديل
+            </button>
+            <button onclick="deleteMemberCard('${c.id}')" class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-lg text-xs font-bold border border-rose-200 transition">
+              حذف
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // -------------------------------------------------------------
+    // Directory Cards Render (Wrap smoothly in extra lines, no side spill)
+    // -------------------------------------------------------------
+    let currentCategory = 'all';
+    let currentCenter = 'all';
+    let currentGovernorate = 'all';
+    let currentSchedule = 'all';
+    let searchQuery = '';
+
+    function getCategoryDetails(cat) {
+      switch(cat) {
+        case 'doctor':
+          return { name: 'طبيب / عيادة', icon: '👨‍⚕️', bg: 'bg-blue-50 text-blue-700 border-blue-200' };
+        case 'pharmacy':
+          return { name: 'صيدلية', icon: '💊', bg: 'bg-emerald-50 text-emerald-700 border-emerald-200' };
+        case 'lab':
+          return { name: 'معمل تحاليل', icon: '🔬', bg: 'bg-purple-50 text-purple-700 border-purple-200' };
+        case 'radiology':
+          return { name: 'مركز أشعة', icon: '🩻', bg: 'bg-amber-50 text-amber-700 border-amber-200' };
+        default:
+          return { name: 'جهة طبية', icon: '🏥', bg: 'bg-slate-50 text-slate-700 border-slate-200' };
+      }
+    }
+
+    function renderCards() {
+      const items = getItems();
+      const grid = document.getElementById('cardsGrid');
+      const noResults = document.getElementById('noResults');
+      const resultsCountText = document.getElementById('resultsCountText');
+
+      const filtered = items.filter(item => {
+        const matchesCategory = (currentCategory === 'all') || (item.category === currentCategory);
+        const matchesCenter = (currentCenter === 'all') || (item.center === currentCenter);
+
+        let matchesSchedule = true;
+        if (currentSchedule === 'daily') {
+          matchesSchedule = (item.schedule || '').includes('يومياً');
+        } else if (currentSchedule === 'evening') {
+          matchesSchedule = (item.schedule || '').includes('م') || (item.schedule || '').includes('مساء');
+        }
+
+        const q = searchQuery.trim().toLowerCase();
+        const matchesSearch = !q ||
+          item.name.toLowerCase().includes(q) ||
+          item.specialty.toLowerCase().includes(q) ||
+          item.address.toLowerCase().includes(q) ||
+          item.center.toLowerCase().includes(q) || (item.governorate || '').toLowerCase().includes(q) ||
+          item.phone.includes(q);
+
+        return matchesCategory && matchesCenter && matchesSchedule && matchesSearch && (currentGovernorate === 'all' || (item.governorate || 'غير محددة') === currentGovernorate);
+      });
+
+      resultsCountText.textContent = `يتم عرض ${filtered.length} من إجمالي ${items.length} جهة طبية معتمدة (انقر على البطاقة لعرض التفاصيل الكاملة)`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+      grid.innerHTML = filtered.map(item => {
+        const cat = getCategoryDetails(item.category);
+
+        const cleanPhone = item.phone.replace(/[^0-9]/g, '');
+        const waPhone = cleanPhone.startsWith('0') ? ('2' + cleanPhone) : cleanPhone;
+        const waMessage = encodeURIComponent(`السلام عليكم، أرغب في حجز كشف مع الطبيب من خلال شبكة رعاية طبية - كود العضوية: `);
+        const waLink = `https://wa.me/${waPhone}?text=${waMessage}`;
+        const unavailableContact = item.seedRecord || /^000/.test(item.phone) || /[xX]/.test(item.phone);
+
+        return `
+          <div onclick="openProviderDetailsModal('${item.id}')"
+               class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-300 transition-all duration-200 flex flex-col justify-between overflow-hidden cursor-pointer group w-full">
+
+            <div class="p-4 sm:p-5 space-y-3">
+              <!-- Header Badges -->
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-extrabold border ${cat.bg}">
+                  <span>${cat.icon}</span>
+                  <span>${cat.name}</span>
+                </span>
+
+                <span class="inline-flex items-center gap-1 bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-1 rounded-lg text-xs font-black shadow-sm shrink-0">
+                  <span>خصم ${item.discount}</span>
+                </span>
+              </div>
+
+              <div>
+                <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-brand-700 transition-colors leading-snug break-words-all">
+                  ${item.name}
+                </h3>
+                <p class="text-xs text-slate-600 font-semibold mt-1 break-words-all leading-relaxed">
+                  <span class="text-slate-400">التخصص:</span>
+                  <span>${item.specialty}</span>
+                </p>
+              </div>
+
+              <!-- Location, Schedule, and Notes -->
+              <div class="space-y-1.5 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                <div class="flex items-start gap-1.5">
+                  <span class="text-slate-400 shrink-0">📍</span>
+                  <p class="break-words-all leading-relaxed">
+                    <span class="font-bold text-slate-700 underline decoration-slate-300 decoration-1">${item.governorate || 'غير محددة'} / ${item.center}:</span>
+                    <span>${item.address}</span>
+                  </p>
+                </div>
+
+                ${item.schedule ? `
+                  <div class="flex items-start gap-1.5 text-slate-700 bg-slate-50 p-2 rounded-xl border border-slate-200/70 text-[11px]">
+                    <span class="text-slate-400 shrink-0">🕒</span>
+                    <span class="font-semibold text-slate-800 break-words-all leading-relaxed">${item.schedule}</span>
+                  </div>
+                ` : ''}
+
+                ${item.notes ? `
+                  <div class="flex items-start gap-1.5 text-amber-800 bg-amber-50/80 p-2 rounded-xl text-[11px] border border-amber-200/60">
+                    <span class="shrink-0 font-bold">ℹ️</span>
+                    <span class="break-words-all leading-relaxed">${item.notes}</span>
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+
+            <!-- Action Bar (Buttons stop propagation so user can directly call/whatsapp or click card for full view) -->
+            <div class="bg-slate-50 px-4 py-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap">
+              <div class="text-xs">
+                <span class="text-slate-400 block text-[9px] font-bold">رقم الحجز</span>
+                <span class="font-bold text-slate-800 font-mono text-[11px]" dir="ltr">${item.phone}</span>
+              </div>
+
+              <div class="flex items-center gap-1.5 shrink-0" onclick="event.stopPropagation();">
+                ${item.mapUrl ? `
+                  <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer"
+                     class="p-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold transition" title="الموقع على الخريطة">
+                    🗺️
+                  </a>
+                ` : ''}
+
+                ${!unavailableContact ? `<a href="${waLink}" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-extrabold shadow-sm transition" title="حجز فوري عبر واتساب">
+                  <span>💬</span>
+                  <span>واتساب</span>
+                </a>
+
+                <a href="tel:${cleanPhone}"
+                   class="inline-flex items-center gap-1 bg-brand-600 hover:bg-brand-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-extrabold shadow-sm transition">
+                  <span>📞</span>
+                  <span>اتصال</span>
+                </a>` : '<span class="text-xs text-slate-500">غير متاح للحجز</span>'}
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateCategoryCounts() {
+      const items = getItems();
+      document.getElementById('count-all').textContent = items.length;
+      document.getElementById('count-doctor').textContent = items.filter(i => i.category === 'doctor').length;
+      document.getElementById('count-pharmacy').textContent = items.filter(i => i.category === 'pharmacy').length;
+      document.getElementById('count-lab').textContent = items.filter(i => i.category === 'lab').length;
+      document.getElementById('count-radiology').textContent = items.filter(i => i.category === 'radiology').length;
+      document.getElementById('adminTotalCount').textContent = items.length;
+    }
+
+    // -------------------------------------------------------------
+    // Provider Form CRUD
+    // -------------------------------------------------------------
+    function resetItemForm() {
+      document.getElementById('itemForm').reset();
+      document.getElementById('itemId').value = '';
+      document.getElementById('formTitle').innerHTML = `
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-500"></span>
+        إضافة جهة جديدة إلى الدليل
+      `;
+    }
+
+    async function saveItem() {try {
+      const id = document.getElementById('itemId').value;
+      const category = document.getElementById('itemCategory').value;
+      const name = document.getElementById('itemName').value.trim();
+      const specialty = document.getElementById('itemSpecialty').value.trim();
+      const center = document.getElementById('itemCenter').value;
+      const governorate = document.getElementById('itemGovernorate').value.trim();
+      const address = document.getElementById('itemAddress').value.trim();
+      const phone = document.getElementById('itemPhone').value.trim();
+      const discount = document.getElementById('itemDiscount').value.trim();
+      const schedule = document.getElementById('itemSchedule').value.trim();
+      const mapUrl = document.getElementById('itemMapUrl').value.trim();
+      const notes = document.getElementById('itemNotes').value.trim();
+
+      let items = getItems();
+      if (id) {
+        const idx = items.findIndex(i => i.id === id);
+        if (idx !== -1) {
+          items[idx] = { ...items[idx], id, category, name, specialty, center, governorate, address, phone, discount, schedule, mapUrl, notes };
+          if (!/^000/.test(phone) && /^[+\d\s()-]{8,}$/.test(phone)) delete items[idx].seedRecord;
+        }
+      } else {
+        const newItem = {
+          id: Date.now().toString(),
+          category,
+          name,
+          specialty,
+          center, governorate,
+          address,
+          phone,
+          discount,
+          schedule,
+          mapUrl,
+          notes
+        };
+        items.unshift(newItem);
+      }
+
+      await saveItems(items);
+      resetItemForm();
+      alert('تم حفظ وتحديث بيانات الجهة في الدليل بنجاح!');
+    } catch(e) { alert('تعذر الحفظ. تحقق من الاتصال والصلاحيات.'); }}
+
+    function editItem(id) {
+      const items = getItems();
+      const item = items.find(i => i.id === id);
+      if (!item) return;
+
+      document.getElementById('itemId').value = item.id;
+      document.getElementById('itemCategory').value = item.category;
+      document.getElementById('itemName').value = item.name;
+      document.getElementById('itemSpecialty').value = item.specialty;
+      document.getElementById('itemCenter').value = item.center;
+      document.getElementById('itemGovernorate').value = item.governorate || '';
+      document.getElementById('itemAddress').value = item.address;
+      document.getElementById('itemPhone').value = item.phone;
+      document.getElementById('itemDiscount').value = item.discount;
+      document.getElementById('itemSchedule').value = item.schedule || '';
+      document.getElementById('itemMapUrl').value = item.mapUrl || '';
+      document.getElementById('itemNotes').value = item.notes || '';
+
+      document.getElementById('formTitle').innerHTML = `
+        <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+        تعديل بيانات: ${item.name}
+      `;
+
+      switchAdminSection('providersSection');
+      document.getElementById('itemForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function deleteItem(id) {try {
+      if (!confirm('هل أنت متأكد من حذف هذه الجهة من الدليل؟')) return;
+      let items = getItems().filter(i => i.id !== id);
+      await saveItems(items);
+    } catch(e) { alert('تعذر الحفظ. تحقق من الاتصال والصلاحيات.'); }}
+
+    function renderAdminTable() {
+      const items = getItems();
+      const tbody = document.getElementById('adminTableBody');
+      const search = (document.getElementById('adminSearchInput').value || '').trim().toLowerCase();
+
+      const filtered = items.filter(item => {
+        if (!search) return true;
+        return item.name.toLowerCase().includes(search) ||
+               item.specialty.toLowerCase().includes(search) ||
+               item.center.toLowerCase().includes(search) ||
+               item.phone.includes(search);
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" class="p-4 text-center text-slate-400">لا توجد بيانات مطابقة</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(item => {
+        const cat = getCategoryDetails(item.category);
+        return `
+          <tr class="hover:bg-slate-50 transition">
+            <td class="p-2.5 whitespace-nowrap">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold border ${cat.bg}">
+                ${cat.icon} ${cat.name}
+              </span>
+            </td>
+            <td class="p-2.5 font-bold text-slate-900 break-words-all">${item.name}</td>
+            <td class="p-2.5 text-slate-600 break-words-all">${item.specialty}</td>
+            <td class="p-2.5 text-slate-600 break-words-all">
+              <span class="font-bold text-slate-800">${item.center}</span> - ${item.schedule || item.address}
+            </td>
+            <td class="p-2.5 font-mono text-slate-700" dir="ltr">${item.phone}</td>
+            <td class="p-2.5 text-center">
+              <span class="font-extrabold text-brand-700 bg-brand-50 px-2 py-0.5 rounded border border-brand-200">
+                ${item.discount}
+              </span>
+            </td>
+            <td class="p-2.5 text-center whitespace-nowrap space-x-1 space-x-reverse">
+              <button onclick="editItem('${item.id}')" class="px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg text-xs font-bold border border-amber-200 transition">
+                تعديل
+              </button>
+              <button onclick="deleteItem('${item.id}')" class="px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-lg text-xs font-bold border border-rose-200 transition">
+                حذف
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // -------------------------------------------------------------
+    // Advanced Settings Modal (Gear ⚙️)
+    // -------------------------------------------------------------
+    function openAdvancedSettingsModal() {
+      const s = getSiteSettings();
+      document.getElementById('settingSiteName').value = s.siteName;
+      document.getElementById('settingHeadline').value = s.headline;
+      document.getElementById('settingSubtext').value = s.subtext;
+
+      document.getElementById('currentPinInput').value = '';
+      document.getElementById('newPinInput').value = '';
+      document.getElementById('confirmNewPinInput').value = '';
+      document.getElementById('changePinMsg').classList.add('hidden');
+
+      renderCentersTags();
+      calculateStats();
+      switchSettingsTab('pinTab');
+      document.getElementById('settingsModal').classList.remove('hidden');
+    }
+
+    function closeAdvancedSettingsModal() {
+      document.getElementById('settingsModal').classList.add('hidden');
+    }
+
+    function switchSettingsTab(tabId) {
+      document.querySelectorAll('.settings-tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-white', 'text-slate-900', 'shadow-sm');
+        btn.classList.add('text-slate-600');
+      });
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'bg-white', 'text-slate-900', 'shadow-sm');
+        activeBtn.classList.remove('text-slate-600');
+      }
+
+      document.querySelectorAll('.settings-tab-content').forEach(content => content.classList.add('hidden'));
+      const activeTab = document.getElementById(`tab-${tabId}`);
+      if (activeTab) activeTab.classList.remove('hidden');
+    }
+
+    function updateSecretPin() {
+      const currentPin = document.getElementById('currentPinInput').value.trim();
+      const newPin = document.getElementById('newPinInput').value.trim();
+      const confirmNewPin = document.getElementById('confirmNewPinInput').value.trim();
+      const msg = document.getElementById('changePinMsg');
+      msg.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+      if (currentPin !== getAdminPin()) {
+        msg.classList.add('text-rose-600');
+        msg.textContent = 'الرقم السري الحالي غير مطابق!';
+        return;
+      }
+      if (!newPin || newPin.length < 4) {
+        msg.classList.add('text-rose-600');
+        msg.textContent = 'يجب أن يتكون الرقم السري من 4 أرقام أو حروف على الأقل.';
+        return;
+      }
+      if (newPin !== confirmNewPin) {
+        msg.classList.add('text-rose-600');
+        msg.textContent = 'الرقم السري الجديد وتأكيده غير متطابقين!';
+        return;
+      }
+
+      setAdminPin(newPin);
+      msg.classList.add('text-emerald-600');
+      msg.textContent = 'تم تحديث الرقم السري بنجاح!';
+      document.getElementById('currentPinInput').value = '';
+      document.getElementById('newPinInput').value = '';
+      document.getElementById('confirmNewPinInput').value = '';
+    }
+
+    function saveSiteSettings() {
+      const updated = {
+        siteName: document.getElementById('settingSiteName').value.trim() || defaultSettings.siteName,
+        headline: document.getElementById('settingHeadline').value.trim() || defaultSettings.headline,
+        subtext: document.getElementById('settingSubtext').value.trim() || defaultSettings.subtext
+      };
+      saveSiteSettingsState(updated);
+      alert('تم تطبيق إعدادات واجهة الموقع بنجاح!');
+    }
+
+    function applySiteSettings() {
+      const s = getSiteSettings();
+      document.getElementById('secretSiteTitleTrigger').textContent = s.siteName;
+      document.getElementById('footerTitle').textContent = `شبكة ${s.siteName} للخصم الطبي - جميع المحافظات`;
+      document.getElementById('heroHeadline').innerHTML = s.headline.replace(/30%/, '<span class="text-emerald-300 underline decoration-wavy decoration-teal-400">30%</span>');
+      document.getElementById('heroSubtext').textContent = s.subtext;
+    }
+
+    function populateCentersSelectors() {
+      const items = getItems();
+      const filter = document.getElementById('governorateFilter');
+      const provinces = [...new Set(items.map(i => i.governorate || 'غير محددة'))].sort();
+      const selected = filter.value;
+      filter.replaceChildren(new Option('جميع المحافظات', 'all'), ...provinces.map(g => new Option(g,g)));
+      filter.value = provinces.includes(selected) ? selected : 'all';
+      currentGovernorate = filter.value;
+      const centers = [...new Set(items.filter(i => currentGovernorate === 'all' || (i.governorate || 'غير محددة') === currentGovernorate).map(i=>i.center))].sort();
+      const centerFilter = document.getElementById('centerFilter');
+      const currentVal = centerFilter.value;
+      centerFilter.replaceChildren(new Option('جميع المناطق والمراكز', 'all'), ...centers.map(c=>new Option(c,c)));
+      centerFilter.value = centers.includes(currentVal) ? currentVal : 'all';
+      currentCenter = centerFilter.value;
+    }
+
+    function renderCentersTags() {
+      const centers = getCenters();
+      const container = document.getElementById('centersTagsList');
+      container.innerHTML = centers.map(c => `
+        <span class="inline-flex items-center gap-1.5 bg-slate-100 border border-slate-300 px-3 py-1 rounded-xl text-xs font-bold text-slate-700">
+          <span>${c}</span>
+          <button type="button" onclick="deleteCenter('${c}')" class="text-rose-500 hover:text-rose-700 text-sm font-bold leading-none">&times;</button>
+        </span>
+      `).join('');
+    }
+
+    function addNewCenter() {
+      const input = document.getElementById('newCenterInput');
+      const val = input.value.trim();
+      if (!val) return;
+      let centers = getCenters();
+      if (!centers.includes(val)) {
+        centers.push(val);
+        saveCenters(centers);
+        input.value = '';
+      }
+    }
+
+    function deleteCenter(cName) {
+      if (!confirm(`هل أنت متأكد من حذف مركز "${cName}"؟`)) return;
+      let centers = getCenters().filter(c => c !== cName);
+      saveCenters(centers);
+    }
+
+    function calculateStats() {
+      const items = getItems();
+      document.getElementById('statDoctors').textContent = items.filter(i => i.category === 'doctor').length;
+      document.getElementById('statPharmacies').textContent = items.filter(i => i.category === 'pharmacy').length;
+      document.getElementById('statLabs').textContent = items.filter(i => i.category === 'lab').length;
+      document.getElementById('statRadiology').textContent = items.filter(i => i.category === 'radiology').length;
+      document.getElementById('statMembersTotal').textContent = getMemberCards().length;
+    }
+
+    // -------------------------------------------------------------
+    // Backup & Restore
+    // -------------------------------------------------------------
+    function exportDataJSON() {
+      const backupPayload = {
+        version: '4.0',
+        timestamp: new Date().toISOString(),
+        items: getItems(),
+        members: getMemberCards(),
+        requests: getJoinRequests(),
+        centers: getCenters(),
+        settings: getSiteSettings()
+      };
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupPayload, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `fayoum_medical_network_backup_${new Date().toISOString().slice(0,10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    // -------------------------------------------------------------
+    // Smart PWA Install Flow & Modals
+    // -------------------------------------------------------------
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('pwaInstallBtn');
+      if (btn) btn.classList.remove('hidden');
+    });
+
+    function installPWA() {
+      handleSmartInstall();
+    }
+
+    function handleSmartInstall() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            dismissBottomBanner();
+          }
+          deferredPrompt = null;
+        });
+      } else {
+        openInstallGuideModal();
+      }
+    }
+
+    function dismissBottomBanner() {
+      const banner = document.getElementById('bottomInstallBanner');
+      if (banner) {
+        banner.style.display = 'none';
+        localStorage.setItem('fayoum_pwa_banner_dismissed', 'true');
+      }
+    }
+
+    function openInstallGuideModal() {
+      document.getElementById('installGuideModal').classList.remove('hidden');
+    }
+
+    function closeInstallGuideModal() {
+      document.getElementById('installGuideModal').classList.add('hidden');
+    }
+
+    function switchGuideTab(tabId) {
+      document.querySelectorAll('.guide-tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-white', 'text-slate-900', 'shadow-sm');
+        btn.classList.add('text-slate-600');
+      });
+      const activeBtn = document.getElementById(`btn-${tabId}`);
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'bg-white', 'text-slate-900', 'shadow-sm');
+        activeBtn.classList.remove('text-slate-600');
+      }
+
+      document.querySelectorAll('.guide-tab-content').forEach(c => c.classList.add('hidden'));
+      const activeTab = document.getElementById(`tab-${tabId}`);
+      if (activeTab) activeTab.classList.remove('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // WhatsApp Welcome & Card Dispatcher for Members
+    // -------------------------------------------------------------
+    function sendMemberCardWhatsApp(cardId) {
+      const cards = getMemberCards();
+      const card = cards.find(c => c.id === cardId);
+      if (!card) return;
+
+      if (card.seedRecord || /^000/.test(card.holderPhone || '')) { alert('لا يوجد رقم تواصل متاح لهذه البطاقة.'); return; }
+      const cleanPhone = card.holderPhone.replace(/[^0-9]/g, '');
+      const waPhone = cleanPhone.startsWith('0') ? ('2' + cleanPhone) : cleanPhone;
+
+      const familyStr = (card.familyMembers && card.familyMembers.length > 0) ?
+        card.familyMembers.join('، ') : 'العائلة الكريمة';
+
+      const siteUrl = window.location.href;
+
+      const message = `السلام عليكم ورحمة الله وبركاته يا أستاذ ${card.holderName} 🌿
+أهلاً بك وبأسرتك الكريمة في شبكة رعاية طبية للخصم الطبي.
+
+✅ تم تفعيل بطاقتكم العائلية بنجاح:
+💳 كود العضوية: ${card.code}
+👥 المشمولين بالخصم: ${familyStr}
+📅 صالحة حتى: ${card.expiryDate}
+
+📱 رابط دليلك الطبي وبطاقتك:
+${siteUrl}
+
+💡 لتثبيت التطبيق على شاشة موبايلك بضغطة واحدة وبدون مساحة:
+افتح الرابط أعلاه واضغط على "تثبيت الآن" ليظهر معك على الشاشة الرئيسية مثل أي تطبيق ويفتح بلمسة واحدة حتى بدون إنترنت.
+
+مع تمنياتنا لكم ولأسرتكم بدوام الصحة والعافية 🌸`;
+
+      const encodedMsg = encodeURIComponent(message);
+      const waUrl = `https://wa.me/${waPhone}?text=${encodedMsg}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // -------------------------------------------------------------
+    // Clinic Countertop Poster / Sticker Generator
+    // -------------------------------------------------------------
+    function openClinicPosterModal() {
+      const siteUrl = window.location.href;
+      const posterQrContainer = document.getElementById('clinicPosterQrCode');
+      if (posterQrContainer) {
+        posterQrContainer.innerHTML = createPureQRCodeSVG(siteUrl, 140);
+      }
+      document.getElementById('clinicPosterModal').classList.remove('hidden');
+    }
+
+    function closeClinicPosterModal() {
+      document.getElementById('clinicPosterModal').classList.add('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // UI Event Listeners
+    // -------------------------------------------------------------
+
+    document.querySelectorAll('#categoryFilters .cat-btn').forEach(b=>{const m=b.innerHTML.match(/^\s*(\p{Extended_Pictographic}(?:\u200d\p{Extended_Pictographic}|\uFE0F)*)/u);if(m)b.innerHTML=b.innerHTML.replace(m[1],'<span class="cat-ic">'+m[1]+'</span>');});
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.cat-btn').forEach(b => {
+          b.classList.remove('active', 'bg-brand-600', 'text-white');
+          b.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        const target = e.currentTarget;
+        target.classList.add('active', 'bg-brand-600', 'text-white');
+        target.classList.remove('bg-slate-100', 'text-slate-700');
+        currentCategory = target.dataset.category;
+        renderCards();
+      });
+    });
+
+    document.getElementById('governorateFilter').addEventListener('change', (e) => {
+      currentGovernorate = e.target.value; populateCentersSelectors(); renderCards();
+    });
+    document.getElementById('centerFilter').addEventListener('change', (e) => {
+      currentCenter = e.target.value;
+      renderCards();
+    });
+
+    document.getElementById('scheduleFilter').addEventListener('change', (e) => {
+      currentSchedule = e.target.value;
+      renderCards();
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCards();
+    });
+
+    // Close Modals on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePinModal();
+        closeMemberCardModal();
+        closeProviderDetailsModal();
+        closeJoinModal();
+        closeAdvancedSettingsModal();
+        closeInstallGuideModal();
+        closeClinicPosterModal();
+        closeAdminDashboard();
+      }
+    });
+
+    // -------------------------------------------------------------
+    // App Initialization
+    // -------------------------------------------------------------
+    if (!localStorage.getItem('reaya_national_v1')) {
+      [STORAGE_KEY, MEMBERS_STORAGE_KEY, REQUESTS_STORAGE_KEY].forEach(key => {
+        const raw = localStorage.getItem(key);
+        if (!raw) return;
+        try { localStorage.setItem(key, JSON.stringify(JSON.parse(raw).map(row => row.seedRecord ? {...row, ...(row.center ? {center: 'منطقة ١'} : {}), governorate: 'غير محددة', ...(key === MEMBERS_STORAGE_KEY ? {holderName: defaultMemberCards[0].holderName, holderPhone: defaultMemberCards[0].holderPhone, familyMembers: defaultMemberCards[0].familyMembers} : {})} : row))); } catch (e) {}
+      });
+      const saved = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (saved) { try { const settings = JSON.parse(saved); settings.siteName = 'رعاية طبية'; settings.subtext = defaultSettings.subtext; localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settings)); } catch (e) {} }
+      localStorage.setItem('reaya_national_v1', '1');
+    }
+    if (!localStorage.getItem('reaya_starter_phones_v3')) {
+      [[STORAGE_KEY, defaultData], [MEMBERS_STORAGE_KEY, defaultMemberCards], [REQUESTS_STORAGE_KEY, defaultRequests]].forEach(([key, defaults]) => {
+        const raw = localStorage.getItem(key);
+        if (!raw) return;
+        try { localStorage.setItem(key, JSON.stringify(JSON.parse(raw).map(row => {
+          const source = defaults.find(d => d.id === row.id);
+          if (!row.seedRecord || !source) return row;
+          return {...row, ...(source.phone ? {phone: source.phone} : {}), ...(source.holderPhone ? {holderPhone: source.holderPhone} : {})};
+        }))); } catch(e) {}
+      });
+      localStorage.setItem('reaya_starter_phones_v3', '1');
+    }
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    applySiteSettings();
+    populateCentersSelectors();
+    updateCategoryCounts();
+    renderCards();
+    calculateSavings();
+    resetMemberForm();
+  </script>
+<script src="assets/backend.js?v=1" defer></script>
+</body>
+</html>
