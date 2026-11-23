@@ -110,7 +110,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 #requestsTableBody td:last-child button{flex:1 1 40%;margin:0!important}
 #adminDashboard .admin-sec-btn{flex:1;white-space:normal!important}#adminDashboard h2{font-size:20px!important}
 }
-</style></head>
+</style><style>#memberCardModal{align-items:flex-start!important;overflow-y:auto!important;padding:12px!important}#memberCardModal>div{margin:12px auto!important;max-height:none!important;overflow:visible!important;width:100%;max-width:480px}#memberCardModal #digitalCard{max-width:100%!important;height:auto!important;overflow:visible!important}#memberCardModal svg{max-width:100%}</style></head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
 
   <!-- ======================================================== -->
@@ -461,9 +461,9 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 
       <!-- Card Search / Phone Lookup -->
       <div class="mb-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
-        <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">ابحث برقم الهاتف أو كود العضوية:</label>
+        <label class="block text-xs font-bold text-slate-700 mb-1 break-words-all">أدخل رمز الوصول الخاص من الإدارة:</label>
         <div class="flex gap-2">
-          <input type="text" id="memberSearchInput" placeholder="رقم الهاتف أو كود العضوية"
+          <input type="text" id="memberSearchInput" style="min-width:0" placeholder="رمز الوصول الخاص للبطاقة"
                  class="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-bold">
           <button onclick="lookupMemberCard()" class="px-3.5 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition shrink-0">
             عرض البطاقة
@@ -2681,7 +2681,7 @@ ${siteUrl}
     calculateSavings();
     resetMemberForm();
   </script>
-<script src="assets/request-bridge.js?v=shared-7" defer></script>
+<script src="assets/request-bridge.js?v=shared-8" defer></script>
 <div id="contactDatabase" class="fixed inset-0 bg-white z-50 hidden overflow-auto p-4" style="z-index:1100"><div class="max-w-6xl mx-auto"><div class="flex justify-between items-center gap-3 mb-4"><h2 class="text-xl font-bold">قاعدة بيانات الجهات والعملاء</h2><button onclick="document.getElementById('contactDatabase').classList.add('hidden')" class="bg-slate-100 rounded-xl p-3">إغلاق</button></div><p class="text-sm text-slate-600 mb-4">بيانات خاصة بالإدارة، لا تظهر لزوار التطبيق.</p><div class="flex flex-wrap gap-3 mb-4"><select id="contactDbKind" onchange="renderContactDatabase()" class="border p-3 rounded-xl"><option value="providers">الجهات الطبية</option><option value="subscribers">العملاء والمشتركون</option></select><input id="contactDbSearch" oninput="renderContactDatabase()" placeholder="بحث بالاسم أو الهاتف أو العنوان" class="border p-3 rounded-xl flex-1 min-w-0"><button onclick="exportContactCsv()" class="bg-emerald-700 text-white p-3 rounded-xl">تصدير CSV</button><span id="contactDbCount" class="p-3"></span></div><div class="overflow-auto"><table class="w-full text-sm text-right"><thead><tr><th>الاسم</th><th>الهاتف</th><th>المحافظة</th><th>العنوان</th><th>التخصص</th><th>التاريخ</th></tr></thead><tbody id="contactDbRows"></tbody></table></div></div></div>
 <div id="subscriberFormModal" class="fixed inset-0 bg-slate-900/70 hidden overflow-auto p-4" style="z-index:1100"><div class="bg-white rounded-2xl max-w-md p-5 mx-auto my-4"><h2 class="text-xl font-bold mb-4">طلب اشتراك عميل جديد</h2><form onsubmit="submitSubscriber(event)" class="space-y-3"><label class="block">الاسم<input name="name" required maxlength="150" class="border rounded-xl p-3 w-full"></label><label class="block">الهاتف<input name="phone" required type="tel" pattern="[+0-9 ()-]{8,25}" class="border rounded-xl p-3 w-full"></label><label class="block">المحافظة<input name="governorate" required maxlength="100" class="border rounded-xl p-3 w-full"></label><label class="block">العنوان<input name="address" required maxlength="350" class="border rounded-xl p-3 w-full"></label><label class="flex gap-2 items-start text-sm"><input name="consent" type="checkbox" required class="mt-1">أوافق على استخدام بياناتي للتواصل معي وإدارة خدمة رعاية طبية. البيانات خاصة بالإدارة.</label><button type="submit" class="bg-emerald-700 text-white rounded-xl p-3 w-full font-bold">إرسال طلب الاشتراك</button><button type="button" onclick="document.getElementById('subscriberFormModal').classList.add('hidden')" class="p-3 w-full">إلغاء</button></form></div></div>
 </body>

@@ -29,6 +29,11 @@ service cloud.firestore {
         && text(request.resource.data.governorate,100) && text(request.resource.data.address,350)
         && request.resource.data.consent == true && request.resource.data.status == 'pending' && request.resource.data.createdAt == request.time);
     }
+    match /memberLookup/{token} {
+      allow get: if token.size() == 64 || owner();
+      allow list: if owner();
+      allow create,update,delete: if owner();
+    }
     match /members/{id} { allow read,write: if owner(); }
     match /requests/{id} {
       allow read,update,delete: if owner();
