@@ -1436,7 +1436,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
     // Data Getters & Setters
     // -------------------------------------------------------------
     function getAdminPin() {
-      return localStorage.getItem(PIN_STORAGE_KEY) || '0846';
+      return localStorage.getItem(PIN_STORAGE_KEY); // no default credential in code
     }
     function setAdminPin(newPin) {
       localStorage.setItem(PIN_STORAGE_KEY, newPin);

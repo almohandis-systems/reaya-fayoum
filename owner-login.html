@@ -1,1 +1,109 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>رعاية طبية | دخول الإدارة</title><style>body{margin:0;background:#f1f5f9;color:#12372c;font:17px system-ui;display:grid;place-items:center;min-height:100vh}main{box-sizing:border-box;background:white;padding:28px;border-radius:24px;width:min(94%,460px);text-align:center;margin:24px auto}img{width:130px}h1{font-size:28px}label{display:block;text-align:right;margin:14px 0 6px}input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #b9cdc4;border-radius:12px;font:inherit}button,.button{display:block;box-sizing:border-box;width:100%;padding:14px;border:0;border-radius:12px;background:#047857;color:white;font:700 16px system-ui;text-decoration:none;margin-top:14px;cursor:pointer}button:disabled{opacity:.5}.secondary{background:#e8f3ed;color:#124b37}p{line-height:1.8}small{display:block;text-align:right;color:#566d63;line-height:1.6;margin-top:6px}[hidden]{display:none!important}#status{background:#f0f7f3;padding:12px;border-radius:12px;overflow-wrap:anywhere}</style></head><body><main><img src="assets/raaya-tibbiya-logo.png" alt="رعاية طبية"><h1>دخول الإدارة</h1><p id="status" role="status" aria-live="polite">جارٍ تجهيز تسجيل الدخول…</p><button id="verifyEmail" hidden>إرسال رابط تأكيد البريد</button><button id="checkEmail" class="secondary" hidden>تم تأكيد البريد، تحقق الآن</button><form id="emailForm"><label for="ownerEmail">البريد الإلكتروني</label><input id="ownerEmail" type="email" autocomplete="username" value="almohandissystems@gmail.com" required dir="ltr"><label for="ownerSecret">الرقم السري، 6 أحرف أو أكثر</label><input id="ownerSecret" type="password" autocomplete="current-password" minlength="6" required><button id="emailLogin" disabled>دخول بالإيميل والرقم السري</button></form><button id="login" class="secondary" disabled>الدخول باستخدام Google</button><a id="openPanel" class="button" href="./#owner" hidden>فتح لوحة الإدارة</a><form id="setupForm" hidden><label for="setupSecret">تفعيل الرقم السري الذي اخترته، 6 أحرف أو أكثر</label><input id="setupSecret" type="password" autocomplete="new-password" minlength="6" required><small>يُحفظ بأمان لدى Firebase، ولا يُنشر في التطبيق.</small><button id="setupSave">تفعيل الدخول بالرقم السري</button></form><form id="changeForm" hidden><h2>تغيير الرقم السري</h2><label for="currentSecret">الرقم السري الحالي</label><input id="currentSecret" type="password" autocomplete="current-password" required><label for="newSecret">الرقم السري الجديد، 6 أحرف أو أكثر</label><input id="newSecret" type="password" autocomplete="new-password" minlength="6" required><label for="confirmSecret">تأكيد الرقم السري الجديد</label><input id="confirmSecret" type="password" autocomplete="new-password" minlength="6" required><button id="changeSave">حفظ الرقم السري الجديد</button></form><button id="logout" class="secondary" hidden>خروج</button><a class="button secondary" href="./">الرجوع للتطبيق</a></main><script src="assets/owner-login-v3.js" defer onerror="document.getElementById('status').textContent='تعذر تحميل تسجيل الدخول. حدّث الصفحة وتحقق من الاتصال.'"></script></body></html>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>رعاية طبية | دخول الإدارة</title><style>
+body{margin:0;background:#f1f5f9;color:#12372c;font:17px system-ui;display:grid;place-items:center;min-height:100vh}
+main{box-sizing:border-box;background:white;border-radius:18px;padding:28px;max-width:380px;width:92%;box-shadow:0 12px 30px #0f172a1a}
+h1{font-size:19px;margin:0 0 6px;text-align:center}
+p.sub{font-size:13px;color:#64748b;text-align:center;margin:0 0 18px}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 4px}
+input{box-sizing:border-box;width:100%;border:1px solid #94a3b8;border-radius:12px;padding:12px;font-size:20px;letter-spacing:6px;text-align:center;direction:ltr}
+button{width:100%;margin-top:14px;background:#047857;color:white;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:800;cursor:pointer}
+button:disabled{opacity:.6}
+a.home{display:block;text-align:center;margin-top:14px;font-size:13px;color:#047857}
+#status{min-height:22px;font-size:13px;font-weight:700;text-align:center;margin-top:12px;color:#b91c1c}
+#status.ok{color:#047857}
+</style></head><body><main>
+<h1 id="title">دخول الإدارة</h1>
+<p class="sub" id="subtitle">رعاية طبية — منطقة المالك فقط</p>
+<form id="loginForm">
+  <label for="pin">الرقم السري</label>
+  <input id="pin" type="password" minlength="8" maxlength="64" autocomplete="current-password" required placeholder="••••••••">
+  <button id="loginBtn" type="submit">دخول</button>
+</form>
+<form id="changeForm" hidden>
+  <label for="currentPin">الرقم السري الحالي</label>
+  <input id="currentPin" type="password" autocomplete="current-password" minlength="8" maxlength="64" required>
+  <label for="newPin">الرقم السري الجديد (٨ أحرف أو أكثر)</label>
+  <input id="newPin" type="password" autocomplete="new-password" minlength="8" maxlength="64" required>
+  <label for="confirmPin">تأكيد الرقم الجديد</label>
+  <input id="confirmPin" type="password" autocomplete="new-password" minlength="8" maxlength="64" required>
+  <button id="changeBtn" type="submit">تغيير الرقم السري</button>
+</form>
+<div id="status" role="status" aria-live="polite"></div>
+<a class="home" href="./">العودة إلى التطبيق</a>
+<script>
+'use strict';
+const SUPA_URL = 'https://kjcxjcxfquakkntwbswp.supabase.co';
+const SUPA_KEY = 'sb_publishable_fDzWnwGXM--5hh0cI3ddGw_xyv6kI0G';
+const TOKEN_KEY = 'raaya.owner.token';
+const el = id => document.getElementById(id);
+const status = (t, ok) => { el('status').textContent = t; el('status').className = ok ? 'ok' : ''; };
+
+async function rpc(name, body) {
+  const res = await fetch(SUPA_URL + '/rest/v1/rpc/' + name, {
+    method: 'POST',
+    headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body || {})
+  });
+  if (!res.ok) { let m = 'http-' + res.status; try { m = (await res.json()).message || m; } catch (e) {} throw new Error(m); }
+  return res.json();
+}
+
+function describe(res) {
+  if (res.status === 'locked') return 'محاولات كثيرة. الدخول مقفل مؤقتًا، حاول بعد ' + Math.ceil((res.retry_after_seconds || 900) / 60) + ' دقيقة.';
+  if (res.status === 'invalid') return 'الرقم السري غير صحيح.';
+  return 'تعذر إتمام العملية. حاول مجددًا.';
+}
+
+const changeMode = new URLSearchParams(location.search).get('mode') === 'change';
+if (changeMode) {
+  el('title').textContent = 'تغيير الرقم السري';
+  el('loginForm').hidden = true;
+  el('changeForm').hidden = false;
+  if (!localStorage.getItem(TOKEN_KEY)) {
+    status('سجّل الدخول أولًا.');
+    el('changeForm').hidden = true;
+    el('loginForm').hidden = false;
+  }
+}
+
+el('loginForm').onsubmit = async e => {
+  e.preventDefault();
+  const b = el('loginBtn'); b.disabled = true;
+  try {
+    const res = await rpc('reaya_owner_login', { p_pin: el('pin').value });
+    if (res.status !== 'ok') { status(describe(res)); return; }
+    localStorage.setItem(TOKEN_KEY, res.token);
+    status('تم تسجيل الدخول بنجاح. جارٍ فتح لوحة الإدارة…', true);
+    location.assign('./#owner');
+  } catch (err) {
+    status('تعذر الاتصال. تحقق من الإنترنت وحاول مرة أخرى.');
+  } finally { b.disabled = false; }
+};
+
+el('changeForm').onsubmit = async e => {
+  e.preventDefault();
+  const b = el('changeBtn');
+  if (el('newPin').value !== el('confirmPin').value) { status('الرقم الجديد لا يطابق التأكيد.'); return; }
+  b.disabled = true;
+  try {
+    const res = await rpc('reaya_owner_change_pin', {
+      p_token: localStorage.getItem(TOKEN_KEY) || '',
+      p_old_pin: el('currentPin').value,
+      p_new_pin: el('newPin').value
+    });
+    if (res.status === 'ok') {
+      localStorage.removeItem(TOKEN_KEY);
+      status('تم تغيير الرقم السري بنجاح. سجّل الدخول بالرقم الجديد.', true);
+      el('changeForm').hidden = true;
+      el('loginForm').hidden = false;
+      el('title').textContent = 'دخول الإدارة';
+      return;
+    }
+    if ((res.status === 'invalid') && !(el('currentPin').value || '').length) status('انتهت الجلسة. سجّل الدخول مجددًا.');
+    else status(describe(res));
+  } catch (err) {
+    status('انتهت الجلسة أو تعذر الاتصال. سجّل الدخول مجددًا.');
+    el('changeForm').hidden = true;
+    el('loginForm').hidden = false;
+  } finally { b.disabled = false; }
+};
+</script></main></body></html>
