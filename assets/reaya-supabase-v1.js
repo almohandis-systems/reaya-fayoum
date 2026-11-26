@@ -413,6 +413,7 @@ window.exportContactCsv = () => {
 window.openContactDatabase = () => {
   if (!owner) return;
   document.getElementById('contactDatabase').classList.remove('hidden');
+  if (serverSubscribers.some(s => s.status === 'pending')) document.getElementById('contactDbKind').value = 'subscribers';
   refreshSubscribers().then(() => renderContactDatabase()).catch(() => renderContactDatabase());
   renderContactDatabase();
 };
@@ -479,6 +480,7 @@ window.ownerSignOut = async () => {
   try { await rpc('reaya_owner_logout', { p_token: token() }); } catch (e) {}
   localStorage.removeItem(TOKEN_KEY);
   owner = false; serverMembers = []; serverRequests = []; serverSubscribers = [];
+  stopAlerts();
   closeAdminDashboard();
   refresh();
 };
@@ -486,6 +488,93 @@ window.ownerSignOut = async () => {
 const oldSettings = window.openAdvancedSettingsModal;
 window.openAdvancedSettingsModal = () => { if (owner) oldSettings(); else window.openPinModal(); };
 window.saveSiteSettings = () => { if (!owner) return; alert('استخدم مكتبة نصوص التطبيق للحفظ والنشر لكل الزوار.'); };
+
+// ---------------- New-request alerts (owner, while the page is open) ----------------
+// Polls pending join requests + pending card signups every 30s while the owner is
+// signed in and the page is open. A new one shows a red bar and a repeating ring
+// (with vibration where supported) until the owner taps "تم". Browsers block sound
+// until the page has had one tap; locked screens/closed tabs cannot ring.
+const SEEN_KEY = 'raaya.owner.seen';
+let alertTimer = null, ringTimer = null, audioCtx = null;
+const seenIds = () => { try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || '[]')); } catch (e) { return new Set(); } };
+const pendingItems = () => [
+  ...serverRequests.map(r => ({ id: r.id, kind: 'request' })),
+  ...serverSubscribers.filter(s => s.status === 'pending').map(s => ({ id: s.id, kind: 'subscriber' }))
+];
+function audioUnlock() {
+  try {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+  } catch (e) {}
+}
+['pointerdown', 'keydown', 'touchstart'].forEach(ev => document.addEventListener(ev, audioUnlock, { passive: true }));
+function beep() {
+  try {
+    audioUnlock();
+    if (audioCtx && audioCtx.state === 'running') {
+      const t = audioCtx.currentTime;
+      [0, 0.4].forEach(off => {
+        const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+        o.type = 'square'; o.frequency.value = 880;
+        g.gain.setValueAtTime(0.35, t + off); g.gain.exponentialRampToValueAtTime(0.001, t + off + 0.32);
+        o.connect(g); g.connect(audioCtx.destination); o.start(t + off); o.stop(t + off + 0.34);
+      });
+    }
+  } catch (e) {}
+  try { if (navigator.vibrate) navigator.vibrate([300, 150, 300]); } catch (e) {}
+}
+function startRing() { if (ringTimer) return; beep(); ringTimer = setInterval(beep, 3000); }
+function stopRing() { if (ringTimer) clearInterval(ringTimer); ringTimer = null; }
+function hideAlertBar() { const b = document.getElementById('raayaAlertBar'); if (b) b.remove(); }
+function ackAlerts() {
+  stopRing(); hideAlertBar();
+  const set = seenIds(); pendingItems().forEach(i => set.add(i.id));
+  try { localStorage.setItem(SEEN_KEY, JSON.stringify([...set].slice(-500))); } catch (e) {}
+}
+function showAlertBar(fresh) {
+  const reqs = fresh.filter(i => i.kind === 'request').length, subs = fresh.filter(i => i.kind === 'subscriber').length;
+  hideAlertBar();
+  const bar = document.createElement('div');
+  bar.id = 'raayaAlertBar'; bar.dir = 'rtl';
+  bar.setAttribute('style', 'position:fixed;top:0;left:0;right:0;z-index:5000;background:#b91c1c;color:#fff;padding:12px;font-weight:800;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.35)');
+  const msg = document.createElement('div');
+  const parts = [];
+  if (reqs) parts.push(reqs + ' طلب انضمام');
+  if (subs) parts.push(subs + ' طلب بطاقة');
+  msg.textContent = '🔔 طلب جديد: ' + parts.join(' + ');
+  bar.append(msg);
+  const mk = (label, fn, bg) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = label; b.onclick = fn;
+    b.setAttribute('style', 'margin:8px 6px 0;padding:8px 16px;border-radius:10px;border:0;font-weight:800;background:' + bg + ';color:#111');
+    return b;
+  };
+  bar.append(mk('فتح', () => { ackAlerts(); if (fresh.some(i => i.kind === 'request')) window.openAdminDashboard(); if (fresh.some(i => i.kind === 'subscriber')) window.openContactDatabase(); }, '#fff'));
+  bar.append(mk('تم (إيقاف الرنين)', ackAlerts, '#fde68a'));
+  const hint = document.createElement('div');
+  hint.setAttribute('style', 'font-size:12px;font-weight:600;margin-top:6px');
+  hint.textContent = 'لو مفيش صوت، اضغط أي مكان في الصفحة لتفعيل الصوت.';
+  bar.append(hint);
+  document.body.append(bar);
+}
+async function pollAlerts() {
+  if (!owner || document.hidden) return;
+  try {
+    await refreshRequests(); await refreshSubscribers();
+  } catch (e) { return; }
+  const seen = seenIds();
+  const fresh = pendingItems().filter(i => !seen.has(i.id));
+  if (fresh.length) { showAlertBar(fresh); startRing(); }
+  else { stopRing(); hideAlertBar(); }
+  try { renderRequestsTable(); if (!document.getElementById('contactDatabase').classList.contains('hidden')) renderContactDatabase(); } catch (e) {}
+}
+function startAlerts() {
+  if (alertTimer) return;
+  alertTimer = setInterval(pollAlerts, 30000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) pollAlerts(); });
+  pollAlerts();
+}
+function stopAlerts() { if (alertTimer) clearInterval(alertTimer); alertTimer = null; stopRing(); hideAlertBar(); }
 
 // ---------------- Boot ----------------
 window.addEventListener('offline', () => statusText('غير متصل، لا يتم تأكيد أي حفظ'));
@@ -503,6 +592,7 @@ window.addEventListener('online', () => statusText('جارٍ الاتصال'));
     try {
       await refreshOwnerData();
       owner = true;
+      setTimeout(startAlerts, 0);
     } catch (e) {
       localStorage.removeItem(TOKEN_KEY);
       owner = false;
