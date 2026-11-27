@@ -296,7 +296,22 @@ window.sendMemberCardWhatsApp = id => {
   const close = document.createElement('button');
   close.textContent = 'إغلاق'; close.className = 'p-3';
   close.onclick = () => modal.remove();
-  box.append(label, input, close); modal.append(box); document.body.append(modal);
+  box.setAttribute('style', 'color:#0f172a;background:#fff');
+  input.setAttribute('style', 'color:#0f172a;background:#fff');
+  box.append(label, input);
+  const phone = (card.holderPhone || '').replace(/[^0-9]/g, '');
+  if (phone.length >= 10 && phone.length <= 15) {
+    const dest = phone.startsWith('0') ? '2' + phone : phone;
+    const text = 'السلام عليكم، تم اعتماد بطاقة رعاية طبية الخاصة بكم. افتحوا بطاقتكم من هذا الرابط الخاص (لا تشاركوه مع أحد):\n' + url.href;
+    const wa = document.createElement('a');
+    wa.textContent = 'إرسال البطاقة عبر واتساب';
+    wa.href = 'https://wa.me/' + dest + '?text=' + encodeURIComponent(text);
+    wa.target = '_blank'; wa.rel = 'noopener noreferrer';
+    wa.className = 'block text-center text-white p-3 rounded-xl my-2';
+    wa.setAttribute('style', 'background:#059669;color:#fff');
+    box.append(wa);
+  }
+  box.append(close); modal.append(box); document.body.append(modal);
 };
 
 // ---------------- Subscribers ----------------
@@ -359,6 +374,12 @@ window.renderContactDatabase = () => {
           await window.saveMemberCards([...getMemberCards(), card]);
           ok(await rpc('reaya_owner_subscriber_action', { p_token: token(), p_id: r.id, p_action: 'approve' }));
           await refreshSubscribers();
+          const saved = getMemberCards().find(c => c.id === card.id);
+          if (saved && saved.lookupToken) {
+            document.getElementById('contactDatabase').classList.add('hidden');
+            window.viewCardDirectly(saved.id);
+            window.sendMemberCardWhatsApp(saved.id);
+          }
         }],
         ['تفاوض', async () => {
           window.negotiateJoinRequest(r.id) ;
