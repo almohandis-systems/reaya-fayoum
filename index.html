@@ -28,6 +28,7 @@
 
   <!-- Tailwind CSS CDN -->
 <link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/fontawesome.css">
 <script src="assets/qrcode.js"></script><script src="assets/qrcode_UTF8.js"></script>
 
   <style>
@@ -82,9 +83,8 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 .reaya-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;max-width:1220px}.reaya-hero-copy{text-align:start;position:relative;z-index:1}.reaya-eyebrow{font-size:14.5px;letter-spacing:.1em;color:#d0bb8b;font-weight:800;margin-bottom:24px}#heroHeadline{font-size:clamp(30px,3.4vw,48px);line-height:1.5;max-width:680px;text-wrap:balance}#heroSubtext{line-height:1.9;color:#d8e8e3}#heroBadge{border-color:#b7975b66;background:#ffffff0c;color:#d7c59d}
 .reaya-hero-photo{position:relative;aspect-ratio:4/3;border-radius:90px 28px 28px 28px;overflow:hidden;box-shadow:0 32px 80px #0005;border:1px solid #f5e8c94d;transform:perspective(1300px) rotateY(5deg)}.reaya-hero-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#001e28aa,transparent 55%);pointer-events:none}.reaya-hero-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.03) saturate(.8)}.reaya-hero-photo figcaption{position:absolute;z-index:1;bottom:16px;inset-inline:20px;font-size:13px;color:#fff;line-height:1.8}
 #searchInput{min-height:56px;box-shadow:0 12px 30px #001c2333;border:1px solid #cfdfd8;border-radius:16px}#cardsGrid>div{border:1px solid #d9e5de;border-radius:24px;box-shadow:0 8px 26px #13392d09;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}#cardsGrid>div:hover{transform:translateY(-5px);border-color:#b7975b;box-shadow:0 20px 38px #16372f12}#cardsGrid>div:before{content:'';height:5px;display:block;background:linear-gradient(90deg,#075e53,#b7975b);flex-shrink:0}
-.reaya-estimate-note{font-size:14px;line-height:1.9;color:#526f67;max-width:1160px;margin:14px auto 0;padding-inline:20px}#bottomInstallBanner{position:relative!important;inset:auto!important;max-width:1200px!important;margin:24px auto!important;width:calc(100% - 32px);box-sizing:border-box;flex-wrap:wrap;border-color:#b7975b55}#cardQrCode{width:160px!important;height:160px!important;max-width:100%}#cardQrCode svg{width:100%;height:auto}#portfolio-share-bar{border-bottom:1px solid #e2e8e3;background:#f8faf9!important}#portfolio-share-app{border-color:#c9b582!important;box-shadow:0 4px 12px #122c2410}
+.reaya-estimate-note{font-size:14px;line-height:1.9;color:#526f67;max-width:1160px;margin:14px auto 0;padding-inline:20px}#bottomInstallBanner{position:relative!important;inset:auto!important;max-width:1200px!important;margin:24px auto!important;width:calc(100% - 32px);box-sizing:border-box;flex-wrap:wrap;border-color:#b7975b55}#cardQrCode{width:160px!important;height:160px!important;max-width:100%}#cardQrCode svg{width:100%;height:auto}
 @media(max-width:767px){.reaya-hero-grid{grid-template-columns:1fr;gap:26px}.reaya-hero-photo{aspect-ratio:16/9;max-height:240px;border-radius:44px 18px 18px 18px;transform:none}.reaya-hero-copy{text-align:start}#reaya-cinematic-hero{padding-top:32px;padding-bottom:64px}#heroHeadline{font-size:32px}#heroBadge{font-size:13px}.reaya-eyebrow{margin-bottom:16px}body>header>div{gap:12px}#cardsGrid>div:hover{transform:none}#bottomInstallBanner>div:first-child{min-width:200px}}
-@media(hover:hover){#portfolio-share-app:hover{transform:translateY(-2px);box-shadow:0 8px 20px #10372a20}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;transform:none!important}}
 @media print{.reaya-hero-photo,#portfolio-share-bar,.reaya-estimate-note{display:none!important}}
 
@@ -94,6 +94,20 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
 #categoryFilters .cat-btn .cat-ic{display:inline-block;transition:transform .25s cubic-bezier(.2,.9,.3,1.4),filter .25s}
 #categoryFilters .cat-btn.active{background:linear-gradient(160deg,#fff3c4 0%,#f5c542 55%,#d9962b 100%)!important;color:#1a1200!important;border-color:#b8791a;font-weight:900;transform:perspective(500px) translateY(-6px) scale(1.14) rotateX(8deg);box-shadow:0 10px 18px #0004,0 2px 0 #fff9 inset,0 -3px 0 #a96a12 inset;z-index:2;text-shadow:0 1px 0 #fff8}
 #categoryFilters .cat-btn.active .cat-ic{transform:translateY(-3px) scale(1.55);filter:drop-shadow(0 5px 3px #0006)}
+</style>
+<style id="reaya-header-3d">
+.reaya-header-actions{max-width:640px;margin:10px auto 0}
+.reaya-header-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px;padding:4px}
+.btn3d{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;font-family:'Cairo',sans-serif;font-weight:900;font-size:13.5px;color:#fff;background:linear-gradient(165deg,#12b981 0%,#059669 55%,#047857 100%);border:1px solid #04614a;border-radius:15px;padding:11px 8px;cursor:pointer;box-shadow:0 5px 0 #045c43,0 11px 18px rgba(4,120,87,.28),inset 0 2px 0 rgba(255,255,255,.38),inset 0 -2px 0 rgba(0,0,0,.14);text-shadow:0 1px 1px rgba(0,0,0,.18);transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease}
+.btn3d i{font-size:15px}
+.btn3d:active{transform:translateY(-6px) scale(1.07);background:linear-gradient(165deg,#6ee7b7 0%,#34d399 50%,#10b981 100%);color:#053b2c;text-shadow:0 1px 0 rgba(255,255,255,.4);box-shadow:0 11px 0 #047857,0 22px 34px rgba(4,120,87,.38),0 0 24px rgba(52,211,153,.65),inset 0 2px 0 rgba(255,255,255,.5),inset 0 -2px 0 rgba(0,0,0,.1)}
+.btn3d-primary{width:100%;font-size:16.5px;padding:13px 10px}
+.btn3d-primary i{font-size:18px}
+.reaya-header-statusrow{text-align:center;font-size:11.5px;font-weight:700;color:#047857;padding-top:2px;overflow-wrap:anywhere}
+.reaya-header-statusrow input{width:100%;max-width:430px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;color:#0f172a;background:#fff;direction:ltr;margin-top:6px}
+@media(max-width:360px){.reaya-header-grid{grid-template-columns:1fr}}
+@media(hover:hover){.btn3d:hover{filter:brightness(1.06)}}
+@media print{.reaya-header-actions{display:none!important}}
 </style>
 <link rel="stylesheet" href="assets/owner-designs.css"><script src="assets/owner-designs.js"></script><style>
 @media(max-width:640px){
@@ -117,7 +131,7 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
   <!-- Top Bar / Header (Responsive, no overflow) -->
   <!-- ======================================================== -->
   <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-30 w-full">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2.5">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3">
 
       <!-- Brand & Secret Trigger (5 clicks on "رعاية طبية") -->
       <div class="flex items-center space-x-2.5 space-x-reverse select-none" style="min-width:0;max-width:100%">
@@ -133,35 +147,36 @@ button,a,select,input,textarea{-webkit-tap-highlight-color:transparent}button,a[
         </div>
       </div>
 
-      <!-- Header Action Buttons (Digital Card, Join Us, Install) -->
-      <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-end">
-        <!-- PWA Install Button -->
-        <button id="pwaInstallBtn" onclick="installPWA()" class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 rounded-xl text-xs font-bold transition">
-          <span>📲</span>
-          <span>تثبيت</span>
-        </button>
-
-        <!-- Digital Membership Card Button -->
-        <button id="openCardHeaderBtn" onclick="openSubscriberForm()" class="inline-flex items-center gap-1 px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-black shadow-sm transition">
-          <span>💳</span>
+      <!-- Header Action Buttons: one uniform 3D style; press = grow, lift, brighter + glow (approved design, Nov 27) -->
+      <div class="reaya-header-actions">
+        <button id="openCardHeaderBtn" onclick="openSubscriberForm()" class="btn3d btn3d-primary">
+          <i class="fa-solid fa-id-card" aria-hidden="true"></i>
           <span>بطاقتي الرقمية</span>
         </button>
-
-        <!-- Doctor Join Us Button -->
-        <button onclick="openJoinModal()" class="inline-flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
-          <span>🩺</span>
-          <span>انضم كجهة</span>
-        </button>
+        <div class="reaya-header-grid" id="headerActionsGrid">
+          <button onclick="openJoinModal()" class="btn3d">
+            <i class="fa-solid fa-briefcase-medical" aria-hidden="true"></i>
+            <span>انضم كجهة</span>
+          </button>
+          <button id="pwaInstallBtn" onclick="installPWA()" class="btn3d">
+            <i class="fa-solid fa-circle-down" aria-hidden="true"></i>
+            <span>تثبيت التطبيق</span>
+          </button>
+          <button id="portfolio-share-app" type="button" class="btn3d">
+            <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+            <span>مشاركة التطبيق</span>
+          </button>
+        </div>
+        <div class="reaya-header-statusrow">
+          <span id="portfolio-share-status" role="status" aria-live="polite"></span>
+          <input id="portfolio-share-url" aria-label="رابط التطبيق للنسخ اليدوي" readonly hidden>
+        </div>
       </div>
 
     </div>
   </header>
 <!-- App-link sharing. No referral credit, account state, or customer data. -->
-<div id="portfolio-share-bar" dir="rtl" style="box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;padding:6px 12px;background:#f8fafc;color:#0f172a;font:600 12px/1.5 sans-serif;flex-shrink:0;position:relative;z-index:20">
-<button id="portfolio-share-app" type="button" style="min-height:44px;padding:8px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;cursor:pointer">مشاركة التطبيق ↗</button>
-<span id="portfolio-share-status" role="status" aria-live="polite" style="max-width:100%;overflow-wrap:anywhere"></span>
-<input id="portfolio-share-url" aria-label="رابط التطبيق للنسخ اليدوي" readonly hidden style="width:100%;max-width:430px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;color:#0f172a;background:#fff;direction:ltr">
-</div>
+<!-- Share button now lives in the header 3D grid; the separate bar was removed (approved redesign, Nov 27). -->
 <script>
 (function(){
  const button=document.getElementById('portfolio-share-app');
@@ -2588,5 +2603,5 @@ ${siteUrl}
 <div class="subscriber-actions"><button type="submit">إرسال طلب الاشتراك</button><button type="button" onclick="document.getElementById('subscriberFormModal').classList.add('hidden')">إلغاء</button></div>
 </form></div></div>
 <script src="assets/subscriber-form.js?v=1" defer></script>
-<script src="assets/language.js?v=7" defer></script><script src="assets/neutral-install-v1.js" defer></script><script src="assets/owner-entry-v2.js" defer></script></body>
+<script src="assets/language.js?v=8" defer></script><script src="assets/neutral-install-v1.js" defer></script><script src="assets/owner-entry-v2.js" defer></script></body>
 </html>
