@@ -108,6 +108,7 @@ function askAction(message, action) {
   modal.style.zIndex = '2000';
   const box = document.createElement('div');
   box.className = 'bg-white p-6 rounded-2xl max-w-sm w-full text-center';
+  box.style.cssText = 'color:#0f172a;background:#fff';
   const text = document.createElement('p'); text.textContent = message;
   const yes = document.createElement('button'), no = document.createElement('button');
   yes.textContent = 'تأكيد'; no.textContent = 'إلغاء';
@@ -160,13 +161,16 @@ window.negotiateJoinRequest = id => {
   modal.style.zIndex = '2000';
   const box = document.createElement('div');
   box.className = 'bg-white rounded-2xl p-5 max-w-md w-full';
+  box.style.cssText = 'color:#0f172a;background:#fff';
   const title = document.createElement('h3'); title.textContent = 'تفاوض على نسبة الخصم';
   const label = document.createElement('label'); label.textContent = 'النسبة المطلوبة (%)';
   const input = document.createElement('input');
   input.type = 'number'; input.min = '1'; input.max = '100';
   input.className = 'w-full border rounded-xl p-3 my-2'; input.value = '';
+  input.style.cssText = 'color:#0f172a;background:#fff;caret-color:#0f172a';
   const message = document.createElement('textarea');
   message.className = 'w-full border rounded-xl p-3 my-2'; message.rows = 5;
+  message.style.cssText = 'color:#0f172a;background:#fff;caret-color:#0f172a';
   const update = () => { message.value = 'السلام عليكم، معكم فريق رعاية طبية. شكراً لطلب انضمامكم. نرغب في مناقشة رفع نسبة الخصم المقترحة إلى ' + (input.value || '...') + '% لتقديم عرض أفضل للمشتركين. هل يناسبكم ذلك؟'; };
   input.oninput = update; update();
   const open = document.createElement('a');
@@ -206,6 +210,34 @@ window.renderRequestsTable = () => {
       n.onclick = () => window.negotiateJoinRequest(r.id);
       td.append(n);
     }
+  });
+};
+
+function negotiateSubscriber(r) {
+  const fake = { ...r, category: 'doctor', discount: '', seedRecord: false };
+  serverRequests = [fake, ...serverRequests];
+  window.negotiateJoinRequest(r.id);
+  serverRequests = serverRequests.filter(x => x !== fake);
+}
+const renderRequestsWithJoin = window.renderRequestsTable;
+window.renderRequestsTable = () => {
+  renderRequestsWithJoin();
+  const body = document.getElementById('requestsTableBody');
+  if (!body || !owner) return;
+  body.querySelectorAll('[data-sub-row]').forEach(x => x.remove());
+  serverSubscribers.filter(r => r.status === 'pending').forEach(r => {
+    const tr = document.createElement('tr'); tr.dataset.subRow = '1';
+    const head = document.createElement('td'); head.className = 'font-bold';
+    head.textContent = 'بطاقة اشتراك عائلي: ' + (r.name || '');
+    const info = document.createElement('td');
+    info.textContent = [r.phone, r.governorate, r.address, ((r.familyMembers || []).length ? (r.familyMembers.length + ' أفراد') : '')].filter(Boolean).join(' - ');
+    const act = document.createElement('td');
+    const mk = (label, bg, fn) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.className = 'px-2 py-1 text-white rounded-lg text-xs font-bold m-1'; b.style.background = bg; b.onclick = fn; act.append(b); };
+    const acts = subscriberActionList(r);
+    mk('اعتماد', '#047857', () => askAction('اعتماد طلب العميل؟', async () => { await acts[0][1](); renderRequestsTable(); }));
+    mk('تفاوض', '#0284c7', () => negotiateSubscriber(r));
+    mk('رفض', '#be123c', () => askAction('رفض طلب العميل؟', async () => { await acts[2][1](); renderRequestsTable(); }));
+    tr.append(head, info, act); body.append(tr);
   });
 };
 
@@ -351,24 +383,8 @@ function dateText(v) {
   const d = new Date(v);
   return isNaN(d) ? String(v).slice(0, 10) : d.toLocaleDateString('ar-EG');
 }
-function tableValues(r) { return [r.name || r.holderName || '', r.phone || r.holderPhone || '', r.governorate || '', r.address || '', r.specialty || '', dateText(r.joinedAt || r.created_at)]; }
-window.renderContactDatabase = () => {
-  if (!owner) return;
-  const kind = document.getElementById('contactDbKind').value;
-  const q = document.getElementById('contactDbSearch').value.trim().toLowerCase();
-  const body = document.getElementById('contactDbRows');
-  body.replaceChildren();
-  const rows = contactRows(kind).filter(r => tableValues(r).join(' ').toLowerCase().includes(q));
-  document.getElementById('contactDbCount').textContent = String(rows.length);
-  for (const r of rows) {
-    const tr = document.createElement('tr');
-    for (const v of tableValues(r)) {
-      const td = document.createElement('td');
-      td.className = 'p-3 border-b break-words'; td.textContent = v; tr.append(td);
-    }
-    if (kind === 'subscribers') {
-      const td = document.createElement('td');
-      const actions = [
+function subscriberActionList(r) {
+  return [
         ['اعتماد', async () => {
           const card = { id: 'card-' + Date.now(), holderName: r.name, holderPhone: r.phone, governorate: r.governorate, address: r.address, code: 'RT-' + crypto.randomUUID().slice(0, 8).toUpperCase(), expiryDate: new Date(Date.now() + 365 * 86400000).toISOString().slice(0, 10), familyMembers: r.familyMembers || [] };
           await window.saveMemberCards([...getMemberCards(), card]);
@@ -393,6 +409,26 @@ window.renderContactDatabase = () => {
           await refreshSubscribers();
         }]
       ];
+}
+
+function tableValues(r) { return [r.name || r.holderName || '', r.phone || r.holderPhone || '', r.governorate || '', r.address || '', r.specialty || '', dateText(r.joinedAt || r.created_at)]; }
+window.renderContactDatabase = () => {
+  if (!owner) return;
+  const kind = document.getElementById('contactDbKind').value;
+  const q = document.getElementById('contactDbSearch').value.trim().toLowerCase();
+  const body = document.getElementById('contactDbRows');
+  body.replaceChildren();
+  const rows = contactRows(kind).filter(r => tableValues(r).join(' ').toLowerCase().includes(q));
+  document.getElementById('contactDbCount').textContent = String(rows.length);
+  for (const r of rows) {
+    const tr = document.createElement('tr');
+    for (const v of tableValues(r)) {
+      const td = document.createElement('td');
+      td.className = 'p-3 border-b break-words'; td.textContent = v; tr.append(td);
+    }
+    if (kind === 'subscribers') {
+      const td = document.createElement('td');
+      const actions = subscriberActionList(r);
       for (const [labelText, action] of actions) {
         if (r.status !== 'pending' && labelText !== 'حذف') continue;
         const btn = document.createElement('button');
