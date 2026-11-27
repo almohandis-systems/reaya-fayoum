@@ -298,9 +298,54 @@ window.viewCardDirectly = id => {
   }
 };
 
+// Offline copy: draws a PNG of the card (name, family, RT code, expiry). No private QR or link in it.
+function saveCardImage(card) {
+  const fam = (card.familyMembers || []).filter(Boolean);
+  const W = 900, H = 560 + fam.length * 56;
+  const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const g = cv.getContext('2d');
+  const grad = g.createLinearGradient(0, 0, W, H); grad.addColorStop(0, '#065f46'); grad.addColorStop(1, '#0f766e');
+  g.fillStyle = grad; g.fillRect(0, 0, W, H);
+  g.fillStyle = '#ffffff'; g.direction = 'rtl'; g.textAlign = 'right';
+  const font = px => px + 'px "Cairo", "Noto Sans Arabic", Tahoma, Arial, sans-serif';
+  let y = 90;
+  g.font = 'bold ' + font(46); g.fillText('بطاقة رعاية طبية', W - 50, y); y += 70;
+  g.font = font(28); g.fillStyle = '#a7f3d0'; g.fillText('بطاقة الرعاية الصحية العائلية', W - 50, y); y += 70;
+  g.fillStyle = '#ffffff'; g.font = font(26); g.fillText('رب الأسرة:', W - 50, y); y += 50;
+  g.font = 'bold ' + font(40); g.fillText(card.holderName || '', W - 50, y); y += 70;
+  if (fam.length) {
+    g.font = font(26); g.fillStyle = '#a7f3d0'; g.fillText('أفراد الأسرة:', W - 50, y); y += 50;
+    g.fillStyle = '#ffffff'; g.font = font(32);
+    fam.forEach(n => { g.fillText(n, W - 50, y); y += 56; });
+    y += 14;
+  }
+  g.font = font(26); g.fillStyle = '#a7f3d0'; g.fillText('كود العضوية:', W - 50, y);
+  g.direction = 'ltr'; g.textAlign = 'left'; g.fillStyle = '#ffffff'; g.font = 'bold 40px monospace'; g.fillText(card.code || '', 50, y); y += 60;
+  g.direction = 'rtl'; g.textAlign = 'right'; g.font = font(26); g.fillStyle = '#a7f3d0'; g.fillText('صالحة حتى:', W - 50, y);
+  g.direction = 'ltr'; g.textAlign = 'left'; g.fillStyle = '#ffffff'; g.font = 'bold 40px monospace'; g.fillText(card.expiryDate || '', 50, y);
+  cv.toBlob(b => {
+    if (!b) { alert('تعذر إنشاء الصورة.'); return; }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b); a.download = 'raaya-card-' + (card.code || 'card') + '.png';
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }, 'image/png');
+}
+window.saveCardImage = saveCardImage;
+
 const baseDisplayCard = window.displayCardData;
 window.displayCardData = card => {
   baseDisplayCard(card);
+  window.__raayaLastCard = card;
+  const area = document.getElementById('printableCardArea');
+  if (area && !document.getElementById('saveCardImageBtn')) {
+    const b = document.createElement('button');
+    b.id = 'saveCardImageBtn'; b.type = 'button'; b.textContent = 'حفظ البطاقة كصورة';
+    b.className = 'block w-full text-center p-3 rounded-xl my-2 font-bold';
+    b.setAttribute('style', 'background:#059669;color:#fff');
+    b.onclick = () => saveCardImage(window.__raayaLastCard);
+    area.append(b);
+  }
   if (card.lookupToken) {
     const url = new URL('./', location.href);
     url.search = ''; url.hash = 'card=' + card.lookupToken;
