@@ -308,42 +308,64 @@ window.displayCardData = card => {
   }
 };
 
-window.sendMemberCardWhatsApp = id => {
+// Short private link: our own revocable short code (server), wrapped by is.gd/Reaya_xxxx.
+// is.gd only ever receives the short code link, never the 64-hex card token.
+async function shortLinkFor(card) {
+  const cacheKey = 'raaya.owner.short.' + card.id;
+  const cached = localStorage.getItem(cacheKey);
+  if (cached) return cached;
+  const r = ok(await rpc('reaya_owner_card_short', { p_token: token(), p_member_id: card.id }));
+  const base = new URL('./', location.href);
+  base.search = ''; base.hash = 'c=' + r.code;
+  let out = base.href;
+  try {
+    const alpha = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    const rnd = crypto.getRandomValues(new Uint8Array(12));
+    const alias = 'Reaya_' + [...rnd].map(n => alpha[n % alpha.length]).join('');
+    const res = await fetch('https://is.gd/create.php?format=json&url=' + encodeURIComponent(base.href) + '&shorturl=' + alias);
+    const j = await res.json();
+    if (j && typeof j.shorturl === 'string' && j.shorturl.startsWith('https://is.gd/')) out = j.shorturl;
+  } catch (e) { console.error('Short link service unavailable, using app link'); }
+  try { localStorage.setItem(cacheKey, out); } catch (e) {}
+  return out;
+}
+
+window.sendMemberCardWhatsApp = async id => {
   if (!owner) return;
   const card = getMemberCards().find(c => c.id === id);
   if (!card || !card.lookupToken) { alert('احفظ البطاقة أولاً لإنشاء رابط خاص.'); return; }
-  const url = new URL('./', location.href);
-  url.search = ''; url.hash = 'card=' + card.lookupToken;
   const modal = document.createElement('div');
   modal.className = 'fixed inset-0 bg-slate-900/70 flex items-center justify-center p-4';
   modal.style.zIndex = '1200';
   const box = document.createElement('div');
   box.className = 'bg-white rounded-xl p-4 max-w-md w-full';
+  box.setAttribute('style', 'color:#0f172a;background:#fff');
   const label = document.createElement('p');
   label.textContent = 'رابط خاص لصاحب البطاقة فقط. انسخه وأرسله له:';
   const input = document.createElement('input');
-  input.value = url.href; input.readOnly = true;
+  input.value = 'جارٍ تجهيز الرابط...'; input.readOnly = true;
   input.className = 'border p-3 w-full rounded-xl';
+  input.setAttribute('style', 'color:#0f172a;background:#fff');
   input.onclick = () => input.select();
   const close = document.createElement('button');
   close.textContent = 'إغلاق'; close.className = 'p-3';
   close.onclick = () => modal.remove();
-  box.setAttribute('style', 'color:#0f172a;background:#fff');
-  input.setAttribute('style', 'color:#0f172a;background:#fff');
-  box.append(label, input);
+  box.append(label, input, close); modal.append(box); document.body.append(modal);
+  let link;
+  try { link = await shortLinkFor(card); } catch (e) { modal.remove(); fail(e); return; }
+  input.value = link;
   const phone = (card.holderPhone || '').replace(/[^0-9]/g, '');
   if (phone.length >= 10 && phone.length <= 15) {
     const dest = phone.startsWith('0') ? '2' + phone : phone;
-    const text = 'السلام عليكم، تم اعتماد بطاقة رعاية طبية الخاصة بكم. افتحوا بطاقتكم من هذا الرابط الخاص (لا تشاركوه مع أحد):\n' + url.href;
+    const text = 'السلام عليكم، تم اعتماد بطاقة رعاية طبية الخاصة بكم. افتحوا بطاقتكم من هذا الرابط الخاص (لا تشاركوه مع أحد):\n' + link;
     const wa = document.createElement('a');
     wa.textContent = 'إرسال البطاقة عبر واتساب';
     wa.href = 'https://wa.me/' + dest + '?text=' + encodeURIComponent(text);
     wa.target = '_blank'; wa.rel = 'noopener noreferrer';
     wa.className = 'block text-center text-white p-3 rounded-xl my-2';
     wa.setAttribute('style', 'background:#059669;color:#fff');
-    box.append(wa);
+    box.insertBefore(wa, close);
   }
-  box.append(close); modal.append(box); document.body.append(modal);
 };
 
 // ---------------- Subscribers ----------------
@@ -656,6 +678,16 @@ window.addEventListener('online', () => statusText('جارٍ الاتصال'));
     }
   }
   refresh();
+  const shortCode = new URLSearchParams(location.hash.slice(1)).get('c');
+  if (shortCode) {
+    openMemberCardModal();
+    document.getElementById('memberSearchInput').value = '';
+    try {
+      const res = await rpc('reaya_public_card_short', { p_code: shortCode });
+      if (res.status === 'ok') { displayCardData(res.card); document.getElementById('printableCardArea').classList.remove('hidden'); }
+      else alert(res.status === 'busy' ? 'الخدمة مشغولة مؤقتًا، حاول بعد قليل.' : 'لم يتم العثور على البطاقة.');
+    } catch (e) { fail(e); }
+  }
   const cardToken = new URLSearchParams(location.hash.slice(1)).get('card');
   if (cardToken) {
     openMemberCardModal();
