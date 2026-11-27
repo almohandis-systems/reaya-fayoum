@@ -753,6 +753,12 @@ window.addEventListener('online', () => statusText('جارٍ الاتصال'));
     }
   }
   refresh();
+  openCardFromHash();
+})();
+
+// Open the card when a card link arrives while the app is already open:
+// a same-URL tap from WhatsApp only changes the hash and never reloads the page.
+async function openCardFromHash() {
   const shortCode = new URLSearchParams(location.hash.slice(1)).get('c');
   if (shortCode) {
     openMemberCardModal();
@@ -769,5 +775,6 @@ window.addEventListener('online', () => statusText('جارٍ الاتصال'));
     document.getElementById('memberSearchInput').value = cardToken;
     lookupMemberCard();
   }
-})();
+}
+window.addEventListener('hashchange', openCardFromHash);
 })();
