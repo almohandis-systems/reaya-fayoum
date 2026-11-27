@@ -369,5 +369,8 @@
   "إرسال طلب أو إصدار بطاقة لا يؤكد قبولها لدى أي جهة. تُعلن تفاصيل الخدمة بعد اعتمادها.": "Submitting an application or issuing a card does not confirm acceptance by a provider. Service details will be announced once approved.",
   "نعمل على تجهيز الدليل. تُضاف الجهات وتفاصيل خدماتها بعد التأكيد.": "We are preparing the directory. Providers and service details will be added after confirmation.",
   "تثبيت التطبيق": "Install the app",
-  "مشاركة التطبيق": "Share the app"
+  "مشاركة التطبيق": "Share the app",
+  "رمز الوصول أو رابط البطاقة": "Access code or card link",
+  "لم يتم العثور على البطاقة بهذا الرمز. تأكد من نسخ رمز الوصول كاملاً من الرسالة، أو افتح رابط البطاقة مباشرة.": "No card was found with this code. Copy the full access code from the message, or open the card link directly.",
+  "البحث برقم الهاتف غير متاح حفاظًا على الخصوصية. استخدم رمز الوصول الخاص أو رابط البطاقة المرسل من الإدارة.": "Phone-number search is unavailable to protect privacy. Use the private access code or the card link sent by the administration."
 }

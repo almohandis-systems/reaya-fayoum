@@ -268,17 +268,31 @@ window.openMemberCardModal = () => {
   document.getElementById('printableCardArea').classList.add('hidden');
 };
 window.lookupMemberCard = async () => {
-  const value = document.getElementById('memberSearchInput').value.trim();
+  const raw = document.getElementById('memberSearchInput').value.trim();
   if (owner) {
-    const card = getMemberCards().find(r => r.code === value || r.lookupToken === value || r.holderPhone === value);
+    const card = getMemberCards().find(r => r.code === raw || r.lookupToken === raw || r.holderPhone === raw);
     if (card) { displayCardData(card); document.getElementById('printableCardArea').classList.remove('hidden'); return; }
   }
-  if (!/^[a-f0-9]{64}$/.test(value)) { alert('أدخل رمز الوصول الخاص الذي حصلت عليه من الإدارة. لا يمكن البحث العام برقم الهاتف.'); return; }
+  // Accept the code however it arrives: bare, pasted inside the private or short link,
+  // or copied together with its message text. Ignore letter case, spaces and line breaks.
+  const collapsed = raw.replace(/\s+/g, '');
+  const tokenMatch = collapsed.match(/[a-fA-F0-9]{64}/);
+  const shortMatch = raw.match(/[#?&]c=([A-Za-z0-9]+)/);
   try {
-    const res = await rpc('reaya_public_card', { p_lookup_token: value });
-    if (res.status !== 'ok') { alert('لم يتم العثور على البطاقة.'); return; }
-    displayCardData(res.card);
-    document.getElementById('printableCardArea').classList.remove('hidden');
+    if (tokenMatch) {
+      const res = await rpc('reaya_public_card', { p_lookup_token: tokenMatch[0].toLowerCase() });
+      if (res.status !== 'ok') { alert('لم يتم العثور على البطاقة بهذا الرمز. تأكد من نسخ رمز الوصول كاملاً من الرسالة، أو افتح رابط البطاقة مباشرة.'); return; }
+      displayCardData(res.card);
+      document.getElementById('printableCardArea').classList.remove('hidden');
+      return;
+    }
+    if (/^[0-9+\s()-]{7,}$/.test(raw)) { alert('البحث برقم الهاتف غير متاح حفاظًا على الخصوصية. استخدم رمز الوصول الخاص أو رابط البطاقة المرسل من الإدارة.'); return; }
+    const code = shortMatch ? shortMatch[1] : collapsed;
+    if (!code) { alert('أدخل رمز الوصول الخاص الذي حصلت عليه من الإدارة. لا يمكن البحث العام برقم الهاتف.'); return; }
+    const res = await rpc('reaya_public_card_short', { p_code: code });
+    if (res.status === 'ok') { displayCardData(res.card); document.getElementById('printableCardArea').classList.remove('hidden'); return; }
+    if (res.status === 'busy') { alert('الخدمة مشغولة مؤقتًا، حاول بعد قليل.'); return; }
+    alert('لم يتم العثور على البطاقة بهذا الرمز. تأكد من نسخ رمز الوصول كاملاً من الرسالة، أو افتح رابط البطاقة مباشرة.');
   } catch (e) { fail(e); }
 };
 
