@@ -372,5 +372,6 @@
   "مشاركة التطبيق": "Share the app",
   "رمز الوصول أو رابط البطاقة": "Access code or card link",
   "لم يتم العثور على البطاقة بهذا الرمز. تأكد من نسخ رمز الوصول كاملاً من الرسالة، أو افتح رابط البطاقة مباشرة.": "No card was found with this code. Copy the full access code from the message, or open the card link directly.",
-  "البحث برقم الهاتف غير متاح حفاظًا على الخصوصية. استخدم رمز الوصول الخاص أو رابط البطاقة المرسل من الإدارة.": "Phone-number search is unavailable to protect privacy. Use the private access code or the card link sent by the administration."
+  "البحث برقم الهاتف غير متاح حفاظًا على الخصوصية. استخدم رمز الوصول الخاص أو رابط البطاقة المرسل من الإدارة.": "Phone-number search is unavailable to protect privacy. Use the private access code or the card link sent by the administration.",
+  "ده رابط وليس رمزًا. افتحه بضغطة واحدة من الرسالة مباشرة بدل لزقه هنا.": "This is a link, not a code. Tap it once in the message instead of pasting it here."
 }

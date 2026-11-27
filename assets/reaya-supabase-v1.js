@@ -287,11 +287,16 @@ window.lookupMemberCard = async () => {
       return;
     }
     if (/^[0-9+\s()-]{7,}$/.test(raw)) { alert('البحث برقم الهاتف غير متاح حفاظًا على الخصوصية. استخدم رمز الوصول الخاص أو رابط البطاقة المرسل من الإدارة.'); return; }
-    const code = shortMatch ? shortMatch[1] : collapsed;
+    let code = shortMatch ? shortMatch[1] : collapsed;
     if (!code) { alert('أدخل رمز الوصول الخاص الذي حصلت عليه من الإدارة. لا يمكن البحث العام برقم الهاتف.'); return; }
+    const linkAdvice = 'ده رابط وليس رمزًا. افتحه بضغطة واحدة من الرسالة مباشرة بدل لزقه هنا.';
+    const isgd = code.match(/is\.gd\/Reaya_([A-Za-z0-9]+)/i);
+    if (isgd) code = isgd[1];
+    else if (/^(https?:\/\/|www\.)/i.test(code)) { alert(linkAdvice); return; }
     const res = await rpc('reaya_public_card_short', { p_code: code });
     if (res.status === 'ok') { displayCardData(res.card); document.getElementById('printableCardArea').classList.remove('hidden'); return; }
     if (res.status === 'busy') { alert('الخدمة مشغولة مؤقتًا، حاول بعد قليل.'); return; }
+    if (isgd) { alert(linkAdvice); return; }
     alert('لم يتم العثور على البطاقة بهذا الرمز. تأكد من نسخ رمز الوصول كاملاً من الرسالة، أو افتح رابط البطاقة مباشرة.');
   } catch (e) { fail(e); }
 };
@@ -396,7 +401,8 @@ async function shortLinkFor(card) {
   try {
     const alpha = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     const rnd = crypto.getRandomValues(new Uint8Array(12));
-    const alias = 'Reaya_' + [...rnd].map(n => alpha[n % alpha.length]).join('');
+    // Alias carries the short code itself so a pasted is.gd link resolves too.
+    const alias = /^[A-Za-z0-9]+$/.test(r.code) ? 'Reaya_' + r.code : 'Reaya_' + [...rnd].map(n => alpha[n % alpha.length]).join('');
     const res = await fetch('https://is.gd/create.php?format=json&url=' + encodeURIComponent(base.href) + '&shorturl=' + alias);
     const j = await res.json();
     if (j && typeof j.shorturl === 'string' && j.shorturl.startsWith('https://is.gd/')) out = j.shorturl;
