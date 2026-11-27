@@ -24,3 +24,6 @@
 @media(max-width:360px){#subscriberFormModal{padding:8px!important}#subscriberFormModal .subscriber-sheet{padding:20px 15px}#subscriberFormModal h2{font-size:21px}}
 #subscriberFormModal .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 #subscriberFormModal{overflow-y:auto!important;overflow-x:hidden!important;inset:0}
+
+/* Keep the request-form title readable under every owner design preset: the midnight preset paints every <header> element dark navy. */
+#subscriberFormModal .subscriber-heading{background:transparent!important}
