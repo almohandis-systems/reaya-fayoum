@@ -298,10 +298,10 @@ window.viewCardDirectly = id => {
   }
 };
 
-// Offline copy: draws a PNG of the card (name, family, RT code, expiry) plus a QR of the RT code ONLY (no private link, token or short code).
+// Offline copy: draws a PNG of the card (name, family, RT code, expiry) plus a QR (private card link when the card has a token, else the RT code) and a registered-names-only notice.
 function saveCardImage(card) {
   const fam = (card.familyMembers || []).filter(Boolean);
-  const W = 900, H = 560 + fam.length * 56 + 380;
+  const W = 900, H = 560 + fam.length * 56 + 600;
   const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
   const g = cv.getContext('2d');
   const grad = g.createLinearGradient(0, 0, W, H); grad.addColorStop(0, '#065f46'); grad.addColorStop(1, '#0f766e');
@@ -325,14 +325,19 @@ function saveCardImage(card) {
   g.direction = 'ltr'; g.textAlign = 'left'; g.fillStyle = '#ffffff'; g.font = 'bold 40px monospace'; g.fillText(card.expiryDate || '', 50, y);
   y += 40;
   try {
-    const q = qrcode(0, 'M'); q.addData(String(card.code || '')); q.make();
-    const n = q.getModuleCount(), cell = Math.floor(260 / (n + 2)), sz = cell * (n + 2), x0 = Math.round((W - sz) / 2);
+    const q = qrcode(0, 'M'); let payload = String(card.code || '');
+    if (card.lookupToken) { const u = new URL('./', location.href); u.search = ''; u.hash = 'card=' + card.lookupToken; payload = u.href; }
+    q.addData(payload); q.make();
+    const n = q.getModuleCount(), cell = Math.floor(340 / (n + 2)), sz = cell * (n + 2), x0 = Math.round((W - sz) / 2);
     g.fillStyle = '#ffffff'; g.fillRect(x0, y, sz, sz);
     g.fillStyle = '#000000';
     for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) g.fillRect(x0 + (c + 1) * cell, y + (r + 1) * cell, cell, cell);
     y += sz + 44;
     g.direction = 'rtl'; g.textAlign = 'center'; g.fillStyle = '#a7f3d0'; g.font = font(24);
-    g.fillText('QR لكود العضوية فقط', W / 2, y);
+    g.fillText(card.lookupToken ? 'امسح الـQR للتحقق من البطاقة' : 'QR لكود العضوية', W / 2, y);
+    y += 56; g.fillStyle = '#ffffff'; g.font = 'bold ' + font(27);
+    g.fillText('تنبيه: الأسماء المسجلة في البطاقة فقط', W / 2, y); y += 44;
+    g.fillText('هي من يحق لها استخدام الخصومات', W / 2, y);
   } catch (e) {}
   cv.toBlob(b => {
     if (!b) { alert('تعذر إنشاء الصورة.'); return; }
